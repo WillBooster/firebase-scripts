@@ -2705,6 +2705,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jest@npm:27.0.2":
+  version: 27.0.2
+  resolution: "@types/jest@npm:27.0.2"
+  dependencies:
+    jest-diff: ^27.0.0
+    pretty-format: ^27.0.0
+  checksum: 814ad5f5d2f277849f47e52906da4b745758e555630fc8cb46a071bde648eefeffb1b35710c530a8cea7fc4ea7c1d813812c120484bf7902ab6c5e473cdd49c9
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:*, @types/json-schema@npm:^7.0.6, @types/json-schema@npm:^7.0.7":
   version: 7.0.9
   resolution: "@types/json-schema@npm:7.0.9"
@@ -6276,6 +6286,7 @@ __metadata:
     "@rollup/plugin-commonjs": 21.0.0
     "@rollup/plugin-node-resolve": 13.0.5
     "@types/eslint": 7.28.1
+    "@types/jest": 27.0.2
     "@types/micromatch": 4.0.2
     "@types/prettier": 2.4.1
     "@types/yargs": 17.0.3
@@ -8154,7 +8165,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-diff@npm:^27.2.5":
+"jest-diff@npm:^27.0.0, jest-diff@npm:^27.2.5":
   version: 27.2.5
   resolution: "jest-diff@npm:27.2.5"
   dependencies:
@@ -11261,7 +11272,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^27.2.5":
+"pretty-format@npm:^27.0.0, pretty-format@npm:^27.2.5":
   version: 27.2.5
   resolution: "pretty-format@npm:27.2.5"
   dependencies:
