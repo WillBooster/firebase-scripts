@@ -10,23 +10,22 @@ export const exportCommand: CommandModule = {
   command: 'export',
   describe: 'Export and serialize specified collections',
   builder: {
-    flag: {
+    gzip: {
       type: 'boolean',
-      description: 'Boolean Flag',
-      alias: 'f',
+      description: 'Enable gzip compressing',
+      alias: 'g',
       default: false,
     },
   },
   handler: async (argv) => {
     console.log('flag', argv);
 
-    await exportCollections([]);
+    await exportCollections([], path.resolve());
   },
 };
 
-export async function exportCollections(collectionPaths: string[]): Promise<void> {
+export async function exportCollections(collectionPaths: string[], dirPath: string): Promise<void> {
   const app = initializeAdmin();
-  const dirPath = path.resolve();
 
   for (const collectionPath of collectionPaths) {
     const collectionRef = app.firestore().collection(collectionPath);
