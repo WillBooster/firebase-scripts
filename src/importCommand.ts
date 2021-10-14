@@ -2,30 +2,40 @@ import fs from 'fs';
 
 import { firestore } from 'firebase-admin';
 import { PromisePool } from 'minimal-promise-pool';
-import { CommandModule } from 'yargs';
+import { CommandModule, InferredOptionTypes } from 'yargs';
 
-import { initializeAdmin } from './firebaseAdmin';
+import { adminApp } from './firebaseAdmin';
+import { decompressJson } from './jsonCompressor';
 
-export const importCommand: CommandModule = {
+const builder = {
+  collection: {
+    type: 'array',
+    description: 'A collection path where a serialized file is imported',
+    alias: 'c',
+  },
+} as const;
+
+export const importCommand: CommandModule<unknown, InferredOptionTypes<typeof builder>> = {
   command: 'import',
   describe: 'Import serialized collection files (.json/.gz)',
-  builder: {
-    flag: {
-      type: 'boolean',
-      description: 'Boolean Flag',
-      alias: 'f',
-      default: false,
-    },
-  },
-  handler: async (argv) => {
-    console.log('flag', argv);
+  builder,
+  async handler(argv) {
+    if (!argv._.length) {
+      console.error('Please pass at least one of serialized collection files.');
+      process.exit(1);
+    }
+    if (argv.collection?.length && argv._.length !== argv.collection.length) {
+      console.error('The numbers of serialized files and collection paths must be equal.');
+      process.exit(1);
+    }
 
-    await importCollections('');
+    for (let i = 0; i < argv._.length; i++) {
+      await importCollection(argv._[i].toString(), argv.collection?.[i].toString());
+    }
   },
 };
 
-export async function importCollections(filePath: string, collectionPath?: string): Promise<void> {
-  const app = initializeAdmin();
+export async function importCollection(filePath: string, collectionPath?: string): Promise<void> {
   if (!collectionPath) {
     const dotIndex = filePath.indexOf('.');
     collectionPath = filePath.substr(0, dotIndex >= 0 ? dotIndex : undefined);
@@ -35,15 +45,18 @@ export async function importCollections(filePath: string, collectionPath?: strin
     console.error(`${filePath} does not exist.`);
     return;
   }
-  const records = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+  const records = filePath.endsWith('.json.gz')
+    ? decompressJson(filePath)
+    : JSON.parse(fs.readFileSync(filePath, 'utf8'));
   if (!Array.isArray(records)) {
     console.error(`${filePath} is not valid json.`);
     return;
   }
 
-  console.log(`Start restoring: ${collectionPath}`);
-  const count = await restoreCollection(records, app.firestore().collection(collectionPath));
-  console.log(`Restored records: ${count}`);
+  console.info(`Start restoring: ${collectionPath}`);
+  const count = await restoreCollection(records, adminApp.firestore().collection(collectionPath));
+  console.info(`Restored records: ${count}`);
 }
 
 export async function restoreCollection(
@@ -60,11 +73,11 @@ export async function restoreCollection(
     await promisePool.run(() => collection.doc(docId).set(record));
     count++;
     if (count % 1000 === 0) {
-      console.log(`${count} / ${records.length}`);
+      console.info(`${count} / ${records.length}`);
     }
   }
   await promisePool.promiseAll();
-  console.log(`${count} / ${records.length}`);
-  console.log(`Done (${records.length - count} records are skipped due to the lack of 'docId' filed)`);
+  console.info(`${count} / ${records.length}`);
+  console.info(`Done (${records.length - count} records are skipped due to the lack of 'docId' filed)`);
   return count;
 }

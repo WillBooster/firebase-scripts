@@ -2,33 +2,41 @@ import fs from 'fs';
 import path from 'path';
 
 import { firestore } from 'firebase-admin';
-import { CommandModule } from 'yargs';
+import { CommandModule, InferredOptionTypes } from 'yargs';
 
-import { initializeAdmin } from './firebaseAdmin';
+import { adminApp } from './firebaseAdmin';
+import { compressJson } from './jsonCompressor';
 
-export const exportCommand: CommandModule = {
+const builder = {
+  directory: {
+    type: 'string',
+    description: 'A directory path where serialized files are generated',
+    alias: 'd',
+  },
+  gzip: {
+    type: 'boolean',
+    description: 'A boolean value indicating whether gzip compressing is enabled',
+    alias: 'g',
+    default: false,
+  },
+} as const;
+
+export const exportCommand: CommandModule<unknown, InferredOptionTypes<typeof builder>> = {
   command: 'export',
   describe: 'Export and serialize specified collections',
-  builder: {
-    gzip: {
-      type: 'boolean',
-      description: 'Enable gzip compressing',
-      alias: 'g',
-      default: false,
-    },
-  },
-  handler: async (argv) => {
-    console.log('flag', argv);
-
-    await exportCollections([], path.resolve());
+  builder,
+  async handler(argv) {
+    await exportCollections(
+      argv._.map((arg) => arg.toString()),
+      argv.directory ?? path.resolve(),
+      argv.gzip
+    );
   },
 };
 
-export async function exportCollections(collectionPaths: string[], dirPath: string): Promise<void> {
-  const app = initializeAdmin();
-
+export async function exportCollections(collectionPaths: string[], dirPath: string, gzip?: boolean): Promise<void> {
   for (const collectionPath of collectionPaths) {
-    const collectionRef = app.firestore().collection(collectionPath);
+    const collectionRef = adminApp.firestore().collection(collectionPath);
     console.info(`Reading ${collectionPath} collection ...`);
 
     const dataList: unknown[] = [];
@@ -39,8 +47,12 @@ export async function exportCollections(collectionPaths: string[], dirPath: stri
     console.info(`Read ${dataList.length} documents ...`);
 
     const normalizedCollectionPath = collectionPath.replaceAll('/', '-');
-    const filePath = path.join(dirPath, `${normalizedCollectionPath}.json`);
-    fs.writeFileSync(filePath, JSON.stringify(dataList));
-    console.log(`Wrote: ${filePath}`);
+    const filePath = path.join(dirPath, `${normalizedCollectionPath}.json${gzip ? '.gz' : ''}`);
+    if (gzip) {
+      compressJson(dataList, filePath);
+    } else {
+      fs.writeFileSync(filePath, JSON.stringify(dataList));
+    }
+    console.info(`Wrote: ${filePath}`);
   }
 }

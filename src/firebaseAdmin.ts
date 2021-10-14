@@ -1,12 +1,8 @@
 import admin from 'firebase-admin';
-import { PromisePool } from 'minimal-promise-pool';
 
-export function initializeAdmin(): admin.app.App {
+function initializeAdmin(): admin.app.App {
   if (!process.env.FIREBASE_PROJECT_ID || !process.env.FIREBASE_PRIVATE_KEY || !process.env.FIREBASE_CLIENT_EMAIL) {
-    console.error(
-      'Please define the environment variables: FIREBASE_PROJECT_ID, FIREBASE_PRIVATE_KEY and FIREBASE_CLIENT_EMAIL'
-    );
-    process.exit(1);
+    return admin.initializeApp();
   }
 
   return admin.initializeApp({
@@ -19,4 +15,4 @@ export function initializeAdmin(): admin.app.App {
   });
 }
 
-export const promisePool = new PromisePool();
+export const adminApp = initializeAdmin();
