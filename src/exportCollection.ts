@@ -1,52 +1,45 @@
 import fs from 'fs';
-import os from 'os';
 import path from 'path';
 
-import { compressJson } from './jsonCompressor';
-import { hideBin } from 'yargs/helpers';
-import yargs from 'yargs/yargs';
+import { firestore } from 'firebase-admin';
+import { CommandModule } from 'yargs';
 
-import { dayjs } from './dayjs';
 import { initializeAdmin } from './firebaseAdmin';
 
-async function exportCollection(collectionPaths: string[]) {
-  
-  const app = initializeAdmin();
-  for (const collectionPath of collectionPaths) {
-    const collectionRef = app.firestore().collection(collectionPath);
-    console.info(`Reading ${collectionPath} collection ...`);
-    const docRefs = await collectionRef.listDocuments();
-    const docs = await Promise.all(docRefs.map((docRef) => docRef.get()));
-    const dataList = docs.map((doc) => ({ docId: doc.id, ...doc.data() }));
-    console.info(`Read ${docRefs.length} documents ...`);
-    fs.writeFileSync(path.join(dirPath, `${normalizedCollectionName}.json`), JSON.stringify(dataList));
+export const exportCollection: CommandModule = {
+  command: 'export',
+  describe: 'Export and serialize specified collections',
+  builder: {
+    flag: {
+      type: 'boolean',
+      description: 'Boolean Flag',
+      alias: 'f',
+      default: false,
+    },
+  },
+  handler: async (argv) => {
+    console.log('flag', argv);
 
+    const collectionPaths: string[] = [];
 
+    const app = initializeAdmin();
+    const dirPath = path.resolve();
 
-    for (const arg of argv._) {
-      const collectionName = arg.toString();
-      const collectionRef = app.firestore().collection(collectionName);
-      console.log(`Read ${collectionName} ...`);
-      const docRefs = await collectionRef.listDocuments();
-      console.log('done');
-      const dataList = docs.map((doc) => ({ docId: doc.id, ...doc.data() }));
-      const timestamp = dayjs().format('YYYY-MM-DD_HH-mm');
-      const normalizedCollectionName = collectionName.replaceAll('/', '-');
-      const filePaths = [
-        path.join(dirPath, `${normalizedCollectionName}.json.gz`),
-        path.join(dirPath, `${normalizedCollectionName}-${timestamp}.json.gz`),
-      ];
-      const driveDirPath = `${os.homedir()}/Google Drive/マイドライブ/SIP分析用ファイル/ルネ高`;
-      if (environment === 'production' && fs.existsSync(driveDirPath)) {
-        filePaths.push(path.join(driveDirPath, `${normalizedCollectionName}-${timestamp}.json.gz`));
+    for (const collectionPath of collectionPaths) {
+      const collectionRef = app.firestore().collection(collectionPath);
+      console.info(`Reading ${collectionPath} collection ...`);
+
+      const dataList: unknown[] = [];
+      for await (const doc of collectionRef.stream()) {
+        const typedDoc = doc as unknown as firestore.QueryDocumentSnapshot;
+        dataList.push({ docId: typedDoc.id, ...typedDoc.data() });
       }
-      compressJson(dataList, ...filePaths);
-      console.log(`Wrote: ${filePaths}`);
-      fs.writeFileSync(path.join(dirPath, `${normalizedCollectionName}.json`), JSON.stringify(dataList));
+      console.info(`Read ${dataList.length} documents ...`);
+
+      const normalizedCollectionPath = collectionPath.replaceAll('/', '-');
+      const filePath = path.join(dirPath, `${normalizedCollectionPath}.json`);
+      fs.writeFileSync(filePath, JSON.stringify(dataList));
+      console.log(`Wrote: ${filePath}`);
     }
-  }
-
-  main().then();
-
-}
-
+  },
+};
