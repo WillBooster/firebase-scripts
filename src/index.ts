@@ -1,6 +1,6 @@
 import yargs from 'yargs/yargs';
 
-import { exportCollection } from './exportCollection';
+import { exportCommand } from './exportCommand';
 
 async function main(): Promise<void> {
   const argv = await yargs(process.argv.slice(2))
@@ -14,7 +14,7 @@ async function main(): Promise<void> {
         console.log('import', argv);
       }
     )
-    .command(exportCollection)
+    .command(exportCommand)
     .help().argv;
   // console.log(argv);
 }
