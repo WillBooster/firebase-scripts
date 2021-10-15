@@ -51,7 +51,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - run: yarn install
       # Generate ts files required in type-checking and linting
-      - run: yarn test
+      - run: FIREBASE_PROJECT_ID=test yarn test
       - run: yarn typecheck
         if: ${{ matrix.node == 16 }}
       - run: yarn lint
