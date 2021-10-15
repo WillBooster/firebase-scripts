@@ -28,5 +28,10 @@ test.each([
 
   const testDocs = await testCollection.listDocuments();
   const test2Docs = await test2Collection.listDocuments();
-  expect(testDocs.length).toBe(test2Docs.length);
+  expect(testDocs.length).toBe(records.length);
+  expect(test2Docs.length).toBe(records.length);
+  expect(testDocs.map((d) => d.id)).toEqual(test2Docs.map((d) => d.id));
+  expect(await Promise.all(testDocs.map(async (d) => (await d.get()).data()))).toEqual(
+    await Promise.all(test2Docs.map(async (d) => (await d.get()).data()))
+  );
 });
