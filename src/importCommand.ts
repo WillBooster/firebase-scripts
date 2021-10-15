@@ -85,19 +85,21 @@ export async function restoreCollection(
   return count;
 }
 
-export function restoreTimestamp<T>(record: T): T {
-  for (const [key, value] of Object.entries(record) as [string, any]) {
+export function restoreTimestamp(record: Record<string, any>): boolean {
+  let modified = false;
+  for (const [key, value] of Object.entries(record)) {
     if (value && typeof value === 'object') {
       if (
         Object.keys(value).length === 2 &&
         typeof value['_nanoseconds'] === 'number' &&
         typeof value['_seconds'] === 'number'
       ) {
-        (record as any)[key] = new firestore.Timestamp(value['_seconds'], value['_nanoseconds']);
+        record[key] = new firestore.Timestamp(value['_seconds'], value['_nanoseconds']);
+        modified = true;
       } else {
-        restoreTimestamp(value);
+        modified ||= restoreTimestamp(value);
       }
     }
   }
-  return record;
+  return modified;
 }
