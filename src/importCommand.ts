@@ -70,6 +70,9 @@ export async function restoreCollection(
 
     const docId = record.docId;
     delete record.docId;
+
+    restoreTimestamp(record);
+
     await promisePool.run(() => collection.doc(docId).set(record));
     count++;
     if (count % 1000 === 0) {
@@ -80,4 +83,20 @@ export async function restoreCollection(
   console.info(`${count} / ${records.length}`);
   console.info(`Done (${records.length - count} records are skipped due to the lack of 'docId' filed)`);
   return count;
+}
+
+export function restoreTimestamp(record: Record<string, any>): void {
+  for (const [key, value] of Object.entries(record)) {
+    if (value && typeof value === 'object') {
+      if (
+        Object.keys(value).length === 2 &&
+        typeof value['_nanoseconds'] === 'number' &&
+        typeof value['_seconds'] === 'number'
+      ) {
+        record[key] = new firestore.Timestamp(value['_seconds'], value['_nanoseconds']);
+      } else {
+        restoreTimestamp(value);
+      }
+    }
+  }
 }
