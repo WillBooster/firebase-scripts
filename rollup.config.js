@@ -2,6 +2,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import externals from 'rollup-plugin-node-externals';
 import { terser } from 'rollup-plugin-terser';
+import dts from 'rollup-plugin-dts';
 
 const extensions = ['.mjs', '.js', '.json', '.ts'];
 const plugins = [
@@ -11,19 +12,35 @@ const plugins = [
   terser(),
 ];
 
-export default {
-  input: 'src/index.ts',
-  output: [
-    {
-      file: 'dist/index.min.mjs',
-      format: 'es',
-      sourcemap: true,
-    },
-    {
-      file: 'dist/index.min.js',
+export default [
+  {
+    input: 'src/index.ts',
+    output: [
+      {
+        file: 'dist/index.min.mjs',
+        format: 'es',
+        sourcemap: true,
+      },
+      {
+        file: 'dist/index.min.js',
+        format: 'commonjs',
+        sourcemap: true,
+      },
+    ],
+    plugins,
+  },
+  {
+    input: 'src/cli.ts',
+    output: {
+      file: 'dist/cli.min.js',
       format: 'commonjs',
       sourcemap: true,
     },
-  ],
-  plugins,
-};
+    plugins,
+  },
+  {
+    input: './dist/src/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'es' }],
+    plugins: [dts()],
+  },
+];

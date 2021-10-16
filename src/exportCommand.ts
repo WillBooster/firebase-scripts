@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 import { firestore } from 'firebase-admin';
-import { CommandModule, InferredOptionTypes } from 'yargs';
+import type { CommandModule, InferredOptionTypes } from 'yargs';
 
 import { adminApp } from './firebaseAdmin';
 import { compressJson } from './jsonCompressor';

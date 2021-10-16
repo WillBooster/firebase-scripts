@@ -6750,6 +6750,7 @@ __metadata:
     pinst: 2.1.6
     prettier: 2.4.1
     rollup: 2.58.0
+    rollup-plugin-dts: 4.0.0
     rollup-plugin-node-externals: 2.2.0
     rollup-plugin-terser: 7.0.2
     semantic-release: 18.0.0
@@ -10084,6 +10085,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"magic-string@npm:^0.25.7":
+  version: 0.25.7
+  resolution: "magic-string@npm:0.25.7"
+  dependencies:
+    sourcemap-codec: ^1.4.4
+  checksum: 727a1fb70f9610304fe384f1df0251eb7d1d9dd779c07ef1225690361b71b216f26f5d934bfb11c919b5b0e7ba50f6240c823a6f2e44cfd33d4a07d7747ca829
+  languageName: node
+  linkType: hard
+
 "make-dir@npm:^2.0.0, make-dir@npm:^2.1.0":
   version: 2.1.0
   resolution: "make-dir@npm:2.1.0"
@@ -12537,6 +12547,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rollup-plugin-dts@npm:4.0.0":
+  version: 4.0.0
+  resolution: "rollup-plugin-dts@npm:4.0.0"
+  dependencies:
+    "@babel/code-frame": ^7.14.5
+    magic-string: ^0.25.7
+  peerDependencies:
+    rollup: ^2.56.3
+    typescript: ^4.4.2
+  dependenciesMeta:
+    "@babel/code-frame":
+      optional: true
+  checksum: b8c74e892d4131da769389549ea6591fd6e6fe4ee480806d01d3d8cd300b278983afa11dcfd93a7c9de5a08352a9a0d321d98e76b00b3b2fa2a3f369971629f1
+  languageName: node
+  linkType: hard
+
 "rollup-plugin-node-externals@npm:2.2.0":
   version: 2.2.0
   resolution: "rollup-plugin-node-externals@npm:2.2.0"
@@ -13079,6 +13105,13 @@ __metadata:
   version: 0.7.3
   resolution: "source-map@npm:0.7.3"
   checksum: cd24efb3b8fa69b64bf28e3c1b1a500de77e84260c5b7f2b873f88284df17974157cc88d386ee9b6d081f08fdd8242f3fc05c953685a6ad81aad94c7393dedea
+  languageName: node
+  linkType: hard
+
+"sourcemap-codec@npm:^1.4.4":
+  version: 1.4.8
+  resolution: "sourcemap-codec@npm:1.4.8"
+  checksum: b57981c05611afef31605732b598ccf65124a9fcb03b833532659ac4d29ac0f7bfacbc0d6c5a28a03e84c7510e7e556d758d0bb57786e214660016fb94279316
   languageName: node
   linkType: hard
 

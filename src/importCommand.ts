@@ -2,7 +2,7 @@ import fs from 'fs';
 
 import { firestore } from 'firebase-admin';
 import { PromisePool } from 'minimal-promise-pool';
-import { CommandModule, InferredOptionTypes } from 'yargs';
+import type { CommandModule, InferredOptionTypes } from 'yargs';
 
 import { adminApp } from './firebaseAdmin';
 import { decompressJson } from './jsonCompressor';

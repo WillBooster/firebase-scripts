@@ -10,14 +10,14 @@
   "author": "WillBooster Inc.",
   "main": "dist/index.min.js",
   "module": "dist/index.min.mjs",
-  "types": "dist/src/index.d.ts",
-  "bin": "./bin/index.js",
+  "types": "dist/index.d.ts",
+  "bin": "bin/index.js",
   "files": [
     "bin/",
     "dist/"
   ],
   "scripts": {
-    "build": "NODE_ENV=production rollup -c && yarn build-d-ts && rm -Rf dist/__tests__",
+    "build": "yarn build-d-ts && NODE_ENV=production rollup -c && rm -Rf dist/__tests__ dist/src",
     "build-d-ts": "yarn tsc --declaration --emitDeclarationOnly",
     "cleanup": "yarn format && yarn lint-fix",
     "format": "sort-package-json && yarn prettify",
@@ -83,6 +83,7 @@
     "pinst": "2.1.6",
     "prettier": "2.4.1",
     "rollup": "2.58.0",
+    "rollup-plugin-dts": "4.0.0",
     "rollup-plugin-node-externals": "2.2.0",
     "rollup-plugin-terser": "7.0.2",
     "semantic-release": "18.0.0",
