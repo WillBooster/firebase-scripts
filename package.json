@@ -11,7 +11,7 @@
   "main": "dist/index.min.js",
   "module": "dist/index.min.mjs",
   "types": "dist/index.d.ts",
-  "bin": "bin/index.js",
+  "bin": "./bin/index.js",
   "files": [
     "bin/",
     "dist/"
