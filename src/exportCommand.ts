@@ -36,23 +36,27 @@ export const exportCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
 
 export async function exportCollections(collectionPaths: string[], dirPath: string, gzip?: boolean): Promise<void> {
   for (const collectionPath of collectionPaths) {
-    const collectionRef = adminApp.firestore().collection(collectionPath);
-    console.info(`Reading ${collectionPath} collection ...`);
-
-    const dataList: unknown[] = [];
-    for await (const doc of collectionRef.stream()) {
-      const typedDoc = doc as unknown as firestore.QueryDocumentSnapshot;
-      dataList.push({ docId: typedDoc.id, ...typedDoc.data() });
-    }
-    console.info(`Read ${dataList.length} documents ...`);
-
     const normalizedCollectionPath = collectionPath.replaceAll('/', '-');
     const filePath = path.join(dirPath, `${normalizedCollectionPath}.json${gzip ? '.gz' : ''}`);
-    if (gzip) {
-      compressJson(dataList, filePath);
-    } else {
-      fs.writeFileSync(filePath, JSON.stringify(dataList));
-    }
-    console.info(`Wrote: ${filePath}`);
+    await exportCollection(collectionPath, filePath, gzip);
   }
+}
+
+export async function exportCollection(collectionPath: string, filePath: string, gzip?: boolean): Promise<void> {
+  const collectionRef = adminApp.firestore().collection(collectionPath);
+  console.info(`Reading ${collectionPath} collection ...`);
+
+  const dataList: unknown[] = [];
+  for await (const doc of collectionRef.stream()) {
+    const typedDoc = doc as unknown as firestore.QueryDocumentSnapshot;
+    dataList.push({ docId: typedDoc.id, ...typedDoc.data() });
+  }
+  console.info(`Read ${dataList.length} documents ...`);
+
+  if (gzip) {
+    compressJson(dataList, filePath);
+  } else {
+    fs.writeFileSync(filePath, JSON.stringify(dataList));
+  }
+  console.info(`Wrote: ${filePath}`);
 }
