@@ -3,7 +3,11 @@ import fs from 'fs';
 import { gunzipSync, gzipSync, strFromU8, strToU8 } from 'fflate';
 
 export function compressJson(obj: unknown, ...filePaths: string[]): void {
-  const buf = strToU8(JSON.stringify(obj));
+  compressJsonText(JSON.stringify(obj), ...filePaths);
+}
+
+export function compressJsonText(jsonText: string, ...filePaths: string[]): void {
+  const buf = strToU8(jsonText);
   const compressed = gzipSync(buf);
   for (const filePath of filePaths) {
     fs.writeFileSync(filePath, compressed);
