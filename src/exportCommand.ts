@@ -5,7 +5,7 @@ import { firestore } from 'firebase-admin';
 import type { CommandModule, InferredOptionTypes } from 'yargs';
 
 import { adminApp } from './firebaseAdmin';
-import { compressJson } from './jsonCompressor';
+import { compressJson, compressJsonText } from './jsonCompressor';
 
 const builder = {
   directory: {
@@ -42,7 +42,7 @@ export async function exportCollections(collectionPaths: string[], dirPath: stri
   }
 }
 
-export async function exportCollection(collectionPath: string, filePath: string, gzip?: boolean): Promise<void> {
+export async function exportCollection(collectionPath: string, filePath: string, gzip?: boolean): Promise<string> {
   const collectionRef = adminApp.firestore().collection(collectionPath);
   console.info(`Reading ${collectionPath} collection ...`);
 
@@ -53,10 +53,13 @@ export async function exportCollection(collectionPath: string, filePath: string,
   }
   console.info(`Read ${dataList.length} documents ...`);
 
+  const jsonText = JSON.stringify(dataList);
   if (gzip) {
-    compressJson(dataList, filePath);
+    compressJsonText(jsonText, filePath);
   } else {
-    fs.writeFileSync(filePath, JSON.stringify(dataList));
+    fs.writeFileSync(filePath, jsonText);
   }
   console.info(`Wrote: ${filePath}`);
+
+  return jsonText;
 }
