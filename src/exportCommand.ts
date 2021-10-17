@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { firestore } from 'firebase-admin';
+import { app, firestore } from 'firebase-admin';
 import type { CommandModule, InferredOptionTypes } from 'yargs';
 
 import { adminApp } from './firebaseAdmin';
@@ -27,6 +27,7 @@ export const exportCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
   builder,
   async handler(argv) {
     await exportCollections(
+      adminApp,
       argv._.map((arg) => arg.toString()),
       argv.directory ?? path.resolve(),
       argv.gzip
@@ -34,15 +35,25 @@ export const exportCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
   },
 };
 
-export async function exportCollections(collectionPaths: string[], dirPath: string, gzip?: boolean): Promise<void> {
+export async function exportCollections(
+  adminApp: app.App,
+  collectionPaths: string[],
+  dirPath: string,
+  gzip?: boolean
+): Promise<void> {
   for (const collectionPath of collectionPaths) {
     const normalizedCollectionPath = collectionPath.replaceAll('/', '-');
     const filePath = path.join(dirPath, `${normalizedCollectionPath}.json${gzip ? '.gz' : ''}`);
-    await exportCollection(collectionPath, filePath, gzip);
+    await exportCollection(adminApp, collectionPath, filePath, gzip);
   }
 }
 
-export async function exportCollection(collectionPath: string, filePath: string, gzip?: boolean): Promise<string> {
+export async function exportCollection(
+  adminApp: app.App,
+  collectionPath: string,
+  filePath: string,
+  gzip?: boolean
+): Promise<string> {
   const collectionRef = adminApp.firestore().collection(collectionPath);
   console.info(`Reading ${collectionPath} collection ...`);
 

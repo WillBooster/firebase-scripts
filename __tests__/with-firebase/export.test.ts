@@ -33,8 +33,8 @@ test.each([
   }
 
   const dirPath = path.resolve('test-fixtures', 'temp');
-  await exportCollections(['test'], dirPath);
-  await importCollection(path.join(dirPath, 'test.json'), 'test2');
+  await exportCollections(adminApp, ['test'], dirPath);
+  await importCollection(adminApp, path.join(dirPath, 'test.json'), 'test2');
 
   const testDocs = await testCollection.listDocuments();
   const test2Docs = await test2Collection.listDocuments();

@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-import { firestore } from 'firebase-admin';
+import { app, firestore } from 'firebase-admin';
 import { PromisePool } from 'minimal-promise-pool';
 import type { CommandModule, InferredOptionTypes } from 'yargs';
 
@@ -30,12 +30,12 @@ export const importCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
     }
 
     for (let i = 0; i < argv._.length; i++) {
-      await importCollection(argv._[i].toString(), argv.collection?.[i].toString());
+      await importCollection(adminApp, argv._[i].toString(), argv.collection?.[i].toString());
     }
   },
 };
 
-export async function importCollection(filePath: string, collectionPath?: string): Promise<void> {
+export async function importCollection(adminApp: app.App, filePath: string, collectionPath?: string): Promise<void> {
   if (!collectionPath) {
     const dotIndex = filePath.indexOf('.');
     collectionPath = filePath.substr(0, dotIndex >= 0 ? dotIndex : undefined);
