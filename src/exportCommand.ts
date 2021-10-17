@@ -5,7 +5,7 @@ import { firestore } from 'firebase-admin';
 import type { CommandModule, InferredOptionTypes } from 'yargs';
 
 import { adminApp } from './firebaseAdmin';
-import { compressJson, compressJsonText } from './jsonCompressor';
+import { compressJsonText } from './jsonCompressor';
 
 const builder = {
   directory: {

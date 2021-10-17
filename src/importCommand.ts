@@ -71,7 +71,7 @@ export async function restoreCollection(
     const docId = record.docId;
     delete record.docId;
 
-    restoreTimestamp(record);
+    convertObjectToTimestamp(record);
 
     await promisePool.run(() => collection.doc(docId).set(record));
     count++;
@@ -85,7 +85,7 @@ export async function restoreCollection(
   return count;
 }
 
-export function restoreTimestamp(record: Record<string, any>): boolean {
+export function convertObjectToTimestamp(record: Record<string, any>): boolean {
   let modified = false;
   for (const [key, value] of Object.entries(record)) {
     if (value && typeof value === 'object' && !(value instanceof firestore.Timestamp)) {
@@ -94,7 +94,7 @@ export function restoreTimestamp(record: Record<string, any>): boolean {
         record[key] = new firestore.Timestamp(_seconds, _nanoseconds);
         modified = true;
       } else {
-        modified ||= restoreTimestamp(value);
+        modified ||= convertObjectToTimestamp(value);
       }
     }
   }
