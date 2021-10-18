@@ -1,11 +1,12 @@
 import fs from 'fs';
+import fsp from 'fs/promises';
 
 import { app, firestore } from 'firebase-admin';
 import { PromisePool } from 'minimal-promise-pool';
 import type { CommandModule, InferredOptionTypes } from 'yargs';
 
-import { adminApp } from './firebaseAdmin';
-import { decompressJson } from './jsonCompressor';
+import { initializeAdmin } from './firebaseAdmin';
+import { decompressJsonText, getFormatFromExtension } from './jsonCompressor';
 
 const builder = {
   collection: {
@@ -17,7 +18,7 @@ const builder = {
 
 export const importCommand: CommandModule<unknown, InferredOptionTypes<typeof builder>> = {
   command: 'import',
-  describe: 'Import serialized collection files (.json/.gz)',
+  describe: 'Import serialized collection files (.json/.gz/.br)',
   builder,
   async handler(argv) {
     if (!argv._.length) {
@@ -29,6 +30,7 @@ export const importCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
       process.exit(1);
     }
 
+    const adminApp = initializeAdmin();
     for (let i = 0; i < argv._.length; i++) {
       await importCollection(adminApp, argv._[i].toString(), argv.collection?.[i].toString());
     }
@@ -46,9 +48,8 @@ export async function importCollection(adminApp: app.App, filePath: string, coll
     return;
   }
 
-  const records = filePath.endsWith('.json.gz')
-    ? decompressJson(filePath)
-    : JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  const format = getFormatFromExtension(filePath);
+  const records = JSON.parse(await (format ? decompressJsonText(filePath, format) : fsp.readFile(filePath, 'utf8')));
   if (!Array.isArray(records)) {
     console.error(`${filePath} is not valid json.`);
     return;

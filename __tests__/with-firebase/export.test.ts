@@ -3,12 +3,14 @@ import path from 'path';
 import { firestore } from 'firebase-admin';
 
 import { exportCollections } from '../../src/exportCommand';
-import { adminApp } from '../../src/firebaseAdmin';
+import { initializeAdmin } from '../../src/firebaseAdmin';
 import { importCollection } from '../../src/importCommand';
 import { configureFirebase, configureJest } from '../common';
 
 configureJest();
 configureFirebase();
+
+const adminApp = initializeAdmin();
 
 test.each([
   [

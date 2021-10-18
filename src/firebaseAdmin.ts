@@ -1,6 +1,6 @@
 import admin from 'firebase-admin';
 
-function initializeAdmin(): admin.app.App {
+export function initializeAdmin(): admin.app.App {
   if (!process.env.FIREBASE_PROJECT_ID || !process.env.FIREBASE_PRIVATE_KEY || !process.env.FIREBASE_CLIENT_EMAIL) {
     return admin.initializeApp();
   }
@@ -14,5 +14,3 @@ function initializeAdmin(): admin.app.App {
     } as any),
   });
 }
-
-export const adminApp = initializeAdmin();

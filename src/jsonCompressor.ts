@@ -1,18 +1,36 @@
-import fs from 'fs';
+import fsp from 'fs/promises';
+import { brotliCompressSync, brotliDecompressSync, gunzipSync, gzipSync } from 'zlib';
 
-import { gunzipSync, gzipSync, strFromU8, strToU8 } from 'fflate';
+export type CompressionFormat = 'gzip' | 'brotil';
+const defaultFormat = 'brotil';
 
-export function compressJson(obj: unknown, filePath: string): void {
-  compressJsonText(JSON.stringify(obj), filePath);
+export async function compressJson(obj: unknown, filePath: string, format?: CompressionFormat): Promise<void> {
+  return compressJsonText(JSON.stringify(obj), filePath, format);
 }
 
-export function compressJsonText(jsonText: string, filePath: string): void {
-  const buf = strToU8(jsonText);
-  const compressed = gzipSync(buf);
-  fs.writeFileSync(filePath, compressed);
+export async function compressJsonText(jsonText: string, filePath: string, format?: CompressionFormat): Promise<void> {
+  format ??= getFormatFromExtension(filePath) ?? defaultFormat;
+  const compressed = format === 'gzip' ? gzipSync(jsonText) : brotliCompressSync(jsonText);
+  await fsp.writeFile(filePath, compressed);
 }
 
-export function decompressJson(filePath: string): any {
-  const decompressed = gunzipSync(fs.readFileSync(filePath));
-  return JSON.parse(strFromU8(decompressed));
+export async function decompressJson(filePath: string, format?: CompressionFormat): Promise<unknown> {
+  return JSON.parse(await decompressJsonText(filePath, format));
+}
+
+export async function decompressJsonText(filePath: string, format?: CompressionFormat): Promise<string> {
+  format ??= getFormatFromExtension(filePath) ?? defaultFormat;
+  const compressed = await fsp.readFile(filePath);
+  const decompressed = format === 'gzip' ? gunzipSync(compressed) : brotliDecompressSync(compressed);
+  return decompressed.toString();
+}
+
+export function getFormatFromExtension(filePath: string): CompressionFormat | undefined {
+  if (filePath.endsWith('.gz')) return 'gzip';
+  if (filePath.endsWith('.br')) return 'brotil';
+}
+
+export function getExtensionFromFormat(format?: CompressionFormat): string | undefined {
+  if (format === 'gzip') return '.gz';
+  if (format === 'brotil') return '.br';
 }
