@@ -5,7 +5,7 @@ import { app, firestore } from 'firebase-admin';
 import type { CommandModule, InferredOptionTypes } from 'yargs';
 
 import { initializeAdmin } from './firebaseAdmin';
-import { CompressionFormat, compressJsonText, getExtensionFromFormat } from './jsonCompressor';
+import { CompressionFormat, compressJsonText, getExtensionFromFormat, getFormatFromExtension } from './jsonCompressor';
 
 const builder = {
   directory: {
@@ -55,6 +55,8 @@ export async function exportCollection(
   filePath: string,
   format?: CompressionFormat
 ): Promise<string> {
+  format ??= getFormatFromExtension(filePath);
+
   const collectionRef = adminApp.firestore().collection(collectionPath);
   console.info(`Reading ${collectionPath} collection ...`);
 
