@@ -22,7 +22,7 @@ export default [
         sourcemap: true,
       },
       {
-        file: 'dist/index.min.js',
+        file: 'dist/index.min.cjs',
         format: 'commonjs',
         sourcemap: true,
       },
@@ -32,7 +32,7 @@ export default [
   {
     input: 'src/cli.ts',
     output: {
-      file: 'dist/cli.min.js',
+      file: 'dist/cli.min.cjs',
       format: 'commonjs',
       sourcemap: true,
     },
