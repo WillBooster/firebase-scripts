@@ -43,7 +43,7 @@ export async function exportCollections(
 ): Promise<void> {
   const extension = getExtensionFromFormat(format) ?? '';
   for (const collectionPath of collectionPaths) {
-    const normalizedCollectionPath = collectionPath.replaceAll('/', '-');
+    const normalizedCollectionPath = collectionPath.replace(/\//g, '-');
     const filePath = path.join(dirPath, `${normalizedCollectionPath}.json${extension}`);
     await exportCollection(adminApp, collectionPath, filePath, format);
   }

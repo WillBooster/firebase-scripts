@@ -28,15 +28,15 @@ test.each([
     { id: 'c', d1: firestore.Timestamp.now(), d2: { d3: { d4: firestore.Timestamp.now() } } },
   ],
 ])('export/import(%p)', async (...records: Record<string, unknown>[]) => {
-  const testCollection = adminApp.firestore().collection('test');
-  const test2Collection = adminApp.firestore().collection('test2');
+  const testCollection = adminApp.firestore().collection('test/test/test');
+  const test2Collection = adminApp.firestore().collection('test/test/test2');
   for (const record of records) {
     await testCollection.doc().set(record);
   }
 
   const dirPath = path.resolve('test-fixtures', 'temp');
-  await exportCollections(adminApp, ['test'], dirPath);
-  await importCollection(adminApp, path.join(dirPath, 'test.json'), 'test2');
+  await exportCollections(adminApp, ['test/test/test'], dirPath);
+  await importCollection(adminApp, path.join(dirPath, 'test-test-test.json'), 'test/test/test2');
 
   const testDocs = await testCollection.listDocuments();
   const test2Docs = await test2Collection.listDocuments();
