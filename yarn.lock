@@ -6761,13 +6761,13 @@ __metadata:
     eslint-plugin-import: 2.25.2
     firebase: 9.1.3
     firebase-admin: 10.0.0
-    firebase-tools: 9.20.0
-    husky: 7.0.2
+    firebase-tools: 9.21.0
+    husky: 7.0.4
     jest: 27.3.1
     kill-port: 1.6.1
     lint-staged: 11.2.3
     micromatch: 4.0.4
-    minimal-promise-pool: 1.1.1
+    minimal-promise-pool: 1.1.2
     pinst: 2.1.6
     prettier: 2.4.1
     rollup: 2.58.0
@@ -6783,9 +6783,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"firebase-tools@npm:9.20.0":
-  version: 9.20.0
-  resolution: "firebase-tools@npm:9.20.0"
+"firebase-tools@npm:9.21.0":
+  version: 9.21.0
+  resolution: "firebase-tools@npm:9.21.0"
   dependencies:
     "@google-cloud/pubsub": ^2.7.0
     "@types/archiver": ^5.1.0
@@ -6847,7 +6847,7 @@ __metadata:
     ws: ^7.2.3
   bin:
     firebase: ./lib/bin/firebase.js
-  checksum: 87e7b733406c1261a2e7929a931460d2bd96e6477af4772bb452cd974ff3f0714679b844ab452023fdf2c6ed30af7cd21e4222be329c28bcddfd72f1f1f2f2ac
+  checksum: bb93e68eebfe166240c1cd797bfcadad3550ce62dd2aacbd082753bbf4c28a1f245dcbfb3f5b771607eb903f6fdde566972acec09e925105d792f81428214ace
   languageName: node
   linkType: hard
 
@@ -7803,12 +7803,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:7.0.2":
-  version: 7.0.2
-  resolution: "husky@npm:7.0.2"
+"husky@npm:7.0.4":
+  version: 7.0.4
+  resolution: "husky@npm:7.0.4"
   bin:
     husky: lib/bin.js
-  checksum: 2ccfe6ddc51dc05ae8ea1e2fbb893344e93a813e00c595d6b5f5e704b7b998d6b0e2adda7c57f99b5e46a60dc07c7d860269a2ea91661c6bacef0eca8e0b8e96
+  checksum: c6ec4af63da2c9522da8674a20ad9b48362cc92704896cc8a58c6a2a39d797feb2b806f93fbd83a6d653fbdceb2c3b6e0b602c6b2e8565206ffc2882ef7db9e9
   languageName: node
   linkType: hard
 
@@ -10412,10 +10412,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimal-promise-pool@npm:1.1.1":
-  version: 1.1.1
-  resolution: "minimal-promise-pool@npm:1.1.1"
-  checksum: 16c1763ef27ebd51590946474b851ea4b91e9f3c82cbe599484cacb4e25747d6322ab447d940ac5eb41c6be4e09ea516d032ec11f131ddf4c8e5985130a62fa1
+"minimal-promise-pool@npm:1.1.2":
+  version: 1.1.2
+  resolution: "minimal-promise-pool@npm:1.1.2"
+  checksum: 83333af086afd83a49e92dbd4ba7e8ae61062c342e0260fc8fb93145c161980bf6fa98e73474b1a285181564e657a28242808ba2beb4756241f045a0bfccfebb
   languageName: node
   linkType: hard
 
