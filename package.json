@@ -17,8 +17,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "yarn build-d-ts && NODE_ENV=production rollup -c && rm -Rf dist/__tests__ dist/src",
-    "build-d-ts": "yarn tsc --declaration --emitDeclarationOnly",
+    "build": "node esbuild.js",
     "cleanup": "yarn format && yarn lint-fix",
     "format": "sort-package-json && yarn prettify",
     "postinstall": "husky install",
@@ -39,6 +38,7 @@
   "dependencies": {
     "dayjs": "1.10.7",
     "dotenv": "10.0.0",
+    "esbuild": "0.13.13",
     "firebase-admin": "10.0.0",
     "minimal-promise-pool": "1.1.2",
     "yargs": "17.2.1"
@@ -69,6 +69,7 @@
     "babel-plugin-transform-remove-console": "6.9.4",
     "conventional-changelog-conventionalcommits": "4.6.1",
     "dotenv-cli": "4.1.0",
+    "esbuild-plugin-d.ts": "1.0.6",
     "eslint": "8.2.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-node": "0.3.6",
