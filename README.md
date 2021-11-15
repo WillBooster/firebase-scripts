@@ -15,4 +15,6 @@ yarn build
 
 # Run the built application.
 yarn run firebase-scripts [command]
+# or
+yarn dotenv -- yarn run firebase-scripts [command]
 ```
