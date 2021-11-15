@@ -21,13 +21,13 @@ export const copyCommand: CommandModule<unknown, InferredOptionTypes<typeof buil
   describe: 'Copy a document',
   builder,
   async handler(argv) {
-    if (argv._.length < 1) {
+    if (!argv._[1]) {
       console.error('Provide the document path to copy.');
       process.exit(1);
     }
 
-    const source = argv._[0].toString();
-    const target = argv._[1] !== undefined ? argv._[1].toString() : source;
+    const source = argv._[1].toString();
+    const target = argv._[2] !== undefined ? argv._[2].toString() : source;
 
     const srcAdminApp = initializeAdmin({
       name: 'source',
