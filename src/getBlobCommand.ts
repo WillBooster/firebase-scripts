@@ -5,7 +5,14 @@ import type { CommandModule, InferredOptionTypes } from 'yargs';
 
 import { initializeAdmin } from './firebaseAdmin';
 
-const builder = {} as const;
+const builder = {
+  output: {
+    alias: 'o',
+    demandOption: true,
+    description: 'An output file path',
+    type: 'string',
+  },
+} as const;
 
 export const getBlobCommand: CommandModule<unknown, InferredOptionTypes<typeof builder>> = {
   command: 'get-blob',
@@ -17,14 +24,15 @@ export const getBlobCommand: CommandModule<unknown, InferredOptionTypes<typeof b
     const documentPath = argv._[1].toString();
     const fieldPath = argv._[2].toString();
 
-    await getBlobCommandHandler(adminApp, documentPath, fieldPath);
+    await getBlobCommandHandler(adminApp, documentPath, fieldPath, argv.output);
   },
 };
 
 export async function getBlobCommandHandler(
   adminApp: app.App,
-  documentPath?: string,
-  fieldPath?: string
+  documentPath: string | undefined,
+  fieldPath: string | undefined,
+  outputFilePath: string
 ): Promise<void> {
   if (!documentPath) {
     throw Error('Provide a slash-separated document path to download.');
@@ -39,8 +47,7 @@ export async function getBlobCommandHandler(
     throw Error(`The field "${fieldPath}" is not BLOB.`);
   }
 
-  const filename = `${documentPath}_${fieldPath}`.replace(/\W/g, '_');
-  await fsp.writeFile(`${filename}.bin`, field);
+  await fsp.writeFile(outputFilePath, field);
 }
 
 async function getField(adminApp: app.App, documentPath: string, fieldPath: string): Promise<unknown> {
