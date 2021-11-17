@@ -11,7 +11,7 @@
   "main": "dist/index.min.cjs",
   "module": "dist/index.min.mjs",
   "types": "dist/index.d.ts",
-  "bin": "./bin/index.js",
+  "bin": "./bin/main.js",
   "files": [
     "bin/",
     "dist/"
@@ -26,7 +26,7 @@
     "prepublishOnly": "pinst --disable",
     "prettify": "prettier --color --write \"**/{.*/,}*.{css,htm,html,js,json,json5,jsx,md,scss,ts,tsx,vue,yaml,yml}\" \"!**/test-fixtures/**\"",
     "postpublish": "pinst --enable",
-    "start": "yarn && babel-node -x .js,.jsx,.es6,.es,.ts -- src/index.ts",
+    "start": "yarn && node -r esbuild-register src/main.ts",
     "stop-firebase": "kill-port --port 8080",
     "test": "yarn test-wo-firebase && yarn test-w-firebase",
     "test-w-firebase": "yarn stop-firebase && dotenv -- yarn test-w-firebase-core",
@@ -58,6 +58,7 @@
     "dotenv-cli": "4.1.0",
     "esbuild": "0.13.13",
     "esbuild-plugin-d.ts": "1.0.6",
+    "esbuild-register": "3.1.2",
     "eslint": "8.2.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-node": "0.3.6",

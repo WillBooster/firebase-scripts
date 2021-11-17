@@ -5013,6 +5013,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-register@npm:3.1.2":
+  version: 3.1.2
+  resolution: "esbuild-register@npm:3.1.2"
+  dependencies:
+    jsonc-parser: ^3.0.0
+  peerDependencies:
+    esbuild: ">=0.12 <1"
+  checksum: 966855f0feb7b6afee6b6d7768390216658bacdc10720df823e0705c0289dee98a5978c2c6e4d8d281589e42b214718b6a4030767439da72aae177a54bf87eb1
+  languageName: node
+  linkType: hard
+
 "esbuild-sunos-64@npm:0.13.13":
   version: 0.13.13
   resolution: "esbuild-sunos-64@npm:0.13.13"
@@ -5822,6 +5833,7 @@ __metadata:
     dotenv-cli: 4.1.0
     esbuild: 0.13.13
     esbuild-plugin-d.ts: 1.0.6
+    esbuild-register: 3.1.2
     eslint: 8.2.0
     eslint-config-prettier: 8.3.0
     eslint-import-resolver-node: 0.3.6
@@ -5842,7 +5854,7 @@ __metadata:
     typescript: 4.4.4
     yargs: 17.2.1
   bin:
-    firebase-scripts: ./bin/index.js
+    firebase-scripts: ./bin/main.js
   languageName: unknown
   linkType: soft
 
@@ -8362,6 +8374,13 @@ __metadata:
   bin:
     json5: lib/cli.js
   checksum: e88fc5274bb58fc99547baa777886b069d2dd96d9cfc4490b305fd16d711dabd5979e35a4f90873cefbeb552e216b041a304fe56702bedba76e19bc7845f208d
+  languageName: node
+  linkType: hard
+
+"jsonc-parser@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "jsonc-parser@npm:3.0.0"
+  checksum: 1df2326f1f9688de30c70ff19c5b2a83ba3b89a1036160da79821d1361090775e9db502dc57a67c11b56e1186fc1ed70b887f25c5febf9a3ec4f91435836c99d
   languageName: node
   linkType: hard
 

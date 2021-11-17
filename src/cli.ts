@@ -5,6 +5,6 @@ import { importCommand } from './importCommand';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const yargs = require('yargs');
 
-export async function main(): Promise<void> {
-  await yargs(process.argv.slice(2)).command(importCommand).command(exportCommand).help().argv;
+export async function cli(): Promise<void> {
+  await yargs(process.argv.slice(2)).command(importCommand).command(exportCommand).demandCommand().help().argv;
 }
