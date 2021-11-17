@@ -42,6 +42,7 @@ test.each([
   const test2Docs = await test2Collection.listDocuments();
   expect(testDocs.length).toBe(records.length);
   expect(test2Docs.length).toBe(records.length);
+
   const testDataList = (await Promise.all(testDocs.map(async (d) => (await d.get()).data()))).sort((a: any, b: any) =>
     a.id.toString().localeCompare(b.id.toString())
   );

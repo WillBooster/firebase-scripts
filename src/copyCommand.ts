@@ -58,5 +58,5 @@ export async function copyDocument(
   }
 
   console.info(`Writing the target document '${targetDocumentPath}'...'`);
-  targetAdminApp.firestore().doc(targetDocumentPath).set(doc);
+  await targetAdminApp.firestore().doc(targetDocumentPath).set(doc);
 }
