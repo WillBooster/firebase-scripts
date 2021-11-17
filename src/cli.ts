@@ -1,3 +1,4 @@
+import { copyCommand } from './copyCommand';
 import { exportCommand } from './exportCommand';
 import { importCommand } from './importCommand';
 
@@ -6,5 +7,10 @@ import { importCommand } from './importCommand';
 const yargs = require('yargs');
 
 export async function cli(): Promise<void> {
-  await yargs(process.argv.slice(2)).command(importCommand).command(exportCommand).demandCommand().help().argv;
+  await yargs(process.argv.slice(2))
+    .command(copyCommand)
+    .command(importCommand)
+    .command(exportCommand)
+    .demandCommand()
+    .help().argv;
 }
