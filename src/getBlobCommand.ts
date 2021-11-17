@@ -12,31 +12,36 @@ export const getBlobCommand: CommandModule<unknown, InferredOptionTypes<typeof b
   describe: 'Download a BLOB field as a binary file',
   builder,
   async handler(argv) {
+    const adminApp = initializeAdmin();
+
     const documentPath = argv._[1].toString();
     const fieldPath = argv._[2].toString();
 
-    if (!documentPath) {
-      console.error('Provide a slash-separated document path to download.');
-      process.exit(1);
-    }
-    if (!fieldPath) {
-      console.error('Provide a dot-separated field path to download.');
-      process.exit(1);
-    }
-
-    const adminApp = initializeAdmin();
-
-    const field = await getField(adminApp, documentPath, fieldPath);
-
-    if (!Buffer.isBuffer(field)) {
-      console.error(`The field "${fieldPath}" is not BLOB.`);
-      process.exit(1);
-    }
-
-    const filename = `${documentPath}_${fieldPath}`.replace(/\W/g, '_');
-    await fsp.writeFile(`${filename}.bin`, field);
+    await getBlobFieldAndWriteFile(adminApp, documentPath, fieldPath);
   },
 };
+
+export async function getBlobFieldAndWriteFile(
+  adminApp: app.App,
+  documentPath?: string,
+  fieldPath?: string
+): Promise<void> {
+  if (!documentPath) {
+    throw Error('Provide a slash-separated document path to download.');
+  }
+  if (!fieldPath) {
+    throw Error('Provide a dot-separated field path to download.');
+  }
+
+  const field = await getField(adminApp, documentPath, fieldPath);
+
+  if (!Buffer.isBuffer(field)) {
+    throw Error(`The field "${fieldPath}" is not BLOB.`);
+  }
+
+  const filename = `${documentPath}_${fieldPath}`.replace(/\W/g, '_');
+  await fsp.writeFile(`${filename}.bin`, field);
+}
 
 export async function getField(adminApp: app.App, documentPath: string, fieldPath: string): Promise<unknown> {
   const document = (await adminApp.firestore().doc(documentPath).get()).data();
