@@ -17,11 +17,11 @@ export const getBlobCommand: CommandModule<unknown, InferredOptionTypes<typeof b
     const documentPath = argv._[1].toString();
     const fieldPath = argv._[2].toString();
 
-    await getBlobFieldAndWriteFile(adminApp, documentPath, fieldPath);
+    await getBlobCommandHandler(adminApp, documentPath, fieldPath);
   },
 };
 
-export async function getBlobFieldAndWriteFile(
+export async function getBlobCommandHandler(
   adminApp: app.App,
   documentPath?: string,
   fieldPath?: string
@@ -43,7 +43,7 @@ export async function getBlobFieldAndWriteFile(
   await fsp.writeFile(`${filename}.bin`, field);
 }
 
-export async function getField(adminApp: app.App, documentPath: string, fieldPath: string): Promise<unknown> {
+async function getField(adminApp: app.App, documentPath: string, fieldPath: string): Promise<unknown> {
   const document = (await adminApp.firestore().doc(documentPath).get()).data();
 
   if (!document) {
