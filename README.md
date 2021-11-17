@@ -7,9 +7,12 @@
 ## Development
 
 ```sh
-# Install dependencies.
-yarn
+yarn start
+```
 
+## Acceptance Test
+
+```sh
 # Build an application.
 yarn build
 
