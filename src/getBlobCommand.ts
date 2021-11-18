@@ -57,16 +57,11 @@ async function getField(adminApp: app.App, documentPath: string, fieldPath: stri
     throw Error(`The document "${documentPath}" does not exist.`);
   }
 
-  const splitedFieldPath = fieldPath.split('.');
-  let field: unknown = document;
-  for (const fieldName of splitedFieldPath) {
-    if (typeof field !== 'object' || field === null || !(fieldName in field)) {
-      throw Error(`The field "${fieldPath}" does not exist in the document "${documentPath}".`);
-    }
-
-    field = (field as Record<typeof fieldName, unknown>)[fieldName];
+  const splitFieldPath = fieldPath.split('.');
+  let field = document;
+  for (const fieldName of splitFieldPath) {
+    field = field?.[fieldName];
   }
-
   if (!field) {
     throw Error(`The field "${fieldPath}" does not exist in the document "${documentPath}".`);
   }
