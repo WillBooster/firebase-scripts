@@ -50,8 +50,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - run: yarn install
-      - run: FIREBASE_PROJECT_ID=test yarn test
       - run: yarn typecheck
         if: ${{ matrix.node == 16 }}
       - run: yarn lint
         if: ${{ matrix.node == 16 }}
+      - run: FIREBASE_PROJECT_ID=test yarn test
