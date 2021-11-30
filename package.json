@@ -68,7 +68,7 @@
     "husky": "7.0.4",
     "jest": "27.3.1",
     "kill-port": "1.6.1",
-    "lint-staged": "11.2.6",
+    "lint-staged": "12.1.2",
     "micromatch": "4.0.4",
     "pinst": "2.1.6",
     "prettier": "2.5.0",
