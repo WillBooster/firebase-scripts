@@ -236,6 +236,9 @@ fabric.properties
 .history
 .ionide
 
+# Support for Project snippet scope
+!.vscode/*.code-snippets
+
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
 # Created by https://www.toptal.com/developers/gitignore/api/emacs
@@ -467,4 +470,24 @@ dist
 # Serverless Webpack directories
 .webpack/
 
+# Optional stylelint cache
+.stylelintcache
+
+# SvelteKit build / generate output
+.svelte-kit
+
 # End of https://www.toptal.com/developers/gitignore/api/node
+
+# Created by https://www.toptal.com/developers/gitignore/api/firebase
+# Edit at https://www.toptal.com/developers/gitignore?templates=firebase
+
+### Firebase ###
+# .idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
+
+# End of https://www.toptal.com/developers/gitignore/api/firebase
