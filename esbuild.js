@@ -6,12 +6,8 @@ const { dtsPlugin } = require('esbuild-plugin-d.ts');
 
 const package = require(path.resolve('package.json'));
 
-const external = [
-  ...builtinModules,
-  ...Object.keys(package.dependencies ?? {}),
-  ...Object.keys(package.devDependencies ?? {}),
-  ...Object.keys(package.peerDependencies ?? {}),
-];
+// If you want to bundle external libraries, please add them in devDependencies
+const external = [...builtinModules, ...Object.keys(package.dependencies ?? {})];
 
 Promise.all([
   build({
