@@ -63,7 +63,7 @@
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-node": "0.3.6",
     "eslint-plugin-import": "2.25.3",
-    "firebase": "9.5.0",
+    "firebase": "9.6.0",
     "firebase-tools": "9.23.0",
     "husky": "7.0.4",
     "jest": "27.4.3",
@@ -79,5 +79,5 @@
   "engines": {
     "node": ">=14"
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.2.0-rc.6"
 }
