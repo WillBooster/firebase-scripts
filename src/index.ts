@@ -7,4 +7,5 @@ export {
   decompressJsonText,
   getFormatFromExtension,
   getExtensionFromFormat,
+  reviverForJsonParse,
 } from './jsonCompressor';
