@@ -75,8 +75,6 @@ export async function restoreCollection(
     const docId = record.docId;
     delete record.docId;
 
-    convertObjectToTimestamp(record);
-
     await promisePool.run(() => collection.doc(docId).set(record));
     count++;
     if (count % 1000 === 0) {

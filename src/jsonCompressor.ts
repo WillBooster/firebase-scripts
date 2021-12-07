@@ -1,6 +1,8 @@
 import fsp from 'fs/promises';
 import { brotliCompressSync, brotliDecompressSync, gunzipSync, gzipSync } from 'zlib';
 
+import { firestore } from 'firebase-admin';
+
 export type CompressionFormat = 'gzip' | 'brotil';
 const defaultFormat = 'brotil';
 
@@ -36,5 +38,10 @@ export function getExtensionFromFormat(format?: CompressionFormat): string | und
 }
 
 export function reviverForJsonParse(key: string, value: any): any {
-  return value && value.type === 'Buffer' ? Buffer.from(value) : value;
+  if (!value) return value;
+  if (value.type === 'Buffer') return Buffer.from(value);
+  if (typeof value._seconds === 'number' && typeof value._nanoseconds === 'number' && Object.keys(value).length === 2) {
+    return new firestore.Timestamp(value._seconds, value._nanoseconds);
+  }
+  return value;
 }
