@@ -11,6 +11,10 @@ const external = [
 ];
 
 module.exports = {
+  getCacheKey() {
+    // TODO: implement
+    return (Math.random() * 10000000).toString();
+  },
   process(_, filename) {
     const outputFiles = buildCode(filename);
     return {

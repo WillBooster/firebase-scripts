@@ -6,7 +6,7 @@ import { PromisePool } from 'minimal-promise-pool';
 import type { CommandModule, InferredOptionTypes } from 'yargs';
 
 import { initializeAdmin } from './firebaseAdmin';
-import { decompressJsonText, getFormatFromExtension } from './jsonCompressor';
+import { decompressJsonText, getFormatFromExtension, reviverForJsonParse } from './jsonCompressor';
 
 const builder = {
   collection: {
@@ -40,7 +40,7 @@ export const importCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
 export async function importCollection(adminApp: app.App, filePath: string, collectionPath?: string): Promise<void> {
   if (!collectionPath) {
     const dotIndex = filePath.indexOf('.');
-    collectionPath = filePath.substr(0, dotIndex >= 0 ? dotIndex : undefined);
+    collectionPath = filePath.substring(0, dotIndex >= 0 ? dotIndex : undefined);
   }
 
   if (!fs.existsSync(filePath)) {
@@ -49,7 +49,10 @@ export async function importCollection(adminApp: app.App, filePath: string, coll
   }
 
   const format = getFormatFromExtension(filePath);
-  const records = JSON.parse(await (format ? decompressJsonText(filePath, format) : fsp.readFile(filePath, 'utf8')));
+  const records = JSON.parse(
+    await (format ? decompressJsonText(filePath, format) : fsp.readFile(filePath, 'utf8')),
+    reviverForJsonParse
+  );
   if (!Array.isArray(records)) {
     console.error(`${filePath} is not valid json.`);
     return;

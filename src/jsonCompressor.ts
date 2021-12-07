@@ -15,7 +15,7 @@ export async function compressJsonText(jsonText: string, filePath: string, forma
 }
 
 export async function decompressJson(filePath: string, format?: CompressionFormat): Promise<unknown> {
-  return JSON.parse(await decompressJsonText(filePath, format));
+  return JSON.parse(await decompressJsonText(filePath, format), reviverForJsonParse);
 }
 
 export async function decompressJsonText(filePath: string, format?: CompressionFormat): Promise<string> {
@@ -33,4 +33,8 @@ export function getFormatFromExtension(filePath: string): CompressionFormat | un
 export function getExtensionFromFormat(format?: CompressionFormat): string | undefined {
   if (format === 'gzip') return '.gz';
   if (format === 'brotil') return '.br';
+}
+
+export function reviverForJsonParse(key: string, value: any): any {
+  return value && value.type === 'Buffer' ? Buffer.from(value) : value;
 }

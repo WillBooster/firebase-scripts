@@ -27,6 +27,7 @@ test.each([
     { id: 'b', d1: firestore.Timestamp.now(), d2: { date: firestore.Timestamp.now() } },
     { id: 'c', d1: firestore.Timestamp.now(), d2: { d3: { d4: firestore.Timestamp.now() } } },
   ],
+  [{ b1: Buffer.from([0x61]), b2: Buffer.from([0x00, 0x62, 0xff]) }],
 ])('export/import(%p)', async (...records: Record<string, unknown>[]) => {
   const testCollection = adminApp.firestore().collection('test/test/test');
   const test2Collection = adminApp.firestore().collection('test/test/test2');
