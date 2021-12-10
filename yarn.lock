@@ -2040,7 +2040,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bser@npm:^2":
+"@types/bser@npm:2.0.1":
   version: 2.0.1
   resolution: "@types/bser@npm:2.0.1"
   dependencies:
@@ -2068,7 +2068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ejson@npm:^2":
+"@types/ejson@npm:2.1.3":
   version: 2.1.3
   resolution: "@types/ejson@npm:2.1.3"
   checksum: 8bccd9a7d01848f4b14090e17af69ac1c46163a195a01668db063b7505a21babda763738b0eae57e694cea73e0d1fcbc4f4eec568075fa2d38d5799db4cf4023
@@ -5893,8 +5893,8 @@ __metadata:
   resolution: "firebase-scripts@workspace:."
   dependencies:
     "@firebase/rules-unit-testing": 2.0.1
-    "@types/bser": ^2
-    "@types/ejson": ^2
+    "@types/bser": 2.0.1
+    "@types/ejson": 2.1.3
     "@types/eslint": 8.2.1
     "@types/jest": 27.0.3
     "@types/micromatch": 4.0.2
