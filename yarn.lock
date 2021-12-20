@@ -2011,16 +2011,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bser@npm:2.0.1":
-  version: 2.0.1
-  resolution: "@types/bser@npm:2.0.1"
-  dependencies:
-    "@types/node": "*"
-    "@types/node-int64": "*"
-  checksum: 1107ba21a522986910d2887a0bb3fa39cb20546f043f8776dc97346baedcf38d5732797d2eef18b93a31271eab9ff3eb37ee9aaf0939d30e68f718cd893eeac8
-  languageName: node
-  linkType: hard
-
 "@types/connect@npm:*":
   version: 3.4.35
   resolution: "@types/connect@npm:3.4.35"
@@ -2036,13 +2026,6 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 2cc557506bcb847fc207c3abbf44a0f82331ed07a347bfc5524975eba3a6d8ce52d841521b857d037a448cf6f2fbcbc628c46e259729cd12d6e32558ce0b33ac
-  languageName: node
-  linkType: hard
-
-"@types/ejson@npm:2.1.3":
-  version: 2.1.3
-  resolution: "@types/ejson@npm:2.1.3"
-  checksum: 8bccd9a7d01848f4b14090e17af69ac1c46163a195a01668db063b7505a21babda763738b0eae57e694cea73e0d1fcbc4f4eec568075fa2d38d5799db4cf4023
   languageName: node
   linkType: hard
 
@@ -2216,15 +2199,6 @@ __metadata:
   version: 1.2.2
   resolution: "@types/minimist@npm:1.2.2"
   checksum: b8da83c66eb4aac0440e64674b19564d9d86c80ae273144db9681e5eeff66f238ade9515f5006ffbfa955ceff8b89ad2bd8ec577d7caee74ba101431fb07045d
-  languageName: node
-  linkType: hard
-
-"@types/node-int64@npm:*":
-  version: 0.4.29
-  resolution: "@types/node-int64@npm:0.4.29"
-  dependencies:
-    "@types/node": "*"
-  checksum: 3773ea01e1d71c432ef7760a67b864245825c24591cdede093d144de9bf41742ef58c04e861825074b02a7a026664f17d9c4d66f46edfbf65c1d06c49f14a8fb
   languageName: node
   linkType: hard
 
@@ -3300,15 +3274,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bson@npm:4.6.0":
-  version: 4.6.0
-  resolution: "bson@npm:4.6.0"
-  dependencies:
-    buffer: ^5.6.0
-  checksum: d38ca1b6c581d8667137c62258f22c0076575879c77f278c08282721844166afc0538d9fb4942976bb320a2e3dec3ddfae57b7ad52845bf7464bf997d3fdc5a2
-  languageName: node
-  linkType: hard
-
 "buffer-crc32@npm:^0.2.1, buffer-crc32@npm:^0.2.13":
   version: 0.2.13
   resolution: "buffer-crc32@npm:0.2.13"
@@ -3337,7 +3302,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"buffer@npm:^5.5.0, buffer@npm:^5.6.0":
+"buffer@npm:^5.5.0":
   version: 5.7.1
   resolution: "buffer@npm:5.7.1"
   dependencies:
@@ -4756,13 +4721,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ejson@npm:2.2.2":
-  version: 2.2.2
-  resolution: "ejson@npm:2.2.2"
-  checksum: 2c0c631a048d55c2286f78a322afb33f719a7aa003010cbf2a1aafbcb6d94040afce8baac7973fe18bea87be3052cdc97bb4a5c3897be1c0dfc3d9fb41bd9e8e
-  languageName: node
-  linkType: hard
-
 "electron-to-chromium@npm:^1.4.17":
   version: 1.4.24
   resolution: "electron-to-chromium@npm:1.4.24"
@@ -5856,8 +5814,6 @@ __metadata:
   resolution: "firebase-scripts@workspace:."
   dependencies:
     "@firebase/rules-unit-testing": 2.0.1
-    "@types/bser": 2.0.1
-    "@types/ejson": 2.1.3
     "@types/eslint": 8.2.1
     "@types/jest": 27.0.3
     "@types/micromatch": 4.0.2
@@ -5868,13 +5824,10 @@ __metadata:
     "@willbooster/eslint-config-ts": 6.5.0
     "@willbooster/prettier-config": 6.5.0
     "@willbooster/renovate-config": 6.5.0
-    bser: 2.1.1
-    bson: 4.6.0
     conventional-changelog-conventionalcommits: 4.6.1
     dayjs: 1.10.7
     dotenv: 10.0.0
     dotenv-cli: 4.1.1
-    ejson: 2.2.2
     esbuild: 0.14.5
     esbuild-plugin-d.ts: 1.1.0
     esbuild-register: 3.2.1
