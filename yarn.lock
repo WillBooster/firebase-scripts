@@ -5847,7 +5847,7 @@ __metadata:
     eslint-plugin-import: 2.25.3
     firebase: 9.6.1
     firebase-admin: 10.0.1
-    firebase-tools: 9.23.3
+    firebase-tools: 10.0.1
     husky: 7.0.4
     jest: 27.4.5
     kill-port: 1.6.1
@@ -5865,9 +5865,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"firebase-tools@npm:9.23.3":
-  version: 9.23.3
-  resolution: "firebase-tools@npm:9.23.3"
+"firebase-tools@npm:10.0.1":
+  version: 10.0.1
+  resolution: "firebase-tools@npm:10.0.1"
   dependencies:
     "@google-cloud/pubsub": ^2.7.0
     "@types/archiver": ^5.1.0
@@ -5929,7 +5929,7 @@ __metadata:
     ws: ^7.2.3
   bin:
     firebase: lib/bin/firebase.js
-  checksum: 21c591eec33ec220b0a05403a7f9ce2729562eaf5510379d16927896f47f3625ccc2755ed4f6289e1fc5588ceadd03e9772a2f3e386d145afe3d51e6597a828b
+  checksum: 025bad31a5bbcc07414ec6a886a1b143ce946b2226d8ef435a90686ae8dc4b14e56b6f1542e63fa46ee6c275fc5f38b4be5307211d21b0fca42676dd47008c6e
   languageName: node
   linkType: hard
 
