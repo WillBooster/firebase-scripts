@@ -64,7 +64,7 @@
     "eslint-import-resolver-node": "0.3.6",
     "eslint-plugin-import": "2.25.3",
     "firebase": "9.6.1",
-    "firebase-tools": "9.23.3",
+    "firebase-tools": "10.0.1",
     "husky": "7.0.4",
     "jest": "27.4.5",
     "kill-port": "1.6.1",
