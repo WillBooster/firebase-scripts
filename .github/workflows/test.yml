@@ -15,3 +15,5 @@ jobs:
     uses: WillBooster/reusable-workflows/.github/workflows/test.yml@main
     with:
       non_self_hosted: true
+    secrets:
+      DOT_ENV: 'FIREBASE_PROJECT_ID=test'
