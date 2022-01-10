@@ -1,13 +1,20 @@
 {
-  "name": "firebase-scripts",
+  "name": "@firebase-scripts/cli",
   "version": "0.0.0-semantically-released",
-  "private": true,
-  "description": "A collection of useful scripts for firebase.",
+  "description": "A cli of useful features for firebase.",
+  "keywords": [
+    "firebase"
+  ],
   "repository": "git@github.com:WillBooster/firebase-scripts.git",
   "license": "Apache-2.0",
   "author": "WillBooster Inc.",
-  "workspaces": [
-    "packages/*"
+  "main": "dist/index.min.cjs",
+  "module": "dist/index.min.mjs",
+  "types": "dist/index.d.ts",
+  "bin": "./bin/main.js",
+  "files": [
+    "packages/firebase-scripts-cli/bin/",
+    "dist/"
   ],
   "scripts": {
     "build": "node esbuild.js",
@@ -16,12 +23,29 @@
     "lint": "eslint --color \"./{src,__tests__}/**/*.{cjs,js,jsx,mjs,ts,tsx}\"",
     "lint-fix": "yarn lint --fix",
     "prettify": "prettier --color --write \"**/{.*/,}*.{cjs,css,htm,html,js,json,json5,jsx,md,mjs,scss,ts,tsx,vue,yaml,yml}\" \"!**/test-fixtures/**\"",
-    "start": "node -r esbuild-register packages/cli/src/main.ts",
+    "start": "node -r esbuild-register packages/firebase-scripts-cli/src/main.ts",
     "stop-firebase": "kill-port --port 8080",
+    "test": "yarn test-wo-firebase && yarn test-w-firebase",
+    "test-w-firebase": "yarn stop-firebase && dotenv -e ../../.env -- yarn test-w-firebase-core",
+    "test-w-firebase-core": "firebase emulators:exec --project $FIREBASE_PROJECT_ID \"yarn jest --silent --color --runInBand --forceExit __tests__/with-firebase\"",
+    "test-wo-firebase": "yarn jest --color __tests__/without-firebase",
     "typecheck": "tsc --noEmit --Pretty"
   },
   "prettier": "@willbooster/prettier-config",
+  "dependencies": {
+    "dayjs": "1.10.7",
+    "dotenv": "10.0.0",
+    "firebase-admin": "10.0.1",
+    "minimal-promise-pool": "1.1.4",
+    "yargs": "17.3.1"
+  },
   "devDependencies": {
+    "@firebase/rules-unit-testing": "2.0.1",
+    "@types/eslint": "8.2.1",
+    "@types/jest": "27.4.0",
+    "@types/micromatch": "4.0.2",
+    "@types/prettier": "2.4.2",
+    "@types/yargs": "17.0.8",
     "@typescript-eslint/eslint-plugin": "5.8.1",
     "@typescript-eslint/parser": "5.8.1",
     "@willbooster/eslint-config-ts": "6.5.0",
@@ -29,11 +53,17 @@
     "@willbooster/renovate-config": "6.5.0",
     "conventional-changelog-conventionalcommits": "4.6.3",
     "dotenv-cli": "4.1.1",
+    "esbuild": "0.14.10",
+    "esbuild-plugin-d.ts": "1.1.0",
+    "esbuild-register": "3.3.1",
     "eslint": "8.5.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-import-resolver-node": "0.3.6",
     "eslint-plugin-import": "2.25.3",
+    "firebase": "9.6.1",
+    "firebase-tools": "10.0.1",
     "husky": "7.0.4",
+    "jest": "27.4.5",
     "kill-port": "1.6.1",
     "lint-staged": "12.1.4",
     "micromatch": "4.0.4",

@@ -431,6 +431,52 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@firebase-scripts/cli@workspace:packages/cli":
+  version: 0.0.0-use.local
+  resolution: "@firebase-scripts/cli@workspace:packages/cli"
+  dependencies:
+    "@firebase/rules-unit-testing": 2.0.1
+    "@types/eslint": 8.2.1
+    "@types/jest": 27.4.0
+    "@types/micromatch": 4.0.2
+    "@types/prettier": 2.4.2
+    "@types/yargs": 17.0.8
+    "@typescript-eslint/eslint-plugin": 5.8.1
+    "@typescript-eslint/parser": 5.8.1
+    "@willbooster/eslint-config-ts": 6.5.0
+    "@willbooster/prettier-config": 6.5.0
+    "@willbooster/renovate-config": 6.5.0
+    conventional-changelog-conventionalcommits: 4.6.3
+    dayjs: 1.10.7
+    dotenv: 10.0.0
+    dotenv-cli: 4.1.1
+    esbuild: 0.14.10
+    esbuild-plugin-d.ts: 1.1.0
+    esbuild-register: 3.3.1
+    eslint: 8.5.0
+    eslint-config-prettier: 8.3.0
+    eslint-import-resolver-node: 0.3.6
+    eslint-plugin-import: 2.25.3
+    firebase: 9.6.1
+    firebase-admin: 10.0.1
+    firebase-tools: 10.0.1
+    husky: 7.0.4
+    jest: 27.4.5
+    kill-port: 1.6.1
+    lint-staged: 12.1.4
+    micromatch: 4.0.4
+    minimal-promise-pool: 1.1.4
+    pinst: 2.1.6
+    prettier: 2.5.1
+    semantic-release: 18.0.1
+    sort-package-json: 1.53.1
+    typescript: 4.5.4
+    yargs: 17.3.1
+  bin:
+    cli: ./bin/main.js
+  languageName: unknown
+  linkType: soft
+
 "@firebase/analytics-compat@npm:0.1.5":
   version: 0.1.5
   resolution: "@firebase/analytics-compat@npm:0.1.5"
@@ -5820,45 +5866,26 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "firebase-scripts@workspace:."
   dependencies:
-    "@firebase/rules-unit-testing": 2.0.1
-    "@types/eslint": 8.2.1
-    "@types/jest": 27.4.0
-    "@types/micromatch": 4.0.2
-    "@types/prettier": 2.4.2
-    "@types/yargs": 17.0.8
     "@typescript-eslint/eslint-plugin": 5.8.1
     "@typescript-eslint/parser": 5.8.1
     "@willbooster/eslint-config-ts": 6.5.0
     "@willbooster/prettier-config": 6.5.0
     "@willbooster/renovate-config": 6.5.0
     conventional-changelog-conventionalcommits: 4.6.3
-    dayjs: 1.10.7
-    dotenv: 10.0.0
     dotenv-cli: 4.1.1
-    esbuild: 0.14.10
-    esbuild-plugin-d.ts: 1.1.0
-    esbuild-register: 3.3.1
     eslint: 8.5.0
     eslint-config-prettier: 8.3.0
     eslint-import-resolver-node: 0.3.6
     eslint-plugin-import: 2.25.3
-    firebase: 9.6.1
-    firebase-admin: 10.0.1
-    firebase-tools: 10.0.1
     husky: 7.0.4
-    jest: 27.4.5
     kill-port: 1.6.1
     lint-staged: 12.1.4
     micromatch: 4.0.4
-    minimal-promise-pool: 1.1.4
     pinst: 2.1.6
     prettier: 2.5.1
     semantic-release: 18.0.1
     sort-package-json: 1.53.1
     typescript: 4.5.4
-    yargs: 17.3.1
-  bin:
-    firebase-scripts: ./bin/main.js
   languageName: unknown
   linkType: soft
 
