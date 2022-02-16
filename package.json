@@ -37,7 +37,7 @@
   "prettier": "@willbooster/prettier-config",
   "dependencies": {
     "dayjs": "1.10.7",
-    "dotenv": "14.3.2",
+    "dotenv": "16.0.0",
     "firebase-admin": "10.0.2",
     "minimal-promise-pool": "1.1.4",
     "yargs": "17.3.1"
