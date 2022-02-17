@@ -91,7 +91,7 @@ export function convertObjectToTimestamp(record: Record<string, any>): boolean {
   let modified = false;
   for (const [key, value] of Object.entries(record)) {
     if (value && typeof value === 'object' && !(value instanceof firestore.Timestamp)) {
-      const { _seconds, _nanoseconds } = value as any;
+      const { _nanoseconds, _seconds } = value as any;
       if (Object.keys(value).length === 2 && typeof _seconds === 'number' && typeof _nanoseconds === 'number') {
         record[key] = new firestore.Timestamp(_seconds, _nanoseconds);
         modified = true;
