@@ -4,10 +4,10 @@ const path = require('path');
 const { build } = require('esbuild');
 const { dtsPlugin } = require('esbuild-plugin-d.ts');
 
-const package = require(path.resolve('package.json'));
+const packageJson = require(path.resolve('package.json'));
 
 // If you want to bundle external libraries, please add them in devDependencies
-const external = [...builtinModules, ...Object.keys(package.dependencies ?? {})];
+const external = [...builtinModules, ...Object.keys(packageJson.dependencies ?? {})];
 
 Promise.all([
   build({
@@ -35,6 +35,7 @@ Promise.all([
     bundle: true,
     entryPoints: ['src/cli.ts'],
     external,
+    format: 'cjs',
     minify: true,
     outfile: 'dist/cli.min.cjs',
     platform: 'node',
