@@ -70,7 +70,7 @@
     "eslint-plugin-sort-destructure-keys": "1.4.0",
     "firebase": "9.6.10",
     "firebase-tools": "10.6.0",
-    "husky": "7.0.4",
+    "husky": "8.0.1",
     "jest": "27.5.1",
     "kill-port": "1.6.1",
     "lint-staged": "12.3.7",
