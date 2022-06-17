@@ -39,18 +39,18 @@
     "npm/chalk": "^4.1.2"
   },
   "dependencies": {
-    "dayjs": "1.11.0",
-    "dotenv": "16.0.0",
-    "firebase-admin": "10.0.2",
+    "dayjs": "1.11.3",
+    "dotenv": "16.0.1",
+    "firebase-admin": "10.3.0",
     "minimal-promise-pool": "1.1.4",
-    "yargs": "17.4.0"
+    "yargs": "17.5.1"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "2.0.2",
-    "@types/eslint": "8.4.1",
-    "@types/jest": "27.4.1",
+    "@types/eslint": "8.4.3",
+    "@types/jest": "27.5.2",
     "@types/micromatch": "4.0.2",
-    "@types/prettier": "2.4.4",
+    "@types/prettier": "2.6.3",
     "@types/yargs": "17.0.10",
     "@typescript-eslint/eslint-plugin": "5.28.0",
     "@typescript-eslint/parser": "5.28.0",
@@ -59,17 +59,17 @@
     "@willbooster/renovate-config": "9.3.0",
     "conventional-changelog-conventionalcommits": "5.0.0",
     "dotenv-cli": "4.1.1",
-    "esbuild": "0.14.34",
+    "esbuild": "0.14.45",
     "esbuild-plugin-d.ts": "1.1.0",
-    "esbuild-register": "3.3.2",
-    "eslint": "8.17.0",
+    "esbuild-register": "3.3.3",
+    "eslint": "8.18.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-import-resolver-typescript": "2.7.1",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-sort-class-members": "1.14.1",
     "eslint-plugin-sort-destructure-keys": "1.4.0",
-    "firebase": "9.6.10",
-    "firebase-tools": "10.6.0",
+    "firebase": "9.8.3",
+    "firebase-tools": "10.9.2",
     "husky": "8.0.1",
     "jest": "27.5.1",
     "kill-port": "1.6.1",
@@ -79,7 +79,7 @@
     "prettier": "2.7.1",
     "semantic-release": "18.0.1",
     "sort-package-json": "1.57.0",
-    "typescript": "4.7.3"
+    "typescript": "4.7.4"
   },
   "packageManager": "yarn@4.0.0-rc.9",
   "engines": {
