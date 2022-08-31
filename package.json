@@ -69,7 +69,7 @@
     "eslint-plugin-sort-class-members": "1.14.1",
     "eslint-plugin-sort-destructure-keys": "1.4.0",
     "firebase": "9.9.3",
-    "firebase-tools": "10.9.2",
+    "firebase-tools": "11.8.0",
     "husky": "8.0.1",
     "jest": "27.5.1",
     "kill-port": "2.0.1",
