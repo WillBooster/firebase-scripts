@@ -41,7 +41,7 @@
   "dependencies": {
     "dayjs": "1.11.5",
     "dotenv": "16.0.1",
-    "firebase-admin": "10.3.0",
+    "firebase-admin": "11.0.1",
     "minimal-promise-pool": "1.1.5",
     "yargs": "17.5.1"
   },
