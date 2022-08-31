@@ -4,8 +4,12 @@
     "indexes": "firebase/firestore.indexes.json"
   },
   "emulators": {
+    "hub": {
+      "port": 4400,
+      "host": "127.0.0.1"
+    },
     "firestore": {
-      "port": "8080",
+      "port": 8080,
       "host": "127.0.0.1"
     }
   }
