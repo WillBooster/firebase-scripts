@@ -499,7 +499,6 @@ __metadata:
   resolution: "@firebase-scripts/cli@workspace:packages/cli"
   dependencies:
     "@firebase-scripts/core": "npm:0.0.0-semantically-released"
-    "@firebase-scripts/shared": "npm:0.0.0-semantically-released"
     "@types/eslint": "npm:8.4.6"
     "@types/micromatch": "npm:4.0.2"
     "@types/prettier": "npm:2.7.0"
@@ -535,7 +534,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@firebase-scripts/core@workspace:packages/core"
   dependencies:
-    "@firebase-scripts/shared": "npm:0.0.0-semantically-released"
     "@firebase/rules-unit-testing": "npm:2.0.4"
     "@types/eslint": "npm:8.4.6"
     "@types/jest": "npm:29.0.0"
@@ -571,7 +569,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@firebase-scripts/shared@npm:0.0.0-semantically-released, @firebase-scripts/shared@workspace:packages/shared":
+"@firebase-scripts/shared@workspace:packages/shared":
   version: 0.0.0-use.local
   resolution: "@firebase-scripts/shared@workspace:packages/shared"
   dependencies:
