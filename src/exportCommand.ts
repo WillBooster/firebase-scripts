@@ -46,7 +46,7 @@ export const exportCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
   },
 };
 
-interface OptionalParamsToExport {
+export interface OptionalParamsToExport {
   batchSize?: number;
   format?: CompressionFormat;
 }
@@ -55,9 +55,9 @@ export async function exportCollections(
   adminApp: app.App,
   collectionPaths: string[],
   dirPath: string,
-  params: OptionalParamsToExport
+  params?: OptionalParamsToExport
 ): Promise<void> {
-  const extension = getExtensionFromFormat(params.format) ?? '';
+  const extension = getExtensionFromFormat(params?.format) ?? '';
   for (const collectionPath of collectionPaths) {
     const normalizedCollectionPath = collectionPath.replace(/\//g, '-');
     const filePath = path.join(dirPath, `${normalizedCollectionPath}.json${extension}`);
@@ -69,10 +69,10 @@ export async function exportCollection(
   adminApp: app.App,
   collectionPath: string,
   filePath: string,
-  { batchSize, format }: OptionalParamsToExport
+  params?: OptionalParamsToExport
 ): Promise<string> {
-  format ??= getFormatFromExtension(filePath);
-  batchSize ??= BASE_BATCH_SIZE;
+  const format = params?.format ?? getFormatFromExtension(filePath);
+  const batchSize = params?.batchSize ?? BASE_BATCH_SIZE;
 
   const collectionRef = adminApp.firestore().collection(collectionPath);
   console.info(`Reading ${collectionPath} collection ...`);
