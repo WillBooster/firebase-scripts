@@ -46,6 +46,7 @@ export async function exportCollection(
     for (const doc of docs) {
       dataList.push({ docId: doc.id, ...doc.data() });
     }
+    process.stdout.write('.');
     if (docs.length < batchSize) {
       break;
     }

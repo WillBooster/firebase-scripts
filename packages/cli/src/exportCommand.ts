@@ -32,9 +32,10 @@ export const exportCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
   builder,
   async handler(argv) {
     const adminApp = initializeAdmin();
+    const [, ...args] = argv._;
     await exportCollections(
       adminApp,
-      argv._.map((arg) => arg.toString()),
+      args.map((arg) => arg.toString()),
       argv.directory ?? path.resolve(),
       {
         format: argv.format as CompressionFormat,

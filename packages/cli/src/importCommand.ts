@@ -15,18 +15,19 @@ export const importCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
   describe: 'Import serialized collection files (.json/.gz/.br)',
   builder,
   async handler(argv) {
-    if (!argv._.length) {
+    const [, ...args] = argv._;
+    if (!args.length) {
       console.error('Please pass at least one of serialized collection files.');
       process.exit(1);
     }
-    if (argv.collection?.length && argv._.length !== argv.collection.length) {
+    if (argv.collection?.length && args.length !== argv.collection.length) {
       console.error('The numbers of serialized files and collection paths must be equal.');
       process.exit(1);
     }
 
     const adminApp = initializeAdmin();
-    for (let i = 0; i < argv._.length; i++) {
-      await importCollection(adminApp, argv._[i].toString(), argv.collection?.[i].toString());
+    for (let i = 0; i < args.length; i++) {
+      await importCollection(adminApp, args[i].toString(), argv.collection?.[i].toString());
     }
   },
 };

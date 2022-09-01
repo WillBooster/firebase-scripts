@@ -8,22 +8,21 @@
   "repository": "github:WillBooster/firebase-scripts",
   "license": "Apache-2.0",
   "author": "WillBooster Inc.",
-  "main": "dist/index.min.cjs",
-  "module": "dist/index.min.mjs",
-  "types": "dist/index.d.ts",
-  "bin": "./bin/main.js",
+  "bin": {
+    "firebase-scripts": "./bin/main.js"
+  },
   "files": [
     "bin/",
     "dist/"
   ],
   "scripts": {
+    ":start": "yarn build && dotenv -e ../../.env -- yarn firebase-scripts",
     "build": "node esbuild.js",
     "cleanup": "yarn format && yarn lint-fix",
     "format": "sort-package-json && yarn prettify",
     "lint": "eslint --color \"./{src,__tests__,scripts}/**/*.{cjs,js,jsx,mjs,ts,tsx}\"",
     "lint-fix": "yarn lint --fix",
     "prettify": "prettier --color --write \"**/{.*/,}*.{cjs,css,htm,html,js,json,json5,jsx,md,mjs,scss,ts,tsx,vue,yaml,yml}\" \"!**/test-fixtures/**\"",
-    "start": "dotenv -- node -r esbuild-register src/main.ts",
     "typecheck": "tsc --noEmit --Pretty"
   },
   "prettier": "@willbooster/prettier-config",
