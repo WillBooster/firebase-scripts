@@ -60,5 +60,8 @@
   "packageManager": "yarn@4.0.0-rc.15",
   "engines": {
     "node": ">=14"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
