@@ -531,7 +531,6 @@ __metadata:
     "@willbooster/prettier-config": "npm:9.1.0"
     "@willbooster/renovate-config": "npm:9.4.0"
     conventional-changelog-conventionalcommits: "npm:5.0.0"
-    dotenv-cli: "npm:6.0.0"
     esbuild: "npm:0.15.6"
     esbuild-plugin-d.ts: "npm:1.1.0"
     eslint: "npm:8.23.0"
@@ -561,7 +560,6 @@ __metadata:
   resolution: "@firebase-scripts/shared@workspace:packages/shared"
   dependencies:
     "@types/eslint": "npm:8.4.6"
-    "@types/jest": "npm:29.0.0"
     "@types/micromatch": "npm:4.0.2"
     "@types/prettier": "npm:2.7.0"
     "@typescript-eslint/eslint-plugin": "npm:5.36.1"
