@@ -20,7 +20,11 @@
     "typecheck": "yarn workspaces foreach --parallel --verbose run typecheck"
   },
   "prettier": "@willbooster/prettier-config",
+  "resolutions": {
+    "libnpmversion": "3.0.6"
+  },
   "devDependencies": {
+    "@qiwi/multi-semantic-release": "6.5.1",
     "@types/eslint": "8.4.6",
     "@types/jest": "29.0.0",
     "@types/micromatch": "4.0.2",
