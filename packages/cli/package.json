@@ -32,7 +32,6 @@
   },
   "devDependencies": {
     "@firebase-scripts/core": "0.0.0-semantically-released",
-    "@firebase-scripts/shared": "0.0.0-semantically-released",
     "@types/eslint": "8.4.6",
     "@types/micromatch": "4.0.2",
     "@types/prettier": "2.7.0",
