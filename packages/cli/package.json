@@ -1,6 +1,6 @@
 {
   "name": "@firebase-scripts/cli",
-  "version": "0.0.0-semantically-released",
+  "version": "1.0.0",
   "description": "A cli of useful scripts for firebase.",
   "keywords": [
     "firebase"
@@ -31,7 +31,7 @@
     "yargs": "17.5.1"
   },
   "devDependencies": {
-    "@firebase-scripts/core": "0.0.0-semantically-released",
+    "@firebase-scripts/core": "1.0.0",
     "@types/eslint": "8.4.6",
     "@types/micromatch": "4.0.2",
     "@types/prettier": "2.7.0",
