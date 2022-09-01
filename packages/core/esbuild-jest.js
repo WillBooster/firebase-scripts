@@ -1,14 +1,14 @@
 const { builtinModules } = require('module');
-const path = require('path');
 
-const package = require(path.resolve('package.json'));
+const rootPackageJson = require('../../package.json');
+const packageJson = require('./package.json');
 
 const external = [
   ...builtinModules,
-  ...Object.keys(package.dependencies ?? {}),
-  ...Object.keys(package.devDependencies ?? {}),
-  ...Object.keys(package.peerDependencies ?? {}),
-];
+  ...Object.keys(packageJson.dependencies ?? {}),
+  ...Object.keys(packageJson.devDependencies ?? {}),
+  ...Object.keys(packageJson.peerDependencies ?? {}),
+].filter((module) => !module.startsWith(`@${rootPackageJson.name}/`));
 
 module.exports = {
   getCacheKey() {

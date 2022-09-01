@@ -1,8 +1,9 @@
 import fsp from 'fs/promises';
 import path from 'path';
 
-import { initializeAdmin } from '../../src/firebaseAdmin';
-import { getBlobCommandHandler } from '../../src/getBlobCommand';
+import { initializeAdmin } from '@firebase-scripts/shared/src/firebaseAdmin';
+
+import { downloadBlobToFile } from '../../src/blob';
 import { configureFirebase, configureJest } from '../common';
 
 configureJest();
@@ -33,7 +34,7 @@ describe('get-blob', () => {
       await adminApp.firestore().doc(documentPath).set(document);
 
       // Test.
-      await getBlobCommandHandler(adminApp, documentPath, fieldPath, outputFilePath);
+      await downloadBlobToFile(adminApp, documentPath, fieldPath, outputFilePath);
 
       const buffer = await fsp.readFile(outputFilePath);
       expect(buffer).toEqual(expectedBuffer);
@@ -42,13 +43,13 @@ describe('get-blob', () => {
 
   test('when a document path was not provided', async () => {
     await expect(() =>
-      getBlobCommandHandler(adminApp, undefined, undefined, path.resolve('test-fixtures', 'temp', 'output.bin'))
+      downloadBlobToFile(adminApp, undefined, undefined, path.resolve('test-fixtures', 'temp', 'output.bin'))
     ).rejects.toThrow('Provide a slash-separated document path to download.');
   });
 
   test('when a field path was not provided', async () => {
     await expect(() =>
-      getBlobCommandHandler(
+      downloadBlobToFile(
         adminApp,
         'collection/document',
         undefined,
@@ -61,7 +62,7 @@ describe('get-blob', () => {
     await adminApp.firestore().doc('collection/document').set({ field: 'value' });
 
     await expect(() =>
-      getBlobCommandHandler(
+      downloadBlobToFile(
         adminApp,
         'nonExistentCollection/document',
         'field',
@@ -74,7 +75,7 @@ describe('get-blob', () => {
     await adminApp.firestore().doc('collection/document').set({ field: 'value' });
 
     await expect(() =>
-      getBlobCommandHandler(
+      downloadBlobToFile(
         adminApp,
         'collection/nonExistentDocument',
         'field',
@@ -87,7 +88,7 @@ describe('get-blob', () => {
     await adminApp.firestore().doc('collection/document').set({ field: 'value' });
 
     await expect(() =>
-      getBlobCommandHandler(
+      downloadBlobToFile(
         adminApp,
         'collection/document',
         'nonExistentField',

@@ -1,7 +1,7 @@
+import { initializeAdmin } from '@firebase-scripts/shared/src/firebaseAdmin';
 import { firestore } from 'firebase-admin';
 
-import { copyDocument } from '../../src/copyCommand';
-import { initializeAdmin } from '../../src/firebaseAdmin';
+import { copyDocument } from '../../src/copy';
 import { configureFirebase, configureJest } from '../common';
 
 configureJest();

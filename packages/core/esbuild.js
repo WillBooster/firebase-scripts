@@ -31,14 +31,4 @@ Promise.all([
     platform: 'node',
     sourcemap: true,
   }),
-  build({
-    bundle: true,
-    entryPoints: ['src/cli.ts'],
-    external,
-    format: 'cjs',
-    minify: true,
-    outfile: 'dist/cli.min.cjs',
-    platform: 'node',
-    sourcemap: true,
-  }),
 ]).then();
