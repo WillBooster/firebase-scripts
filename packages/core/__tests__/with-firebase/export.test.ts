@@ -1,10 +1,10 @@
 import path from 'path';
 
+import { initializeAdmin } from '@firebase-scripts/shared/src/firebaseAdmin';
 import { firestore } from 'firebase-admin';
 
-import { exportCollections, ExportOptions } from '../../src/exportCommand';
-import { initializeAdmin } from '../../src/firebaseAdmin';
-import { importCollection } from '../../src/importCommand';
+import { exportCollections, ExportOptions } from '../../src/export';
+import { importCollection } from '../../src/import';
 import { configureFirebase, configureJest } from '../common';
 
 configureJest();

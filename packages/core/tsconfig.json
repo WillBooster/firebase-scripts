@@ -13,14 +13,5 @@
     "strict": true,
     "target": "es2019"
   },
-  "include": [
-    "src/**/*",
-    "__tests__/**/*",
-    "scripts/**/*",
-    "packages/*/src/**/*",
-    "packages/*/__tests__/**/*",
-    "packages/*/scripts/**/*",
-    "./node_modules/@types",
-    "./@types"
-  ]
+  "include": ["src/**/*", "__tests__/**/*", "scripts/**/*", "../../node_modules/@types", "../../@types", "./@types"]
 }

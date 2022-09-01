@@ -1,5 +1,5 @@
-export { exportCollections, exportCollection } from './exportCommand';
-export { importCollection, restoreCollection, convertObjectToTimestamp } from './importCommand';
+export { exportCollections, exportCollection } from './export';
+export { importCollection, restoreCollection, convertObjectToTimestamp } from './import';
 export {
   compressJson,
   compressJsonText,

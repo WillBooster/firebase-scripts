@@ -1,34 +1,8 @@
 import fsp from 'fs/promises';
 
 import type { app } from 'firebase-admin';
-import type { CommandModule, InferredOptionTypes } from 'yargs';
 
-import { initializeAdmin } from './firebaseAdmin';
-
-const builder = {
-  output: {
-    alias: 'o',
-    demandOption: true,
-    description: 'An output file path',
-    type: 'string',
-  },
-} as const;
-
-export const getBlobCommand: CommandModule<unknown, InferredOptionTypes<typeof builder>> = {
-  command: 'get-blob',
-  describe: 'Download a BLOB field as a binary file',
-  builder,
-  async handler(argv) {
-    const adminApp = initializeAdmin();
-
-    const documentPath = argv._[1].toString();
-    const fieldPath = argv._[2].toString();
-
-    await getBlobCommandHandler(adminApp, documentPath, fieldPath, argv.output);
-  },
-};
-
-export async function getBlobCommandHandler(
+export async function downloadBlobToFile(
   adminApp: app.App,
   documentPath: string | undefined,
   fieldPath: string | undefined,

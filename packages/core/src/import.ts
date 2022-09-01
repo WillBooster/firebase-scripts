@@ -2,40 +2,9 @@ import fs from 'fs';
 import fsp from 'fs/promises';
 
 import { app, firestore } from 'firebase-admin';
-import { PromisePool } from 'minimal-promise-pool';
-import type { CommandModule, InferredOptionTypes } from 'yargs';
 
-import { initializeAdmin } from './firebaseAdmin';
 import { decompressJsonText, getFormatFromExtension, reviverForJsonParse } from './jsonCompressor';
-
-const builder = {
-  collection: {
-    type: 'array',
-    description: 'A collection path where a serialized file is imported',
-    alias: 'c',
-  },
-} as const;
-
-export const importCommand: CommandModule<unknown, InferredOptionTypes<typeof builder>> = {
-  command: 'import',
-  describe: 'Import serialized collection files (.json/.gz/.br)',
-  builder,
-  async handler(argv) {
-    if (!argv._.length) {
-      console.error('Please pass at least one of serialized collection files.');
-      process.exit(1);
-    }
-    if (argv.collection?.length && argv._.length !== argv.collection.length) {
-      console.error('The numbers of serialized files and collection paths must be equal.');
-      process.exit(1);
-    }
-
-    const adminApp = initializeAdmin();
-    for (let i = 0; i < argv._.length; i++) {
-      await importCollection(adminApp, argv._[i].toString(), argv.collection?.[i].toString());
-    }
-  },
-};
+import { promisePool } from './promisePool';
 
 export async function importCollection(adminApp: app.App, filePath: string, collectionPath?: string): Promise<void> {
   if (!collectionPath) {
@@ -68,7 +37,6 @@ export async function restoreCollection(
   collection: firestore.CollectionReference
 ): Promise<number> {
   let count = 0;
-  const promisePool = new PromisePool(10);
   for (const record of records) {
     if (!record.docId) continue;
 
