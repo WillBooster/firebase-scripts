@@ -7,7 +7,7 @@ import type { CommandModule, InferredOptionTypes } from 'yargs';
 import { initializeAdmin } from './firebaseAdmin';
 import { CompressionFormat, compressJsonText, getExtensionFromFormat, getFormatFromExtension } from './jsonCompressor';
 
-export const BASE_BATCH_SIZE = 10000;
+export const DEFAULT_BATCH_SIZE = 10000;
 
 const builder = {
   directory: {
@@ -23,7 +23,7 @@ const builder = {
   batchSize: {
     type: 'number',
     description: 'A batch size to fetch document from collection',
-    default: BASE_BATCH_SIZE,
+    default: DEFAULT_BATCH_SIZE,
     alias: 'b',
   },
 } as const;
@@ -46,7 +46,7 @@ export const exportCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
   },
 };
 
-export interface OptionalParamsToExport {
+export interface ExportOptions {
   batchSize?: number;
   format?: CompressionFormat;
 }
@@ -55,7 +55,7 @@ export async function exportCollections(
   adminApp: app.App,
   collectionPaths: string[],
   dirPath: string,
-  params?: OptionalParamsToExport
+  params?: ExportOptions
 ): Promise<void> {
   const extension = getExtensionFromFormat(params?.format) ?? '';
   for (const collectionPath of collectionPaths) {
@@ -69,10 +69,10 @@ export async function exportCollection(
   adminApp: app.App,
   collectionPath: string,
   filePath: string,
-  params?: OptionalParamsToExport
+  params?: ExportOptions
 ): Promise<string> {
   const format = params?.format ?? getFormatFromExtension(filePath);
-  const batchSize = params?.batchSize ?? BASE_BATCH_SIZE;
+  const batchSize = params?.batchSize ?? DEFAULT_BATCH_SIZE;
 
   const collectionRef = adminApp.firestore().collection(collectionPath);
   console.info(`Reading ${collectionPath} collection ...`);

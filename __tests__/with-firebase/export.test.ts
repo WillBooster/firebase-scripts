@@ -2,7 +2,7 @@ import path from 'path';
 
 import { firestore } from 'firebase-admin';
 
-import { exportCollections, OptionalParamsToExport } from '../../src/exportCommand';
+import { exportCollections, ExportOptions } from '../../src/exportCommand';
 import { initializeAdmin } from '../../src/firebaseAdmin';
 import { importCollection } from '../../src/importCommand';
 import { configureFirebase, configureJest } from '../common';
@@ -12,7 +12,7 @@ configureFirebase();
 
 const adminApp = initializeAdmin();
 
-function exportTest(params?: OptionalParamsToExport): void {
+function testExportAndImport(params?: ExportOptions): void {
   test.each([
     [
       { id: 1, v: 1 },
@@ -30,7 +30,7 @@ function exportTest(params?: OptionalParamsToExport): void {
     ],
     [{ id: 1, b1: Buffer.from([0x61]), b2: Buffer.from([0x00, 0x62, 0xff]) }],
     ...[9, 10, 11, 100].map((arraySize) => [...Array(arraySize)].map((_, idx) => ({ id: idx, v: idx }))),
-  ])('export/import(%p)', async (...records: Record<string, unknown>[]) => {
+  ])('[%p, ... ]', async (...records: Record<string, unknown>[]) => {
     const testCollection = adminApp.firestore().collection('test/test/test');
     const test2Collection = adminApp.firestore().collection('test/test/test2');
     for (const record of records) {
@@ -59,5 +59,5 @@ function exportTest(params?: OptionalParamsToExport): void {
   });
 }
 
-describe('export without hyper parameter', () => exportTest());
-describe('export with hyper parameter', () => exportTest({ batchSize: 10 }));
+describe('export and import a collection without options', () => testExportAndImport());
+describe('export and import a collection with options', () => testExportAndImport({ batchSize: 10 }));
