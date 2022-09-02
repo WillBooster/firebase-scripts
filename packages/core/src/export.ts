@@ -60,7 +60,7 @@ export async function exportCollection(
   } else {
     await fsp.writeFile(filePath, jsonText);
   }
-  console.info(`Wrote: ${filePath}`);
+  console.info(`Wrote ${filePath}`);
 
   return jsonText;
 }
