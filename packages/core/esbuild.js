@@ -7,7 +7,7 @@ const { dtsPlugin } = require('esbuild-plugin-d.ts');
 const packageJson = require(path.resolve('package.json'));
 
 // If you want to bundle external libraries, please add them in devDependencies
-const external = [...builtinModules, ...Object.keys(packageJson.dependencies ?? {})];
+const external = ['firebase-admin', ...builtinModules, ...Object.keys(packageJson.dependencies ?? {})];
 
 Promise.all([
   build({
