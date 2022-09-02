@@ -22,7 +22,7 @@
   },
   "prettier": "@willbooster/prettier-config",
   "resolutions": {
-    "libnpmversion": "3.0.6"
+    "libnpmversion": "3.0.7"
   },
   "devDependencies": {
     "@qiwi/multi-semantic-release": "6.5.1",
