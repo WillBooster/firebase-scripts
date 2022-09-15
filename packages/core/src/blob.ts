@@ -25,20 +25,19 @@ export async function downloadBlobToFile(
 }
 
 async function getField(adminApp: app.App, documentPath: string, fieldPath: string): Promise<unknown> {
-  const document = (await adminApp.firestore().doc(documentPath).get()).data();
-
-  if (!document) {
+  const docSnapshot = await adminApp.firestore().doc(documentPath).get();
+  const docData = docSnapshot.data();
+  if (!docData) {
     throw new Error(`The document "${documentPath}" does not exist.`);
   }
 
   const splitFieldPath = fieldPath.split('.');
-  let field = document;
+  let field = docData;
   for (const fieldName of splitFieldPath) {
     field = field?.[fieldName];
   }
   if (!field) {
     throw new Error(`The field "${fieldPath}" does not exist in the document "${documentPath}".`);
   }
-
   return field;
 }

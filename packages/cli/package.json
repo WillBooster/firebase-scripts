@@ -9,7 +9,7 @@
   "license": "Apache-2.0",
   "author": "WillBooster Inc.",
   "bin": {
-    "firebase-scripts": "./bin/main.js"
+    "firebase-scripts": "bin/main.cjs"
   },
   "files": [
     "bin/",

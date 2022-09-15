@@ -29,7 +29,7 @@ function testExportAndImport(params?: ExportOptions): void {
       { id: 'c', d1: firestore.Timestamp.now(), d2: { d3: { d4: firestore.Timestamp.now() } } },
     ],
     [{ id: 1, b1: Buffer.from([0x61]), b2: Buffer.from([0x00, 0x62, 0xff]) }],
-    ...[9, 10, 11, 100].map((arraySize) => [...new Array(arraySize)].map((_, idx) => ({ id: idx, v: idx }))),
+    ...[9, 10, 11, 100].map((arraySize) => Array.from({ length: arraySize }).map((_, idx) => ({ id: idx, v: idx }))),
   ])('[%p, ... ]', async (...records: Record<string, unknown>[]) => {
     const testCollection = adminApp.firestore().collection('test/test/test');
     const test2Collection = adminApp.firestore().collection('test/test/test2');
@@ -47,12 +47,12 @@ function testExportAndImport(params?: ExportOptions): void {
     expect(test2Docs.length).toBe(records.length);
 
     const recordDataList = [...records].sort((a: any, b: any) => a.id.toString().localeCompare(b.id.toString()));
-    const testDataList = (await Promise.all(testDocs.map(async (d) => (await d.get()).data()))).sort((a: any, b: any) =>
-      a.id.toString().localeCompare(b.id.toString())
-    );
-    const test2DataList = (await Promise.all(test2Docs.map(async (d) => (await d.get()).data()))).sort(
-      (a: any, b: any) => a.id.toString().localeCompare(b.id.toString())
-    );
+    const testDocSnapshots = await Promise.all(testDocs.map((d) => d.get()));
+    const testDataList = testDocSnapshots
+      .map((s) => s.data())
+      .sort((a: any, b: any) => a.id.toString().localeCompare(b.id.toString()));
+    const test2DocSnapshots = await Promise.all(test2Docs.map((d) => d.get()));
+    const test2DataList = test2DocSnapshots.sort((a: any, b: any) => a.id.toString().localeCompare(b.id.toString()));
     expect(testDataList).toEqual(recordDataList);
     expect(test2DataList).toEqual(recordDataList);
     expect(testDocs.map((d) => d.id)).toEqual(test2Docs.map((d) => d.id));
