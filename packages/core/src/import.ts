@@ -9,7 +9,7 @@ import { promisePool } from './promisePool';
 export async function importCollection(adminApp: app.App, filePath: string, collectionPath?: string): Promise<void> {
   if (!collectionPath) {
     const dotIndex = filePath.indexOf('.');
-    collectionPath = filePath.slice(0, Math.max(0, dotIndex >= 0 ? dotIndex : undefined));
+    collectionPath = filePath.slice(0, dotIndex >= 0 ? dotIndex : undefined);
   }
 
   if (!fs.existsSync(filePath)) {
