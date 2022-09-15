@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 
 import { initializeAdmin } from '@firebase-scripts/shared/src/firebaseAdmin';
 import { firestore } from 'firebase-admin';
@@ -29,7 +29,7 @@ function testExportAndImport(params?: ExportOptions): void {
       { id: 'c', d1: firestore.Timestamp.now(), d2: { d3: { d4: firestore.Timestamp.now() } } },
     ],
     [{ id: 1, b1: Buffer.from([0x61]), b2: Buffer.from([0x00, 0x62, 0xff]) }],
-    ...[9, 10, 11, 100].map((arraySize) => [...Array(arraySize)].map((_, idx) => ({ id: idx, v: idx }))),
+    ...[9, 10, 11, 100].map((arraySize) => [...new Array(arraySize)].map((_, idx) => ({ id: idx, v: idx }))),
   ])('[%p, ... ]', async (...records: Record<string, unknown>[]) => {
     const testCollection = adminApp.firestore().collection('test/test/test');
     const test2Collection = adminApp.firestore().collection('test/test/test2');

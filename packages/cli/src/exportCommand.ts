@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 
 import { exportCollections } from '@firebase-scripts/core/src';
 import { CompressionFormat } from '@firebase-scripts/core/src/jsonCompressor';

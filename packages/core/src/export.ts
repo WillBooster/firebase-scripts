@@ -1,5 +1,5 @@
-import fsp from 'fs/promises';
-import path from 'path';
+import fsp from 'node:fs/promises';
+import path from 'node:path';
 
 import { app, firestore } from 'firebase-admin';
 
@@ -42,7 +42,7 @@ export async function exportCollection(
   let lastDocument: firestore.QueryDocumentSnapshot<firestore.DocumentData> | undefined;
   for (;;) {
     const query = lastDocument ? collectionRef.startAfter(lastDocument) : collectionRef;
-    const docs = (await query.limit(batchSize).get()).docs;
+    const {docs} = await query.limit(batchSize).get();
     for (const doc of docs) {
       dataList.push({ docId: doc.id, ...doc.data() });
     }
@@ -55,11 +55,7 @@ export async function exportCollection(
   console.info(`Read ${dataList.length} documents ...`);
 
   const jsonText = JSON.stringify(dataList);
-  if (format) {
-    await compressJsonText(jsonText, filePath, format);
-  } else {
-    await fsp.writeFile(filePath, jsonText);
-  }
+  await (format ? compressJsonText(jsonText, filePath, format) : fsp.writeFile(filePath, jsonText));
   console.info(`Wrote ${filePath}`);
 
   return jsonText;
