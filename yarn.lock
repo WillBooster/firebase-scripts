@@ -526,7 +526,7 @@ __metadata:
     typescript: "npm:4.8.3"
     yargs: "npm:17.5.1"
   bin:
-    firebase-scripts: ./bin/main.js
+    firebase-scripts: bin/main.cjs
   languageName: unknown
   linkType: soft
 
