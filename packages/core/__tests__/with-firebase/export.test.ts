@@ -52,7 +52,9 @@ function testExportAndImport(params?: ExportOptions): void {
       .map((s) => s.data())
       .sort((a: any, b: any) => a.id.toString().localeCompare(b.id.toString()));
     const test2DocSnapshots = await Promise.all(test2Docs.map((d) => d.get()));
-    const test2DataList = test2DocSnapshots.sort((a: any, b: any) => a.id.toString().localeCompare(b.id.toString()));
+    const test2DataList = test2DocSnapshots
+      .map((s) => s.data())
+      .sort((a: any, b: any) => a.id.toString().localeCompare(b.id.toString()));
     expect(testDataList).toEqual(recordDataList);
     expect(test2DataList).toEqual(recordDataList);
     expect(testDocs.map((d) => d.id)).toEqual(test2Docs.map((d) => d.id));
