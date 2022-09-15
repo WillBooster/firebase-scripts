@@ -19,12 +19,14 @@ test.each([
 
   const srcCollection = adminApp.firestore().collection(srcCollectionPath);
   await srcCollection.doc().set(record);
-  const srcDoc = (await srcCollection.get()).docs[0];
+  const srcDocsSnapshot = await srcCollection.get();
+  const srcDoc = srcDocsSnapshot.docs[0];
   const srcId = srcDoc.id;
   await copyDocument(adminApp, `${srcCollectionPath}/${srcId}`, adminApp, `${destCollectionPath}/${srcId}`);
 
   const destCollection = adminApp.firestore().collection(destCollectionPath);
-  const destDocs = (await destCollection.get()).docs;
+  const destDocsSnapshot = await destCollection.get();
+  const destDocs = destDocsSnapshot.docs;
 
   expect(destDocs.length).toBe(1);
   expect(destDocs[0].id).toEqual(srcId);

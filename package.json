@@ -22,7 +22,8 @@
   },
   "prettier": "@willbooster/prettier-config",
   "resolutions": {
-    "libnpmversion": "3.0.7"
+    "libnpmversion": "3.0.7",
+    "npm/chalk": "^4.1.2"
   },
   "devDependencies": {
     "@qiwi/multi-semantic-release": "6.5.1",
@@ -30,11 +31,11 @@
     "@types/jest": "29.0.0",
     "@types/micromatch": "4.0.2",
     "@types/prettier": "2.7.0",
-    "@typescript-eslint/parser": "5.36.2",
-    "@willbooster/prettier-config": "9.1.0",
-    "@willbooster/renovate-config": "9.4.0",
+    "@typescript-eslint/parser": "5.37.0",
+    "@willbooster/prettier-config": "9.1.1",
+    "@willbooster/renovate-config": "9.4.1",
     "conventional-changelog-conventionalcommits": "5.0.0",
-    "eslint": "8.23.0",
+    "eslint": "8.23.1",
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
     "micromatch": "4.0.5",
@@ -45,6 +46,6 @@
   },
   "packageManager": "yarn@4.0.0-rc.18",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   }
 }

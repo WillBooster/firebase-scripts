@@ -7,13 +7,13 @@ export async function copyDocument(
   targetDocumentPath: string
 ): Promise<void> {
   console.info(`Reading the source document '${sourceDocumentPath}'...`);
-  const doc = (await sourceAdminApp.firestore().doc(sourceDocumentPath).get()).data();
-
-  if (!doc) {
+  const docSnapshot = await sourceAdminApp.firestore().doc(sourceDocumentPath).get();
+  const docData = docSnapshot.data();
+  if (!docData) {
     console.error(`The source document '${sourceDocumentPath}' does not exist.`);
     return;
   }
 
   console.info(`Writing the target document '${targetDocumentPath}'...'`);
-  await targetAdminApp.firestore().doc(targetDocumentPath).set(doc);
+  await targetAdminApp.firestore().doc(targetDocumentPath).set(docData);
 }

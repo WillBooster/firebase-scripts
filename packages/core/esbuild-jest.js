@@ -32,6 +32,7 @@ function buildCode(filename) {
     external,
     minify: false,
     outdir: './dist',
+    platform: 'node',
     sourcemap: true,
     write: false,
   });

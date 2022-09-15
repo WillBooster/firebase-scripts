@@ -1,5 +1,5 @@
-import fs from 'fs';
-import fsp from 'fs/promises';
+import fs from 'node:fs';
+import fsp from 'node:fs/promises';
 
 import { app, firestore } from 'firebase-admin';
 
@@ -9,7 +9,7 @@ import { promisePool } from './promisePool';
 export async function importCollection(adminApp: app.App, filePath: string, collectionPath?: string): Promise<void> {
   if (!collectionPath) {
     const dotIndex = filePath.indexOf('.');
-    collectionPath = filePath.substring(0, dotIndex >= 0 ? dotIndex : undefined);
+    collectionPath = filePath.slice(0, dotIndex >= 0 ? dotIndex : undefined);
   }
 
   if (!fs.existsSync(filePath)) {

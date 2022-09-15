@@ -1,5 +1,5 @@
-import fsp from 'fs/promises';
-import { brotliCompressSync, brotliDecompressSync, gunzipSync, gzipSync } from 'zlib';
+import fsp from 'node:fs/promises';
+import { brotliCompressSync, brotliDecompressSync, gunzipSync, gzipSync } from 'node:zlib';
 
 import { firestore } from 'firebase-admin';
 

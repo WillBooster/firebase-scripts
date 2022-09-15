@@ -16,7 +16,7 @@ export const importCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
   builder,
   async handler(argv) {
     const [, ...args] = argv._;
-    if (!args.length) {
+    if (args.length === 0) {
       console.error('Please pass at least one of serialized collection files.');
       process.exit(1);
     }
@@ -26,8 +26,8 @@ export const importCommand: CommandModule<unknown, InferredOptionTypes<typeof bu
     }
 
     const adminApp = initializeAdmin();
-    for (let i = 0; i < args.length; i++) {
-      await importCollection(adminApp, args[i].toString(), argv.collection?.[i].toString());
+    for (const [i, arg] of args.entries()) {
+      await importCollection(adminApp, arg.toString(), argv.collection?.[i].toString());
     }
   },
 };
