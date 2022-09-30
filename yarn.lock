@@ -563,7 +563,7 @@ __metadata:
     eslint-plugin-unicorn: "npm:43.0.2"
     firebase: "npm:9.10.0"
     firebase-admin: "npm:11.0.1"
-    firebase-tools: "npm:11.12.0"
+    firebase-tools: "npm:11.13.0"
     jest: "npm:29.1.2"
     kill-port: "npm:2.0.1"
     lint-staged: "npm:13.0.3"
@@ -6455,9 +6455,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"firebase-tools@npm:11.12.0":
-  version: 11.12.0
-  resolution: "firebase-tools@npm:11.12.0"
+"firebase-tools@npm:11.13.0":
+  version: 11.13.0
+  resolution: "firebase-tools@npm:11.13.0"
   dependencies:
     "@google-cloud/pubsub": "npm:^3.0.1"
     abort-controller: "npm:^3.0.0"
@@ -6520,9 +6520,12 @@ __metadata:
     winston: "npm:^3.0.0"
     winston-transport: "npm:^4.4.0"
     ws: "npm:^7.2.3"
+  dependenciesMeta:
+    esbuild:
+      optional: true
   bin:
     firebase: lib/bin/firebase.js
-  checksum: 231fe20641ca72b783532d5c5550ba2979e9ace0d594746f0e9ae67c72ea5b46fa250346d651ab134f1604fd2604fa026378ee7ae17aa4ba8255f0f0e319d307
+  checksum: 98ee057c8d5b21773a2da943c1fb5d5f43cfe5a5e5f6cc5fb8bdc5a3ea81fe0c096f5fca8b1c1ae5bf9e6bce399eb59945b9a3fa1b7e32c569c0c6c1c26d6130
   languageName: node
   linkType: hard
 
