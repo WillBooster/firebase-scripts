@@ -27,16 +27,16 @@
   },
   "prettier": "@willbooster/prettier-config",
   "dependencies": {
-    "firebase-admin": "11.0.1",
-    "yargs": "17.5.1"
+    "firebase-admin": "11.1.0",
+    "yargs": "17.6.0"
   },
   "devDependencies": {
     "@types/eslint": "8.4.6",
     "@types/micromatch": "4.0.2",
     "@types/prettier": "2.7.1",
     "@types/yargs": "17.0.13",
-    "@typescript-eslint/eslint-plugin": "5.38.1",
-    "@typescript-eslint/parser": "5.38.1",
+    "@typescript-eslint/eslint-plugin": "5.39.0",
+    "@typescript-eslint/parser": "5.39.0",
     "@willbooster/eslint-config-ts": "10.0.7",
     "@willbooster/prettier-config": "9.1.1",
     "@willbooster/renovate-config": "9.4.1",
