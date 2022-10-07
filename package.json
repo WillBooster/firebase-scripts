@@ -28,10 +28,10 @@
   "devDependencies": {
     "@qiwi/multi-semantic-release": "6.5.1",
     "@types/eslint": "8.4.6",
-    "@types/jest": "29.1.1",
+    "@types/jest": "29.1.2",
     "@types/micromatch": "4.0.2",
     "@types/prettier": "2.7.1",
-    "@typescript-eslint/parser": "5.38.1",
+    "@typescript-eslint/parser": "5.39.0",
     "@willbooster/prettier-config": "9.1.1",
     "@willbooster/renovate-config": "9.4.1",
     "conventional-changelog-conventionalcommits": "5.0.0",
