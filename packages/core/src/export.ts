@@ -42,7 +42,7 @@ export async function exportCollection(
   let lastDocument: firestore.QueryDocumentSnapshot<firestore.DocumentData> | undefined;
   for (;;) {
     const query = lastDocument ? collectionRef.startAfter(lastDocument) : collectionRef;
-    const {docs} = await query.limit(batchSize).get();
+    const { docs } = await query.limit(batchSize).get();
     for (const doc of docs) {
       dataList.push({ docId: doc.id, ...doc.data() });
     }
