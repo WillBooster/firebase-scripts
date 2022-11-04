@@ -1,9 +1,10 @@
 import fsp from 'node:fs/promises';
 
-import type { app } from 'firebase-admin';
+import { App } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
 
 export async function downloadBlobToFile(
-  adminApp: app.App,
+  adminApp: App,
   documentPath: string | undefined,
   fieldPath: string | undefined,
   outputFilePath: string
@@ -24,8 +25,8 @@ export async function downloadBlobToFile(
   await fsp.writeFile(outputFilePath, field);
 }
 
-async function getField(adminApp: app.App, documentPath: string, fieldPath: string): Promise<unknown> {
-  const docSnapshot = await adminApp.firestore().doc(documentPath).get();
+async function getField(adminApp: App, documentPath: string, fieldPath: string): Promise<unknown> {
+  const docSnapshot = await getFirestore(adminApp).doc(documentPath).get();
   const docData = docSnapshot.data();
   if (!docData) {
     throw new Error(`The document "${documentPath}" does not exist.`);
