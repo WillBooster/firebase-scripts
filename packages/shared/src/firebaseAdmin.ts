@@ -1,21 +1,21 @@
-import admin from 'firebase-admin';
+import { initializeApp, App, cert, ServiceAccount } from 'firebase-admin/app';
 
 interface InitializeAdminOptions {
   name?: string;
-  serviceAccountPathOrObject?: string | admin.ServiceAccount;
+  serviceAccountPathOrObject?: string | ServiceAccount;
 }
 
-export function initializeAdmin(options?: InitializeAdminOptions): admin.app.App {
+export function initializeAdmin(options?: InitializeAdminOptions): App {
   if (
     !options?.serviceAccountPathOrObject &&
     (!process.env.FIREBASE_PROJECT_ID || !process.env.FIREBASE_PRIVATE_KEY || !process.env.FIREBASE_CLIENT_EMAIL)
   ) {
-    return admin.initializeApp(undefined, options?.name);
+    return initializeApp(undefined, options?.name);
   }
 
-  return admin.initializeApp(
+  return initializeApp(
     {
-      credential: admin.credential.cert(
+      credential: cert(
         options?.serviceAccountPathOrObject ??
           ({
             type: 'service_account',

@@ -1,7 +1,7 @@
 import path from 'node:path';
 
 import { initializeAdmin } from '@firebase-scripts/shared/src/firebaseAdmin';
-import { firestore } from 'firebase-admin';
+import { getFirestore, Timestamp } from 'firebase-admin/firestore';
 
 import { exportCollections, ExportOptions } from '../../src/export';
 import { importCollection } from '../../src/import';
@@ -19,20 +19,20 @@ function testExportAndImport(params?: ExportOptions): void {
       { id: 2, v: 2 },
     ],
     [
-      { id: 'a', date: firestore.Timestamp.fromDate(new Date(0)) },
-      { id: 'b', date: firestore.Timestamp.fromDate(new Date(1)) },
-      { id: 'c', date: firestore.Timestamp.fromDate(new Date()) },
+      { id: 'a', date: Timestamp.fromDate(new Date(0)) },
+      { id: 'b', date: Timestamp.fromDate(new Date(1)) },
+      { id: 'c', date: Timestamp.fromDate(new Date()) },
     ],
     [
-      { id: 'a', dates: { d1: firestore.Timestamp.now(), d2: firestore.Timestamp.now() } },
-      { id: 'b', d1: firestore.Timestamp.now(), d2: { date: firestore.Timestamp.now() } },
-      { id: 'c', d1: firestore.Timestamp.now(), d2: { d3: { d4: firestore.Timestamp.now() } } },
+      { id: 'a', dates: { d1: Timestamp.now(), d2: Timestamp.now() } },
+      { id: 'b', d1: Timestamp.now(), d2: { date: Timestamp.now() } },
+      { id: 'c', d1: Timestamp.now(), d2: { d3: { d4: Timestamp.now() } } },
     ],
     [{ id: 1, b1: Buffer.from([0x61]), b2: Buffer.from([0x00, 0x62, 0xff]) }],
     ...[9, 10, 11, 100].map((arraySize) => Array.from({ length: arraySize }).map((_, idx) => ({ id: idx, v: idx }))),
   ])('[%p, ... ]', async (...records: Record<string, unknown>[]) => {
-    const testCollection = adminApp.firestore().collection('test/test/test');
-    const test2Collection = adminApp.firestore().collection('test/test/test2');
+    const testCollection = getFirestore(adminApp).collection('test/test/test');
+    const test2Collection = getFirestore(adminApp).collection('test/test/test2');
     for (const record of records) {
       await testCollection.doc().set(record);
     }

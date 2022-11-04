@@ -1,7 +1,8 @@
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 
-import { app, firestore } from 'firebase-admin';
+import { App } from 'firebase-admin/app';
+import { DocumentData, getFirestore, QueryDocumentSnapshot } from 'firebase-admin/firestore';
 
 import { CompressionFormat, compressJsonText, getExtensionFromFormat, getFormatFromExtension } from './jsonCompressor';
 
@@ -13,7 +14,7 @@ export interface ExportOptions {
 }
 
 export async function exportCollections(
-  adminApp: app.App,
+  adminApp: App,
   collectionPaths: string[],
   dirPath: string,
   params?: ExportOptions
@@ -27,7 +28,7 @@ export async function exportCollections(
 }
 
 export async function exportCollection(
-  adminApp: app.App,
+  adminApp: App,
   collectionPath: string,
   filePath: string,
   params?: ExportOptions
@@ -35,11 +36,11 @@ export async function exportCollection(
   const format = params?.format ?? getFormatFromExtension(filePath);
   const batchSize = params?.batchSize ?? DEFAULT_BATCH_SIZE;
 
-  const collectionRef = adminApp.firestore().collection(collectionPath);
+  const collectionRef = getFirestore(adminApp).collection(collectionPath);
   console.info(`Reading ${collectionPath} collection ...`);
 
   const dataList: unknown[] = [];
-  let lastDocument: firestore.QueryDocumentSnapshot<firestore.DocumentData> | undefined;
+  let lastDocument: QueryDocumentSnapshot<DocumentData> | undefined;
   for (;;) {
     const query = lastDocument ? collectionRef.startAfter(lastDocument) : collectionRef;
     const { docs } = await query.limit(batchSize).get();
