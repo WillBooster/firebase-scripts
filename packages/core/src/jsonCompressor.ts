@@ -3,8 +3,8 @@ import { brotliCompressSync, brotliDecompressSync, gunzipSync, gzipSync } from '
 
 import { Timestamp } from 'firebase-admin/firestore';
 
-export type CompressionFormat = 'gzip' | 'brotil';
-const defaultFormat = 'brotil';
+export type CompressionFormat = 'gzip' | 'brotli';
+const defaultFormat = 'brotli';
 
 export async function compressJson(obj: unknown, filePath: string, format?: CompressionFormat): Promise<void> {
   return compressJsonText(JSON.stringify(obj), filePath, format);
@@ -29,12 +29,12 @@ export async function decompressJsonText(filePath: string, format?: CompressionF
 
 export function getFormatFromExtension(filePath: string): CompressionFormat | undefined {
   if (filePath.endsWith('.gz')) return 'gzip';
-  if (filePath.endsWith('.br')) return 'brotil';
+  if (filePath.endsWith('.br')) return 'brotli';
 }
 
 export function getExtensionFromFormat(format?: CompressionFormat): string | undefined {
   if (format === 'gzip') return '.gz';
-  if (format === 'brotil') return '.br';
+  if (format === 'brotli') return '.br';
 }
 
 export function reviverForJsonParse(key: string, value: any): any {

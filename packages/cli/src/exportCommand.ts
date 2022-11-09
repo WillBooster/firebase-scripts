@@ -15,7 +15,7 @@ const builder = {
   },
   format: {
     type: 'string',
-    description: 'A compression format (gzip or brotil)',
+    description: 'A compression format (gzip or brotli)',
     alias: 'f',
   },
   batchSize: {
