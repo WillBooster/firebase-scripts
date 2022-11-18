@@ -28,10 +28,10 @@
   "devDependencies": {
     "@qiwi/multi-semantic-release": "6.5.1",
     "@types/eslint": "8.4.10",
-    "@types/jest": "29.2.2",
+    "@types/jest": "29.2.3",
     "@types/micromatch": "4.0.2",
     "@types/prettier": "2.7.1",
-    "@typescript-eslint/parser": "5.42.1",
+    "@typescript-eslint/parser": "5.43.0",
     "@willbooster/prettier-config": "9.1.1",
     "@willbooster/renovate-config": "9.4.2",
     "conventional-changelog-conventionalcommits": "5.0.0",
@@ -42,9 +42,9 @@
     "pinst": "3.0.0",
     "prettier": "2.7.1",
     "sort-package-json": "2.1.0",
-    "typescript": "4.8.4"
+    "typescript": "4.9.3"
   },
-  "packageManager": "yarn@4.0.0-rc.28",
+  "packageManager": "yarn@4.0.0-rc.30",
   "engines": {
     "node": ">=16"
   }
