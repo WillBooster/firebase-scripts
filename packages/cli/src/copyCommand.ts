@@ -26,7 +26,7 @@ export const copyCommand: CommandModule<unknown, InferredOptionTypes<typeof buil
     }
 
     const source = argv._[1].toString();
-    const target = argv._[2] !== undefined ? argv._[2].toString() : source;
+    const target = argv._[2] === undefined ? source : argv._[2].toString();
 
     const srcAdminApp = initializeAdmin({
       name: 'source',

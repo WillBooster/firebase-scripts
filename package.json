@@ -22,7 +22,6 @@
   },
   "prettier": "@willbooster/prettier-config",
   "resolutions": {
-    "libnpmversion": "3.0.7",
     "npm/chalk": "^4.1.2"
   },
   "devDependencies": {
