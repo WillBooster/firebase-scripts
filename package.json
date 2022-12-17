@@ -22,7 +22,7 @@
   },
   "prettier": "@willbooster/prettier-config",
   "resolutions": {
-    "libnpmversion": "3.0.7",
+    "libnpmversion": "4.0.1",
     "npm/chalk": "^4.1.2"
   },
   "devDependencies": {
