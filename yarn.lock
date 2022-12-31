@@ -695,7 +695,7 @@ __metadata:
   dependencies:
     "@firebase/rules-unit-testing": "npm:2.0.5"
     "@types/eslint": "npm:8.4.10"
-    "@types/jest": "npm:29.2.4"
+    "@types/jest": "npm:29.2.5"
     "@types/micromatch": "npm:4.0.2"
     "@types/prettier": "npm:2.7.2"
     "@typescript-eslint/eslint-plugin": "npm:5.47.1"
@@ -2698,13 +2698,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:29.2.4":
-  version: 29.2.4
-  resolution: "@types/jest@npm:29.2.4"
+"@types/jest@npm:29.2.5":
+  version: 29.2.5
+  resolution: "@types/jest@npm:29.2.5"
   dependencies:
     expect: "npm:^29.0.0"
     pretty-format: "npm:^29.0.0"
-  checksum: f7f0f6e5d0600898548593be715f1fb8c5340aad4a1ca4d98fa7c752936b65794c7296a5106eaf5f4f98e23d79b00790d0ce6c105049c7076492e1f7b2ca1f97
+  checksum: cd392406b575acdf9d902402a59d11128e7bfbde5b78c9f3bc5e85ae43e5f2f542b067ef706a87abbf27f330d83a3807dc7c5a99ee1f2d020025d12076aba40d
   languageName: node
   linkType: hard
 
@@ -6492,7 +6492,7 @@ __metadata:
   dependencies:
     "@qiwi/multi-semantic-release": "npm:6.5.1"
     "@types/eslint": "npm:8.4.10"
-    "@types/jest": "npm:29.2.4"
+    "@types/jest": "npm:29.2.5"
     "@types/micromatch": "npm:4.0.2"
     "@types/prettier": "npm:2.7.2"
     "@typescript-eslint/parser": "npm:5.47.1"
