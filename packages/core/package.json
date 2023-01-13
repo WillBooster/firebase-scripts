@@ -44,7 +44,7 @@
     "@willbooster/prettier-config": "9.1.1",
     "@willbooster/renovate-config": "9.5.0",
     "conventional-changelog-conventionalcommits": "5.0.0",
-    "esbuild": "0.16.14",
+    "esbuild": "0.16.17",
     "esbuild-plugin-d.ts": "1.1.0",
     "eslint": "8.31.0",
     "eslint-config-prettier": "8.6.0",
@@ -67,7 +67,7 @@
   "peerDependencies": {
     "firebase-admin": ">=11"
   },
-  "packageManager": "yarn@4.0.0-rc.34",
+  "packageManager": "yarn@4.0.0-rc.35",
   "engines": {
     "node": ">=14"
   },
