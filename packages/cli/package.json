@@ -41,7 +41,7 @@
     "@willbooster/prettier-config": "9.1.1",
     "@willbooster/renovate-config": "9.5.0",
     "conventional-changelog-conventionalcommits": "5.0.0",
-    "dotenv-cli": "6.0.0",
+    "dotenv-cli": "7.0.0",
     "esbuild": "0.17.5",
     "esbuild-register": "3.4.2",
     "eslint": "8.32.0",
