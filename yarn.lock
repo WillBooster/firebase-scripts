@@ -374,7 +374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.5.5":
+"@babel/runtime@npm:7.20.13, @babel/runtime@npm:^7.5.5":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
   dependencies:
@@ -720,7 +720,7 @@ __metadata:
     kill-port: "npm:2.0.1"
     lint-staged: "npm:13.1.0"
     micromatch: "npm:4.0.5"
-    minimal-promise-pool: "npm:1.2.0"
+    minimal-promise-pool: "npm:2.1.5"
     prettier: "npm:2.8.3"
     sort-package-json: "npm:2.2.0"
     typescript: "npm:4.9.4"
@@ -9791,10 +9791,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimal-promise-pool@npm:1.2.0":
-  version: 1.2.0
-  resolution: "minimal-promise-pool@npm:1.2.0"
-  checksum: c48f0003cc4cc7734daeb5607f7d46a29bb3380c7c4091f07d577978c498be0afac00259a2e6f16288e9fbc7d610aba194d694c0e4606ef8a32f5ed350b8c05f
+"minimal-promise-pool@npm:2.1.5":
+  version: 2.1.5
+  resolution: "minimal-promise-pool@npm:2.1.5"
+  dependencies:
+    "@babel/runtime": "npm:7.20.13"
+  checksum: 95cb1884434a14de2e95eb96044154e8e0af00f7b6e00fd7baaafb6581733fa4c4959b3f8fc303122c5d3e7e25fe64fbbf988675ee57c523be4d1aff34f5aeb6
   languageName: node
   linkType: hard
 
