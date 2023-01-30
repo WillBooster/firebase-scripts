@@ -16,8 +16,9 @@
     "dist/"
   ],
   "scripts": {
-    ":start": "yarn build && dotenv -e ../../.env -- yarn firebase-scripts",
-    "build": "node esbuild.js",
+    ":start": "dotenv -e ../../.env -- build-ts run src/index.ts",
+    ":start-prod": "yarn build && dotenv -e ../../.env -- yarn firebase-scripts",
+    "build": "build-ts app",
     "cleanup": "yarn format && yarn lint-fix",
     "format": "sort-package-json && yarn prettify",
     "lint": "eslint --color \"./{scripts,src,tests}/**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}\"",
@@ -40,10 +41,9 @@
     "@willbooster/eslint-config-ts": "10.0.8",
     "@willbooster/prettier-config": "9.1.1",
     "@willbooster/renovate-config": "9.5.0",
+    "build-ts": "5.1.0",
     "conventional-changelog-conventionalcommits": "5.0.0",
     "dotenv-cli": "7.0.0",
-    "esbuild": "0.17.5",
-    "esbuild-register": "3.4.2",
     "eslint": "8.33.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-import-resolver-typescript": "3.5.3",

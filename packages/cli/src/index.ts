@@ -18,3 +18,5 @@ export async function cli(): Promise<void> {
     .demandCommand()
     .help().argv;
 }
+
+cli().then();
