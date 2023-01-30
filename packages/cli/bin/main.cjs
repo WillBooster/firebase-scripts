@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require('../dist/cli.min.cjs').cli();
+require('../dist/index.cjs');

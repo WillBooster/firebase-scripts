@@ -8,7 +8,7 @@ interface InitializeAdminOptions {
 export function initializeAdmin(options?: InitializeAdminOptions): App {
   if (
     !options?.serviceAccountPathOrObject &&
-    (!process.env.FIREBASE_PROJECT_ID || !process.env.FIREBASE_PRIVATE_KEY || !process.env.FIREBASE_CLIENT_EMAIL)
+    (!process.env.GCLOUD_PROJECT || !process.env.FIREBASE_PRIVATE_KEY || !process.env.FIREBASE_CLIENT_EMAIL)
   ) {
     return initializeApp(undefined, options?.name);
   }
@@ -19,7 +19,7 @@ export function initializeAdmin(options?: InitializeAdminOptions): App {
         options?.serviceAccountPathOrObject ??
           ({
             type: 'service_account',
-            project_id: process.env.FIREBASE_PROJECT_ID,
+            project_id: process.env.GCLOUD_PROJECT,
             private_key: process.env.FIREBASE_PRIVATE_KEY,
             client_email: process.env.FIREBASE_CLIENT_EMAIL,
           } as any)
