@@ -1,16 +1,14 @@
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 
-import { initializeAdmin } from '@firebase-scripts/shared/src/firebaseAdmin';
 import { getFirestore } from 'firebase-admin/firestore';
 import { describe, expect, test } from 'vitest';
 
 import { downloadBlobToFile } from '../../src/blob';
 import { configureFirebase } from '../shared';
 
-configureFirebase();
-
-const adminApp = initializeAdmin();
+const adminApp = configureFirebase();
+const firestore = getFirestore(adminApp);
 
 describe(
   'get-blob',
@@ -34,7 +32,7 @@ describe(
       '%s %s -o "%s" (when the document is \'%j\')',
       async (documentPath, fieldPath, outputFilePath, document, expectedBuffer) => {
         // Prepare a document for testing.
-        await getFirestore(adminApp).doc(documentPath).set(document);
+        await firestore.doc(documentPath).set(document);
 
         // Test.
         await downloadBlobToFile(adminApp, documentPath, fieldPath, outputFilePath);
@@ -62,7 +60,7 @@ describe(
     });
 
     test('when the collection does not exist', async () => {
-      await getFirestore(adminApp).doc('collection/document').set({ field: 'value' });
+      await firestore.doc('collection/document').set({ field: 'value' });
 
       await expect(() =>
         downloadBlobToFile(
@@ -75,7 +73,7 @@ describe(
     });
 
     test('when the document does not exist', async () => {
-      await getFirestore(adminApp).doc('collection/document').set({ field: 'value' });
+      await firestore.doc('collection/document').set({ field: 'value' });
 
       await expect(() =>
         downloadBlobToFile(
@@ -88,7 +86,7 @@ describe(
     });
 
     test('when the field does not exist', async () => {
-      await getFirestore(adminApp).doc('collection/document').set({ field: 'value' });
+      await firestore.doc('collection/document').set({ field: 'value' });
 
       await expect(() =>
         downloadBlobToFile(

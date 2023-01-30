@@ -23,8 +23,8 @@
     "prettify": "prettier --cache --color --write \"**/{.*/,}*.{cjs,css,cts,htm,html,js,json,json5,jsx,md,mjs,mts,scss,ts,tsx,vue,yaml,yml}\" \"!**/test-fixtures/**\"",
     "stop-firebase": "kill-port --port 8080",
     "test": "yarn test-wo-firebase && yarn test-w-firebase",
-    "test-w-firebase": "FIREBASE_PROJECT_ID=test; yarn stop-firebase && yarn test-w-firebase-core",
-    "test-w-firebase-core": "firebase emulators:exec --project $FIREBASE_PROJECT_ID \"vitest run tests/with-firebase\"",
+    "test-w-firebase": "GCLOUD_PROJECT=test; yarn stop-firebase && firebase emulators:exec \"vitest run tests/with-firebase\"",
+    "test-w-firebase-debug": "GCLOUD_PROJECT=debug; concurrently \"firebase emulators:start --only firestore --project $GCLOUD_PROJECT\" \"wait-on http://127.0.0.1:4000 && vitest tests/with-firebase\"",
     "test-wo-firebase": "vitest run tests/without-firebase",
     "typecheck": "tsc --noEmit --Pretty"
   },
@@ -42,6 +42,7 @@
     "@willbooster/eslint-config-ts": "10.0.8",
     "@willbooster/prettier-config": "9.1.1",
     "@willbooster/renovate-config": "9.5.0",
+    "concurrently": "7.6.0",
     "conventional-changelog-conventionalcommits": "5.0.0",
     "esbuild": "0.17.5",
     "esbuild-plugin-d.ts": "1.1.0",
@@ -61,7 +62,8 @@
     "prettier": "2.8.3",
     "sort-package-json": "2.2.0",
     "typescript": "4.9.4",
-    "vitest": "0.28.3"
+    "vitest": "0.28.3",
+    "wait-on": "7.0.1"
   },
   "peerDependencies": {
     "firebase-admin": ">=11"

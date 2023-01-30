@@ -1,16 +1,14 @@
 import path from 'node:path';
 
-import { initializeAdmin } from '@firebase-scripts/shared/src/firebaseAdmin';
 import { getFirestore, Timestamp } from 'firebase-admin/firestore';
 import { expect, test } from 'vitest';
 
 import { exportCollections, ExportOptions } from '../../src/export';
 import { importCollection } from '../../src/import';
-import { configureFirebase } from '../shared';
+import { configureFirebase, getEmptyCollection } from '../shared';
 
-configureFirebase();
-
-const adminApp = initializeAdmin();
+const adminApp = configureFirebase();
+const firestore = getFirestore(adminApp);
 
 function testExportAndImport(params?: ExportOptions): void {
   test.each([
@@ -31,18 +29,24 @@ function testExportAndImport(params?: ExportOptions): void {
     [{ id: 1, b1: Buffer.from([0x61]), b2: Buffer.from([0x00, 0x62, 0xff]) }],
     ...[9, 10, 11, 100].map((arraySize) => Array.from({ length: arraySize }).map((_, idx) => ({ id: idx, v: idx }))),
   ])('[%p, ... ]', async (...records: Record<string, unknown>[]) => {
-    const testCollection = getFirestore(adminApp).collection('test/test/test');
-    const test2Collection = getFirestore(adminApp).collection('test/test/test2');
+    const srcCollectionPath = 'test/test/src';
+    const destCollectionPath = 'test/test/dest';
+    const srcCollection = await getEmptyCollection(firestore, srcCollectionPath);
+    const destCollection = await getEmptyCollection(firestore, destCollectionPath);
     for (const record of records) {
-      await testCollection.doc().set(record);
+      await srcCollection.doc().set(record);
     }
 
     const dirPath = path.resolve('test-fixtures', 'temp');
-    await exportCollections(adminApp, ['test/test/test'], dirPath, params);
-    await importCollection(adminApp, path.join(dirPath, 'test-test-test.json'), 'test/test/test2');
+    await exportCollections(adminApp, [srcCollectionPath], dirPath, params);
+    await importCollection(
+      adminApp,
+      path.join(dirPath, `${srcCollectionPath.replace(/\//g, '-')}.json`),
+      destCollectionPath
+    );
 
-    const testDocs = await testCollection.listDocuments();
-    const test2Docs = await test2Collection.listDocuments();
+    const testDocs = await srcCollection.listDocuments();
+    const test2Docs = await destCollection.listDocuments();
     expect(testDocs.length).toBe(records.length);
     expect(test2Docs.length).toBe(records.length);
 
