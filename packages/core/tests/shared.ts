@@ -2,10 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { initializeTestEnvironment } from '@firebase/rules-unit-testing';
-
-export function configureJest(): void {
-  jest.setTimeout(180 * 1000);
-}
+import { beforeEach } from 'vitest';
 
 export function configureFirebase(): void {
   beforeEach(async () => {

@@ -2,12 +2,12 @@ import path from 'node:path';
 
 import { initializeAdmin } from '@firebase-scripts/shared/src/firebaseAdmin';
 import { getFirestore, Timestamp } from 'firebase-admin/firestore';
+import { expect, test } from 'vitest';
 
 import { exportCollections, ExportOptions } from '../../src/export';
 import { importCollection } from '../../src/import';
-import { configureFirebase, configureJest } from '../common';
+import { configureFirebase } from '../shared';
 
-configureJest();
 configureFirebase();
 
 const adminApp = initializeAdmin();
@@ -61,5 +61,5 @@ function testExportAndImport(params?: ExportOptions): void {
   });
 }
 
-describe('export and import a collection without options', () => testExportAndImport());
-describe('export and import a collection with options', () => testExportAndImport({ batchSize: 10 }));
+test('export and import a collection without options', () => testExportAndImport(), 180 * 1000);
+test('export and import a collection with options', () => testExportAndImport({ batchSize: 10 }), 180 * 1000);
