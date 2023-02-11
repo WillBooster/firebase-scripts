@@ -67,7 +67,7 @@
   "peerDependencies": {
     "firebase-admin": ">=11"
   },
-  "packageManager": "yarn@4.0.0-rc.37",
+  "packageManager": "yarn@4.0.0-rc.39",
   "engines": {
     "node": ">=14"
   },
