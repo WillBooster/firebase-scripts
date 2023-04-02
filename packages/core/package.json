@@ -43,7 +43,7 @@
     "@willbooster/prettier-config": "9.1.1",
     "@willbooster/renovate-config": "9.5.0",
     "build-ts": "5.7.7",
-    "concurrently": "7.6.0",
+    "concurrently": "8.0.1",
     "conventional-changelog-conventionalcommits": "5.0.0",
     "eslint": "8.37.0",
     "eslint-config-prettier": "8.8.0",
