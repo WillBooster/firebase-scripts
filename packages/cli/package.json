@@ -41,7 +41,7 @@
     "@willbooster/eslint-config-ts": "10.1.0",
     "@willbooster/prettier-config": "9.1.1",
     "@willbooster/renovate-config": "9.5.0",
-    "build-ts": "5.7.7",
+    "build-ts": "5.7.8",
     "conventional-changelog-conventionalcommits": "5.0.0",
     "dotenv-cli": "7.2.1",
     "eslint": "8.38.0",
