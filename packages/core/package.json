@@ -58,7 +58,7 @@
     "kill-port": "2.0.1",
     "lint-staged": "13.2.1",
     "micromatch": "4.0.5",
-    "prettier": "2.8.7",
+    "prettier": "2.8.8",
     "sort-package-json": "2.4.1",
     "typescript": "5.0.4",
     "vitest": "0.30.1",
