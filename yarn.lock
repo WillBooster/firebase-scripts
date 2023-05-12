@@ -1719,7 +1719,7 @@ __metadata:
     eslint-plugin-unicorn: "npm:46.0.1"
     firebase: "npm:9.22.0"
     firebase-admin: "npm:11.8.0"
-    firebase-tools: "npm:11.30.0"
+    firebase-tools: "npm:12.0.0"
     kill-port: "npm:2.0.1"
     lint-staged: "npm:13.2.2"
     micromatch: "npm:4.0.5"
@@ -7266,9 +7266,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"firebase-tools@npm:11.30.0":
-  version: 11.30.0
-  resolution: "firebase-tools@npm:11.30.0"
+"firebase-tools@npm:12.0.0":
+  version: 12.0.0
+  resolution: "firebase-tools@npm:12.0.0"
   dependencies:
     "@google-cloud/pubsub": "npm:^3.0.1"
     abort-controller: "npm:^3.0.0"
@@ -7332,7 +7332,7 @@ __metadata:
     ws: "npm:^7.2.3"
   bin:
     firebase: lib/bin/firebase.js
-  checksum: a7f12748bc3d19bf3a585e28e8d6f11346a311755acbb9f79ab353a90df51b6dbd629fbbf11e6727ee41eda4a806e46000512b6e40074a5b93ae74868b0311cf
+  checksum: 190d47c64b35af8566832ab7818e3a338feac7ad6749c82f665a47392f86d8dd5af35ad9535bc1f3cc35eb82c359a895086bfcdf08b875de3e2c6a58e2245a2c
   languageName: node
   linkType: hard
 
