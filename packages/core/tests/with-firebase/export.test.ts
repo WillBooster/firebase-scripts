@@ -41,7 +41,7 @@ function testExportAndImport(params?: ExportOptions): void {
     await exportCollections(adminApp, [srcCollectionPath], dirPath, params);
     await importCollection(
       adminApp,
-      path.join(dirPath, `${srcCollectionPath.replace(/\//g, '-')}.json`),
+      path.join(dirPath, `${srcCollectionPath.replaceAll('/', '-')}.json`),
       destCollectionPath
     );
 
