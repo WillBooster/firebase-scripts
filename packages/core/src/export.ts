@@ -21,7 +21,7 @@ export async function exportCollections(
 ): Promise<void> {
   const extension = getExtensionFromFormat(params?.format) ?? '';
   for (const collectionPath of collectionPaths) {
-    const normalizedCollectionPath = collectionPath.replace(/\//g, '-');
+    const normalizedCollectionPath = collectionPath.replaceAll('/', '-');
     const filePath = path.join(dirPath, `${normalizedCollectionPath}.json${extension}`);
     await exportCollection(adminApp, collectionPath, filePath, params);
   }
@@ -51,7 +51,7 @@ export async function exportCollection(
     if (docs.length < batchSize) {
       break;
     }
-    lastDocument = docs[docs.length - 1];
+    lastDocument = docs.at(-1);
   }
   console.info(`Read ${dataList.length} documents ...`);
 
