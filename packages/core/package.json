@@ -42,10 +42,10 @@
     "@willbooster/eslint-config-ts": "10.1.0",
     "@willbooster/prettier-config": "9.1.1",
     "@willbooster/renovate-config": "9.5.0",
-    "build-ts": "5.7.14",
+    "build-ts": "5.8.0",
     "concurrently": "8.0.1",
     "conventional-changelog-conventionalcommits": "5.0.0",
-    "eslint": "8.40.0",
+    "eslint": "8.41.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-import-resolver-typescript": "3.5.5",
     "eslint-plugin-import": "2.27.5",
@@ -54,20 +54,20 @@
     "eslint-plugin-unicorn": "47.0.0",
     "firebase": "9.22.0",
     "firebase-admin": "11.8.0",
-    "firebase-tools": "12.0.0",
+    "firebase-tools": "12.1.0",
     "kill-port": "2.0.1",
     "lint-staged": "13.2.2",
     "micromatch": "4.0.5",
     "prettier": "2.8.8",
     "sort-package-json": "2.4.1",
     "typescript": "5.0.4",
-    "vitest": "0.31.0",
+    "vitest": "0.31.1",
     "wait-on": "7.0.1"
   },
   "peerDependencies": {
     "firebase-admin": ">=11"
   },
-  "packageManager": "yarn@4.0.0-rc.43",
+  "packageManager": "yarn@4.0.0-rc.44",
   "engines": {
     "node": ">=16"
   },
