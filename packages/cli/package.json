@@ -32,7 +32,7 @@
     "yargs": "17.7.2"
   },
   "devDependencies": {
-    "@types/eslint": "8.37.0",
+    "@types/eslint": "8.40.0",
     "@types/micromatch": "4.0.2",
     "@types/prettier": "2.7.2",
     "@types/yargs": "17.0.24",
