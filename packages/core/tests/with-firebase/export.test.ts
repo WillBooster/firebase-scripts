@@ -3,7 +3,8 @@ import path from 'node:path';
 import { getFirestore, Timestamp } from 'firebase-admin/firestore';
 import { expect, test } from 'vitest';
 
-import { exportCollections, ExportOptions } from '../../src/export';
+import type { ExportOptions } from '../../src/export';
+import { exportCollections } from '../../src/export';
 import { importCollection } from '../../src/import';
 import { configureFirebase, getEmptyCollection } from '../shared';
 

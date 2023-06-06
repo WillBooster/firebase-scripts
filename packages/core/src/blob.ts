@@ -1,6 +1,6 @@
 import fsp from 'node:fs/promises';
 
-import { App } from 'firebase-admin/app';
+import type { App } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 
 export async function downloadBlobToFile(

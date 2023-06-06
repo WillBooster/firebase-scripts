@@ -1,4 +1,5 @@
-import { initializeApp, App, cert, ServiceAccount } from 'firebase-admin/app';
+import type { App, ServiceAccount } from 'firebase-admin/app';
+import { initializeApp, cert } from 'firebase-admin/app';
 
 interface InitializeAdminOptions {
   name?: string;

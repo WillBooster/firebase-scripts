@@ -1,10 +1,12 @@
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 
-import { App } from 'firebase-admin/app';
-import { DocumentData, getFirestore, QueryDocumentSnapshot } from 'firebase-admin/firestore';
+import type { App } from 'firebase-admin/app';
+import type { DocumentData, QueryDocumentSnapshot } from 'firebase-admin/firestore';
+import { getFirestore } from 'firebase-admin/firestore';
 
-import { CompressionFormat, compressJsonText, getExtensionFromFormat, getFormatFromExtension } from './jsonCompressor';
+import type { CompressionFormat} from './jsonCompressor';
+import { compressJsonText, getExtensionFromFormat, getFormatFromExtension } from './jsonCompressor';
 
 export const DEFAULT_BATCH_SIZE = 1000;
 

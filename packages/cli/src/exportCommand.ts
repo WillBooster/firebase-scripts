@@ -1,7 +1,7 @@
 import path from 'node:path';
 
 import { exportCollections } from '@firebase-scripts/core/src';
-import { CompressionFormat } from '@firebase-scripts/core/src/jsonCompressor';
+import type { CompressionFormat } from '@firebase-scripts/core/src/jsonCompressor';
 import { initializeAdmin } from '@firebase-scripts/shared/src/firebaseAdmin';
 import type { CommandModule, InferredOptionTypes } from 'yargs';
 
