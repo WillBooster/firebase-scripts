@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import fsp from 'node:fs/promises';
 
 import type { App } from 'firebase-admin/app';
-import type { CollectionReference} from 'firebase-admin/firestore';
+import type { CollectionReference } from 'firebase-admin/firestore';
 import { getFirestore, Timestamp } from 'firebase-admin/firestore';
 
 import { decompressJsonText, getFormatFromExtension, reviverForJsonParse } from './jsonCompressor';
