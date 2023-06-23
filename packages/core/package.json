@@ -52,7 +52,7 @@
     "eslint-plugin-sort-class-members": "1.18.0",
     "eslint-plugin-sort-destructure-keys": "1.5.0",
     "eslint-plugin-unicorn": "47.0.0",
-    "firebase": "9.22.2",
+    "firebase": "9.23.0",
     "firebase-admin": "11.9.0",
     "firebase-tools": "12.4.0",
     "kill-port": "2.0.1",
@@ -67,7 +67,7 @@
   "peerDependencies": {
     "firebase-admin": ">=11"
   },
-  "packageManager": "yarn@4.0.0-rc.45",
+  "packageManager": "yarn@4.0.0-rc.46",
   "engines": {
     "node": ">=16"
   },
