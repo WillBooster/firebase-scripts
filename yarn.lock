@@ -7784,14 +7784,14 @@ __metadata:
   linkType: hard
 
 "gaxios@npm:^5.0.0, gaxios@npm:^5.0.1":
-  version: 5.1.1
-  resolution: "gaxios@npm:5.1.1"
+  version: 5.1.2
+  resolution: "gaxios@npm:5.1.2"
   dependencies:
     extend: "npm:^3.0.2"
     https-proxy-agent: "npm:^5.0.0"
     is-stream: "npm:^2.0.0"
     node-fetch: "npm:^2.6.9"
-  checksum: b4804a2459346bb54961d4b15875cc81eed0ac3bb95e7e54997f9b3539e534e0754aeb09b384134b791f6252a2feb8fb84ad8edf0e273dad8da85b2957ca7892
+  checksum: c04b6f85fc9d4931626bdbc2210110853b8f4b475040332e925f191b300d0c0ea5dbfa5bd564bb833ca8224e0ea87aeb59b6c98e0412de1f37ff2016b94794cb
   languageName: node
   linkType: hard
 
