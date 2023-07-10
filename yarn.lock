@@ -12298,13 +12298,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"q@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "q@npm:1.5.1"
-  checksum: 70c4a30b300277165cd855889cd3aa681929840a5940413297645c5691e00a3549a2a4153131efdf43fe8277ee8cf5a34c9636dcb649d83ad47f311a015fd380
-  languageName: node
-  linkType: hard
-
 "qrcode-terminal@npm:^0.12.0":
   version: 0.12.0
   resolution: "qrcode-terminal@npm:0.12.0"
