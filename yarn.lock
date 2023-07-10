@@ -1781,7 +1781,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@firebase-scripts/core@workspace:packages/core"
   dependencies:
-    "@firebase/rules-unit-testing": "npm:2.0.7"
+    "@firebase/rules-unit-testing": "npm:3.0.0"
     "@types/eslint": "npm:8.40.2"
     "@types/micromatch": "npm:4.0.2"
     "@types/prettier": "npm:2.7.3"
@@ -2337,14 +2337,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@firebase/rules-unit-testing@npm:2.0.7":
-  version: 2.0.7
-  resolution: "@firebase/rules-unit-testing@npm:2.0.7"
+"@firebase/rules-unit-testing@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@firebase/rules-unit-testing@npm:3.0.0"
   dependencies:
     node-fetch: "npm:2.6.7"
   peerDependencies:
-    firebase: ^9.0.0
-  checksum: 6d00003927ff2340044fe613864804ba0870648fd96f09df22f5af1da98728bd502c4c5fe361c5228e53ebbeed9a1483ede9bfe463ebb9d4ec87e325cf7c6885
+    firebase: ^10.0.0
+  checksum: 08cf0080b9899a145eb806b63f17da4d7f34347fd7b9eaf1354a999664027eb78ae922641367aff9c28b367832b30a95d60c6249e7317c0e52a994ea554b248f
   languageName: node
   linkType: hard
 
