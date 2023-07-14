@@ -30,7 +30,7 @@
   },
   "prettier": "@willbooster/prettier-config",
   "dependencies": {
-    "minimal-promise-pool": "2.1.13"
+    "minimal-promise-pool": "3.0.1"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "3.0.0",
