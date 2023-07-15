@@ -303,7 +303,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-validator-identifier@npm:^7.19.1, @babel/helper-validator-identifier@npm:^7.22.5":
+"@babel/helper-validator-identifier@npm:^7.22.5":
   version: 7.22.5
   resolution: "@babel/helper-validator-identifier@npm:7.22.5"
   checksum: 2ff1d3833154d17ccf773b8a71fdc0cd0e7356aa8033179d0e3133787dfb33d97796cbff8b92a97c56268205337dfc720227aeddc677c1bc08ae1b67a95252d7
@@ -1745,7 +1745,6 @@ __metadata:
     "@typescript-eslint/parser": "npm:6.0.0"
     "@willbooster/eslint-config-ts": "npm:10.3.0"
     "@willbooster/prettier-config": "npm:9.1.1"
-    "@willbooster/renovate-config": "npm:9.5.0"
     build-ts: "npm:5.10.5"
     conventional-changelog-conventionalcommits: "npm:6.1.0"
     dotenv-cli: "npm:7.2.1"
@@ -1755,7 +1754,7 @@ __metadata:
     eslint-plugin-import: "npm:2.27.5"
     eslint-plugin-sort-class-members: "npm:1.18.0"
     eslint-plugin-sort-destructure-keys: "npm:1.5.0"
-    eslint-plugin-unicorn: "npm:47.0.0"
+    eslint-plugin-unicorn: "npm:48.0.0"
     firebase-admin: "npm:11.10.1"
     lint-staged: "npm:13.2.3"
     micromatch: "npm:4.0.5"
@@ -1780,7 +1779,6 @@ __metadata:
     "@typescript-eslint/parser": "npm:6.0.0"
     "@willbooster/eslint-config-ts": "npm:10.3.0"
     "@willbooster/prettier-config": "npm:9.1.1"
-    "@willbooster/renovate-config": "npm:9.5.0"
     build-ts: "npm:5.10.5"
     concurrently: "npm:8.2.0"
     conventional-changelog-conventionalcommits: "npm:6.1.0"
@@ -1790,7 +1788,7 @@ __metadata:
     eslint-plugin-import: "npm:2.27.5"
     eslint-plugin-sort-class-members: "npm:1.18.0"
     eslint-plugin-sort-destructure-keys: "npm:1.5.0"
-    eslint-plugin-unicorn: "npm:47.0.0"
+    eslint-plugin-unicorn: "npm:48.0.0"
     firebase: "npm:10.0.0"
     firebase-admin: "npm:11.10.1"
     firebase-tools: "npm:12.4.4"
@@ -1819,7 +1817,6 @@ __metadata:
     "@typescript-eslint/parser": "npm:6.0.0"
     "@willbooster/eslint-config-ts": "npm:10.3.0"
     "@willbooster/prettier-config": "npm:9.1.1"
-    "@willbooster/renovate-config": "npm:9.5.0"
     conventional-changelog-conventionalcommits: "npm:6.1.0"
     eslint: "npm:8.45.0"
     eslint-config-prettier: "npm:8.8.0"
@@ -1827,7 +1824,7 @@ __metadata:
     eslint-plugin-import: "npm:2.27.5"
     eslint-plugin-sort-class-members: "npm:1.18.0"
     eslint-plugin-sort-destructure-keys: "npm:1.5.0"
-    eslint-plugin-unicorn: "npm:47.0.0"
+    eslint-plugin-unicorn: "npm:48.0.0"
     firebase-admin: "npm:11.10.1"
     lint-staged: "npm:13.2.3"
     micromatch: "npm:4.0.5"
@@ -4131,13 +4128,6 @@ __metadata:
   peerDependencies:
     prettier: ">=2"
   checksum: 28e8237e9c7d180e723ea10e7a9710c318320b8fada694d6b15d8baa867339f4236f28e6c5254fc12a3725264e399ca7e3e43b94b043eff608c262693d8aab42
-  languageName: node
-  linkType: hard
-
-"@willbooster/renovate-config@npm:9.5.0":
-  version: 9.5.0
-  resolution: "@willbooster/renovate-config@npm:9.5.0"
-  checksum: 65a02680709a698579edaa4fa899b674d0a46b6c80ee73c6b9d68e0c19d1a76d1a23aa34b5e42736791b725bc94cb0a8e7a214ae9882d43f11124046fbcf0842
   languageName: node
   linkType: hard
 
@@ -6848,11 +6838,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-unicorn@npm:47.0.0":
-  version: 47.0.0
-  resolution: "eslint-plugin-unicorn@npm:47.0.0"
+"eslint-plugin-unicorn@npm:48.0.0":
+  version: 48.0.0
+  resolution: "eslint-plugin-unicorn@npm:48.0.0"
   dependencies:
-    "@babel/helper-validator-identifier": "npm:^7.19.1"
+    "@babel/helper-validator-identifier": "npm:^7.22.5"
     "@eslint-community/eslint-utils": "npm:^4.4.0"
     ci-info: "npm:^3.8.0"
     clean-regexp: "npm:^1.0.0"
@@ -6863,14 +6853,13 @@ __metadata:
     lodash: "npm:^4.17.21"
     pluralize: "npm:^8.0.0"
     read-pkg-up: "npm:^7.0.1"
-    regexp-tree: "npm:^0.1.24"
+    regexp-tree: "npm:^0.1.27"
     regjsparser: "npm:^0.10.0"
-    safe-regex: "npm:^2.1.1"
-    semver: "npm:^7.3.8"
+    semver: "npm:^7.5.4"
     strip-indent: "npm:^3.0.0"
   peerDependencies:
-    eslint: ">=8.38.0"
-  checksum: d84db2e94e4544137c9aad0820cc2bdbf6a19681a697dffa6f76cce1107ecb01ed8bc1abcdfa0d5c3c35d9fc00b2e9e8126eeac004cf0c9e0e888137cf93f352
+    eslint: ">=8.44.0"
+  checksum: 7c6cd7e39864150973da6cdf50a90d9183d95674ffe6eb52d042623c51714fe237838b00eb3ecf2ba78846f767bf22706e0c0e31f59fa57028fb3e6d3b88a04f
   languageName: node
   linkType: hard
 
@@ -7449,7 +7438,6 @@ __metadata:
     "@types/prettier": "npm:2.7.3"
     "@typescript-eslint/parser": "npm:6.0.0"
     "@willbooster/prettier-config": "npm:9.1.1"
-    "@willbooster/renovate-config": "npm:9.5.0"
     conventional-changelog-conventionalcommits: "npm:6.1.0"
     eslint: "npm:8.45.0"
     husky: "npm:8.0.3"
@@ -12610,7 +12598,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regexp-tree@npm:^0.1.24, regexp-tree@npm:~0.1.1":
+"regexp-tree@npm:^0.1.27":
   version: 0.1.27
   resolution: "regexp-tree@npm:0.1.27"
   bin:
@@ -13013,15 +13001,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safe-regex@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "safe-regex@npm:2.1.1"
-  dependencies:
-    regexp-tree: "npm:~0.1.1"
-  checksum: 53eb5d3ecf4b3c0954dff465eb179af4d2f5f77f74ba7b57489adbc4fa44454c3d391f37379cd28722d9ac6fa5b70be3f4645d4bd25df395fd99b934f6ec9265
-  languageName: node
-  linkType: hard
-
 "safe-stable-stringify@npm:^2.3.1":
   version: 2.4.3
   resolution: "safe-stable-stringify@npm:2.4.3"
@@ -13117,7 +13096,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.1.2, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.0, semver@npm:^7.5.2, semver@npm:^7.5.3":
+"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.1.2, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.0, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
