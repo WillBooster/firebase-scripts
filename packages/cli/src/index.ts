@@ -19,4 +19,5 @@ export async function cli(): Promise<void> {
     .help().argv;
 }
 
+// eslint-disable-next-line unicorn/prefer-top-level-await
 cli().then();

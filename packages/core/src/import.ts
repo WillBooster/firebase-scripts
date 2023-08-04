@@ -35,6 +35,7 @@ export async function importCollection(adminApp: App, filePath: string, collecti
 }
 
 export async function restoreCollection(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   records: Record<string, any>[],
   collection: CollectionReference
 ): Promise<number> {
@@ -57,10 +58,12 @@ export async function restoreCollection(
   return count;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function convertObjectToTimestamp(record: Record<string, any>): boolean {
   let modified = false;
   for (const [key, value] of Object.entries(record)) {
     if (value && typeof value === 'object' && !(value instanceof Timestamp)) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const { _nanoseconds, _seconds } = value as any;
       if (Object.keys(value).length === 2 && typeof _seconds === 'number' && typeof _nanoseconds === 'number') {
         record[key] = new Timestamp(_seconds, _nanoseconds);

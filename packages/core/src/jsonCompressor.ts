@@ -37,6 +37,7 @@ export function getExtensionFromFormat(format?: CompressionFormat): string | und
   if (format === 'brotli') return '.br';
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function reviverForJsonParse(key: string, value: any): any {
   if (!value) return value;
   if (value.type === 'Buffer') return Buffer.from(value);

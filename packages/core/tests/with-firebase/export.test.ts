@@ -51,14 +51,17 @@ function testExportAndImport(params?: ExportOptions): void {
     expect(testDocs.length).toBe(records.length);
     expect(test2Docs.length).toBe(records.length);
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const recordDataList = [...records].sort((a: any, b: any) => a.id.toString().localeCompare(b.id.toString()));
     const testDocSnapshots = await Promise.all(testDocs.map((d) => d.get()));
     const testDataList = testDocSnapshots
       .map((s) => s.data())
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .sort((a: any, b: any) => a.id.toString().localeCompare(b.id.toString()));
     const test2DocSnapshots = await Promise.all(test2Docs.map((d) => d.get()));
     const test2DataList = test2DocSnapshots
       .map((s) => s.data())
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .sort((a: any, b: any) => a.id.toString().localeCompare(b.id.toString()));
     expect(testDataList).toEqual(recordDataList);
     expect(test2DataList).toEqual(recordDataList);
