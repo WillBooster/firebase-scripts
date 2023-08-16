@@ -36,7 +36,7 @@
     "eslint-plugin-unicorn": "48.0.1",
     "lint-staged": "14.0.0",
     "micromatch": "4.0.5",
-    "prettier": "3.0.1",
+    "prettier": "3.0.2",
     "sort-package-json": "2.5.1",
     "typescript": "5.1.6"
   },
