@@ -1743,7 +1743,6 @@ __metadata:
   dependencies:
     "@types/eslint": "npm:8.44.2"
     "@types/micromatch": "npm:4.0.2"
-    "@types/prettier": "npm:2.7.3"
     "@types/yargs": "npm:17.0.24"
     "@typescript-eslint/eslint-plugin": "npm:6.4.0"
     "@typescript-eslint/parser": "npm:6.4.0"
@@ -1755,12 +1754,12 @@ __metadata:
     eslint: "npm:8.47.0"
     eslint-config-prettier: "npm:9.0.0"
     eslint-import-resolver-typescript: "npm:3.6.0"
-    eslint-plugin-import: "npm:2.28.0"
+    eslint-plugin-import: "npm:2.28.1"
     eslint-plugin-sort-class-members: "npm:1.18.0"
     eslint-plugin-sort-destructure-keys: "npm:1.5.0"
     eslint-plugin-unicorn: "npm:48.0.1"
     firebase-admin: "npm:11.10.1"
-    lint-staged: "npm:14.0.0"
+    lint-staged: "npm:14.0.1"
     micromatch: "npm:4.0.5"
     prettier: "npm:3.0.2"
     sort-package-json: "npm:2.5.1"
@@ -1778,7 +1777,6 @@ __metadata:
     "@firebase/rules-unit-testing": "npm:3.0.0"
     "@types/eslint": "npm:8.44.2"
     "@types/micromatch": "npm:4.0.2"
-    "@types/prettier": "npm:2.7.3"
     "@typescript-eslint/eslint-plugin": "npm:6.4.0"
     "@typescript-eslint/parser": "npm:6.4.0"
     "@willbooster/eslint-config-ts": "npm:10.4.0"
@@ -1789,7 +1787,7 @@ __metadata:
     eslint: "npm:8.47.0"
     eslint-config-prettier: "npm:9.0.0"
     eslint-import-resolver-typescript: "npm:3.6.0"
-    eslint-plugin-import: "npm:2.28.0"
+    eslint-plugin-import: "npm:2.28.1"
     eslint-plugin-sort-class-members: "npm:1.18.0"
     eslint-plugin-sort-destructure-keys: "npm:1.5.0"
     eslint-plugin-unicorn: "npm:48.0.1"
@@ -1797,7 +1795,7 @@ __metadata:
     firebase-admin: "npm:11.10.1"
     firebase-tools: "npm:12.4.7"
     kill-port: "npm:2.0.1"
-    lint-staged: "npm:14.0.0"
+    lint-staged: "npm:14.0.1"
     micromatch: "npm:4.0.5"
     minimal-promise-pool: "npm:3.0.1"
     prettier: "npm:3.0.2"
@@ -1816,7 +1814,6 @@ __metadata:
   dependencies:
     "@types/eslint": "npm:8.44.2"
     "@types/micromatch": "npm:4.0.2"
-    "@types/prettier": "npm:2.7.3"
     "@typescript-eslint/eslint-plugin": "npm:6.4.0"
     "@typescript-eslint/parser": "npm:6.4.0"
     "@willbooster/eslint-config-ts": "npm:10.4.0"
@@ -1825,12 +1822,12 @@ __metadata:
     eslint: "npm:8.47.0"
     eslint-config-prettier: "npm:9.0.0"
     eslint-import-resolver-typescript: "npm:3.6.0"
-    eslint-plugin-import: "npm:2.28.0"
+    eslint-plugin-import: "npm:2.28.1"
     eslint-plugin-sort-class-members: "npm:1.18.0"
     eslint-plugin-sort-destructure-keys: "npm:1.5.0"
     eslint-plugin-unicorn: "npm:48.0.1"
     firebase-admin: "npm:11.10.1"
-    lint-staged: "npm:14.0.0"
+    lint-staged: "npm:14.0.1"
     micromatch: "npm:4.0.5"
     prettier: "npm:3.0.2"
     sort-package-json: "npm:2.5.1"
@@ -3785,13 +3782,6 @@ __metadata:
   version: 0.11.1
   resolution: "@types/object-path@npm:0.11.1"
   checksum: 03369975bf5ae34d8414beb53d464b1ec7338136d89f2b72e03d897044edd4abb6080418636961da7e5e1ee06fddc834a2099c39d582d2949ac3bea7aab99544
-  languageName: node
-  linkType: hard
-
-"@types/prettier@npm:2.7.3":
-  version: 2.7.3
-  resolution: "@types/prettier@npm:2.7.3"
-  checksum: 0960b5c1115bb25e979009d0b44c42cf3d792accf24085e4bfce15aef5794ea042e04e70c2139a2c3387f781f18c89b5706f000ddb089e9a4a2ccb7536a2c5f0
   languageName: node
   linkType: hard
 
@@ -6727,9 +6717,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:2.28.0":
-  version: 2.28.0
-  resolution: "eslint-plugin-import@npm:2.28.0"
+"eslint-plugin-import@npm:2.28.1":
+  version: 2.28.1
+  resolution: "eslint-plugin-import@npm:2.28.1"
   dependencies:
     array-includes: "npm:^3.1.6"
     array.prototype.findlastindex: "npm:^1.2.2"
@@ -6740,18 +6730,17 @@ __metadata:
     eslint-import-resolver-node: "npm:^0.3.7"
     eslint-module-utils: "npm:^2.8.0"
     has: "npm:^1.0.3"
-    is-core-module: "npm:^2.12.1"
+    is-core-module: "npm:^2.13.0"
     is-glob: "npm:^4.0.3"
     minimatch: "npm:^3.1.2"
     object.fromentries: "npm:^2.0.6"
     object.groupby: "npm:^1.0.0"
     object.values: "npm:^1.1.6"
-    resolve: "npm:^1.22.3"
     semver: "npm:^6.3.1"
     tsconfig-paths: "npm:^3.14.2"
   peerDependencies:
     eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
-  checksum: 0d7b978a3c4778b68bede2c8a14512e33581091bd8a508c4a424d2e8bff1f174549ffc3f2b7cfb28345cfb63061d3e43fdaa810ebfe9c96b5a4a1dc4047f6e9d
+  checksum: 5a29554d56f26d2bfb4d4f20b99aad6664c64812ef9655d5b3f089bbf70f340a34dabbe0b8ffa38bd9f1eabf828200acc5a56634842ddb83dd1e4ba01ad6d38d
   languageName: node
   linkType: hard
 
@@ -7373,13 +7362,12 @@ __metadata:
     "@qiwi/multi-semantic-release": "npm:7.0.0"
     "@types/eslint": "npm:8.44.2"
     "@types/micromatch": "npm:4.0.2"
-    "@types/prettier": "npm:2.7.3"
     "@typescript-eslint/parser": "npm:6.4.0"
     "@willbooster/prettier-config": "npm:9.1.1"
     conventional-changelog-conventionalcommits: "npm:6.1.0"
     eslint: "npm:8.47.0"
     husky: "npm:8.0.3"
-    lint-staged: "npm:14.0.0"
+    lint-staged: "npm:14.0.1"
     micromatch: "npm:4.0.5"
     pinst: "npm:3.0.0"
     prettier: "npm:3.0.2"
@@ -8802,7 +8790,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.11.0, is-core-module@npm:^2.12.1, is-core-module@npm:^2.13.0, is-core-module@npm:^2.5.0, is-core-module@npm:^2.8.1":
+"is-core-module@npm:^2.11.0, is-core-module@npm:^2.13.0, is-core-module@npm:^2.5.0, is-core-module@npm:^2.8.1":
   version: 2.13.0
   resolution: "is-core-module@npm:2.13.0"
   dependencies:
@@ -9821,9 +9809,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:14.0.0":
-  version: 14.0.0
-  resolution: "lint-staged@npm:14.0.0"
+"lint-staged@npm:14.0.1":
+  version: 14.0.1
+  resolution: "lint-staged@npm:14.0.1"
   dependencies:
     chalk: "npm:5.3.0"
     commander: "npm:11.0.0"
@@ -9837,7 +9825,7 @@ __metadata:
     yaml: "npm:2.3.1"
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 9eea0969aede13eaa4cc58a8cad3f6ab4c2bb3725a244e3dda84fb56073d03f8f5a053132157c86017bd8e76d6f13788277b910e297f9481d8d3a00167c4c63b
+  checksum: 57291d036123168998cb248ca70974b835edb231dbe0dc395cef44a4073a2c2404215e9cae8657ce562a559fc30cdaa4c20775dff6e8d2aa519243cc8bc294f4
   languageName: node
   linkType: hard
 
@@ -12554,7 +12542,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.10.0, resolve@npm:^1.14.2, resolve@npm:^1.22.1, resolve@npm:^1.22.3, resolve@npm:^1.22.4":
+"resolve@npm:^1.10.0, resolve@npm:^1.14.2, resolve@npm:^1.22.1, resolve@npm:^1.22.4":
   version: 1.22.4
   resolution: "resolve@npm:1.22.4"
   dependencies:
@@ -12567,7 +12555,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^1.10.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.3#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.4#optional!builtin<compat/resolve>":
+"resolve@patch:resolve@npm%3A^1.10.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.4#optional!builtin<compat/resolve>":
   version: 1.22.4
   resolution: "resolve@patch:resolve@npm%3A1.22.4#optional!builtin<compat/resolve>::version=1.22.4&hash=c3c19d"
   dependencies:
