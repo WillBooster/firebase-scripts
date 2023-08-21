@@ -30,17 +30,17 @@
   },
   "prettier": "@willbooster/prettier-config",
   "dependencies": {
-    "minimal-promise-pool": "3.0.1"
+    "minimal-promise-pool": "3.0.2"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "3.0.0",
     "@types/eslint": "8.44.2",
     "@types/micromatch": "4.0.2",
-    "@typescript-eslint/eslint-plugin": "6.4.0",
-    "@typescript-eslint/parser": "6.4.0",
+    "@typescript-eslint/eslint-plugin": "6.4.1",
+    "@typescript-eslint/parser": "6.4.1",
     "@willbooster/eslint-config-ts": "10.4.0",
     "@willbooster/prettier-config": "9.1.1",
-    "build-ts": "8.2.0",
+    "build-ts": "8.2.2",
     "concurrently": "8.2.0",
     "conventional-changelog-conventionalcommits": "6.1.0",
     "eslint": "8.47.0",
@@ -50,22 +50,22 @@
     "eslint-plugin-sort-class-members": "1.18.0",
     "eslint-plugin-sort-destructure-keys": "1.5.0",
     "eslint-plugin-unicorn": "48.0.1",
-    "firebase": "10.1.0",
+    "firebase": "10.2.0",
     "firebase-admin": "11.10.1",
-    "firebase-tools": "12.4.7",
+    "firebase-tools": "12.4.8",
     "kill-port": "2.0.1",
     "lint-staged": "14.0.1",
     "micromatch": "4.0.5",
     "prettier": "3.0.2",
     "sort-package-json": "2.5.1",
     "typescript": "5.1.6",
-    "vitest": "0.34.1",
+    "vitest": "0.34.2",
     "wait-on": "7.0.1"
   },
   "peerDependencies": {
     "firebase-admin": ">=11"
   },
-  "packageManager": "yarn@4.0.0-rc.48",
+  "packageManager": "yarn@4.0.0-rc.49",
   "engines": {
     "node": ">=16"
   },
