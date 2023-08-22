@@ -1723,7 +1723,7 @@ __metadata:
     "@types/yargs": "npm:17.0.24"
     "@typescript-eslint/eslint-plugin": "npm:6.4.1"
     "@typescript-eslint/parser": "npm:6.4.1"
-    "@willbooster/eslint-config-ts": "npm:10.4.0"
+    "@willbooster/eslint-config-ts": "npm:10.5.0"
     "@willbooster/prettier-config": "npm:9.1.1"
     build-ts: "npm:8.2.2"
     conventional-changelog-conventionalcommits: "npm:6.1.0"
@@ -1756,7 +1756,7 @@ __metadata:
     "@types/micromatch": "npm:4.0.2"
     "@typescript-eslint/eslint-plugin": "npm:6.4.1"
     "@typescript-eslint/parser": "npm:6.4.1"
-    "@willbooster/eslint-config-ts": "npm:10.4.0"
+    "@willbooster/eslint-config-ts": "npm:10.5.0"
     "@willbooster/prettier-config": "npm:9.1.1"
     build-ts: "npm:8.2.2"
     concurrently: "npm:8.2.0"
@@ -1793,7 +1793,7 @@ __metadata:
     "@types/micromatch": "npm:4.0.2"
     "@typescript-eslint/eslint-plugin": "npm:6.4.1"
     "@typescript-eslint/parser": "npm:6.4.1"
-    "@willbooster/eslint-config-ts": "npm:10.4.0"
+    "@willbooster/eslint-config-ts": "npm:10.5.0"
     "@willbooster/prettier-config": "npm:9.1.1"
     conventional-changelog-conventionalcommits: "npm:6.1.0"
     eslint: "npm:8.47.0"
@@ -4002,9 +4002,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@willbooster/eslint-config-ts@npm:10.4.0":
-  version: 10.4.0
-  resolution: "@willbooster/eslint-config-ts@npm:10.4.0"
+"@willbooster/eslint-config-ts@npm:10.5.0":
+  version: 10.5.0
+  resolution: "@willbooster/eslint-config-ts@npm:10.5.0"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ">=5"
     "@typescript-eslint/parser": ">=5"
@@ -4016,7 +4016,7 @@ __metadata:
     eslint-plugin-sort-class-members: ">=1.14"
     eslint-plugin-sort-destructure-keys: ">=1.4"
     typescript: ">=4"
-  checksum: e6a86e1d64bdb397f215320f375f3c808a9e37ce76b1db540dbfe6363b90d7a50b40f8891fe7b8012c705113287d0c4bc1c1bbe2b55ea389ee7d5cd6227fe356
+  checksum: a4b861ae04d5a73223e7c948492774b048b85410ad0957ecc3b795980efe94f10d8426197c8a6dc85baf872a9faae4c60c167ea2381f1bf054ee83561e158276
   languageName: node
   linkType: hard
 
