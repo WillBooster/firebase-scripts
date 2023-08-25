@@ -15,6 +15,13 @@ export interface ExportOptions {
   format?: CompressionFormat;
 }
 
+/**
+ * Export collections to files.
+ * @param adminApp An app of firebase admin.
+ * @param collectionPaths An array of slash-separated collection paths to export.
+ * @param dirPath A path of the directory to export.
+ * @param params An optional object to specify the batch size and the compression format.
+ */
 export async function exportCollections(
   adminApp: App,
   collectionPaths: string[],
@@ -29,6 +36,13 @@ export async function exportCollections(
   }
 }
 
+/**
+ * Export a collection to a file.
+ * @param adminApp An app of firebase admin.
+ * @param collectionPath A slash-separated collection path to export.
+ * @param filePath A path of the file to export.
+ * @param params An optional object to specify the batch size and the compression format.
+ */
 export async function exportCollection(
   adminApp: App,
   collectionPath: string,

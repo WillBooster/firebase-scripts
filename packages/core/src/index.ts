@@ -1,3 +1,4 @@
+export { deleteDocumentsWithBatch } from './delete';
 export { exportCollections, exportCollection } from './export';
 export { importCollection, restoreCollection, convertObjectToTimestamp } from './import';
 export {

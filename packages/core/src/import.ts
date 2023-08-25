@@ -8,6 +8,12 @@ import { getFirestore, Timestamp } from 'firebase-admin/firestore';
 import { decompressJsonText, getFormatFromExtension, reviverForJsonParse } from './jsonCompressor';
 import { promisePool } from './promisePool';
 
+/**
+ * Import a collection from a file.
+ * @param adminApp An app of firebase admin.
+ * @param filePath A path of the file to import.
+ * @param collectionPath An optional slash-separated collection path to import.
+ */
 export async function importCollection(adminApp: App, filePath: string, collectionPath?: string): Promise<void> {
   if (!collectionPath) {
     const dotIndex = filePath.indexOf('.');
@@ -34,6 +40,11 @@ export async function importCollection(adminApp: App, filePath: string, collecti
   console.info(`Restored records: ${count}`);
 }
 
+/**
+ * Restore a collection from record objects.
+ * @param records An array of record objects to restore.
+ * @param collection A collection reference to restore.
+ */
 export async function restoreCollection(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   records: Record<string, any>[],

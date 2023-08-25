@@ -1,6 +1,13 @@
 import type { App } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 
+/**
+ * Copy a document.
+ * @param sourceAdminApp An app of firebase admin.
+ * @param sourceDocumentPath A slash-separated document path to copy.
+ * @param targetAdminApp An app of firebase admin.
+ * @param targetDocumentPath A slash-separated document path to copy.
+ */
 export async function copyDocument(
   sourceAdminApp: App,
   sourceDocumentPath: string,

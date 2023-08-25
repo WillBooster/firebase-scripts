@@ -3,6 +3,13 @@ import fsp from 'node:fs/promises';
 import type { App } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 
+/**
+ * Download a BLOB field to a file.
+ * @param adminApp An app of firebase admin.
+ * @param documentPath A slash-separated document path to download.
+ * @param fieldPath A dot-separated field path to download.
+ * @param outputFilePath A path of the file to download.
+ */
 export async function downloadBlobToFile(
   adminApp: App,
   documentPath: string | undefined,
