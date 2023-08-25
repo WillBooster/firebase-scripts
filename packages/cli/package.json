@@ -39,7 +39,7 @@
     "@typescript-eslint/parser": "6.4.1",
     "@willbooster/eslint-config-ts": "10.5.0",
     "@willbooster/prettier-config": "9.1.1",
-    "build-ts": "8.2.2",
+    "build-ts": "8.3.1",
     "conventional-changelog-conventionalcommits": "6.1.0",
     "dotenv-cli": "7.3.0",
     "eslint": "8.47.0",
@@ -55,7 +55,7 @@
     "sort-package-json": "2.5.1",
     "typescript": "5.2.2"
   },
-  "packageManager": "yarn@4.0.0-rc.49",
+  "packageManager": "yarn@4.0.0-rc.50",
   "engines": {
     "node": ">=16"
   },
