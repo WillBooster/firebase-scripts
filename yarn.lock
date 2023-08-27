@@ -5687,6 +5687,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"conventional-changelog-conventionalcommits@npm:7.0.0":
+  version: 7.0.0
+  resolution: "conventional-changelog-conventionalcommits@npm:7.0.0"
+  dependencies:
+    compare-func: "npm:^2.0.0"
+  checksum: 28d65ad326375034dc01307433c8edf7335e13086166822f07860764b75ebbca6be111f4967898e0704e62d795a59326bfe75b94943e5feb286314473a5b11d7
+  languageName: node
+  linkType: hard
+
 "conventional-changelog-writer@npm:^6.0.0":
   version: 6.0.1
   resolution: "conventional-changelog-writer@npm:6.0.1"
@@ -7316,7 +7325,7 @@ __metadata:
     "@types/micromatch": "npm:4.0.2"
     "@typescript-eslint/parser": "npm:6.4.1"
     "@willbooster/prettier-config": "npm:9.1.1"
-    conventional-changelog-conventionalcommits: "npm:6.1.0"
+    conventional-changelog-conventionalcommits: "npm:7.0.0"
     eslint: "npm:8.48.0"
     husky: "npm:8.0.3"
     lint-staged: "npm:14.0.1"
