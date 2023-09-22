@@ -59,13 +59,13 @@
     "prettier": "3.0.3",
     "sort-package-json": "2.5.1",
     "typescript": "5.2.2",
-    "vitest": "0.34.4",
+    "vitest": "0.34.5",
     "wait-on": "7.0.1"
   },
   "peerDependencies": {
     "firebase-admin": ">=11"
   },
-  "packageManager": "yarn@4.0.0-rc.50",
+  "packageManager": "yarn@4.0.0-rc.51",
   "engines": {
     "node": ">=16"
   },
