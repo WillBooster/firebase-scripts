@@ -52,7 +52,7 @@
     "eslint-plugin-unicorn": "48.0.1",
     "firebase": "10.4.0",
     "firebase-admin": "11.11.0",
-    "firebase-tools": "12.6.1",
+    "firebase-tools": "12.6.2",
     "kill-port": "2.0.1",
     "lint-staged": "14.0.1",
     "micromatch": "4.0.5",
@@ -65,7 +65,7 @@
   "peerDependencies": {
     "firebase-admin": ">=11"
   },
-  "packageManager": "yarn@4.0.0-rc.51",
+  "packageManager": "yarn@4.0.0-rc.53",
   "engines": {
     "node": ">=16"
   },
