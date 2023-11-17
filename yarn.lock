@@ -1822,7 +1822,7 @@ __metadata:
     eslint-plugin-unicorn: "npm:49.0.0"
     firebase: "npm:10.6.0"
     firebase-admin: "npm:11.11.0"
-    firebase-tools: "npm:12.8.1"
+    firebase-tools: "npm:12.9.1"
     kill-port: "npm:2.0.1"
     lint-staged: "npm:15.1.0"
     micromatch: "npm:4.0.5"
@@ -1831,7 +1831,7 @@ __metadata:
     sort-package-json: "npm:2.6.0"
     typescript: "npm:5.2.2"
     vitest: "npm:0.34.6"
-    wait-on: "npm:7.1.0"
+    wait-on: "npm:7.2.0"
   peerDependencies:
     firebase-admin: ">=11"
   languageName: unknown
@@ -4850,13 +4850,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.27.2":
-  version: 0.27.2
-  resolution: "axios@npm:0.27.2"
+"axios@npm:^1.6.1":
+  version: 1.6.2
+  resolution: "axios@npm:1.6.2"
   dependencies:
-    follow-redirects: "npm:^1.14.9"
+    follow-redirects: "npm:^1.15.0"
     form-data: "npm:^4.0.0"
-  checksum: 76d673d2a90629944b44d6f345f01e58e9174690f635115d5ffd4aca495d99bcd8f95c590d5ccb473513f5ebc1d1a6e8934580d0c57cdd0498c3a101313ef771
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 9b77e030e85e4f9cbcba7bb52fbff67d6ce906c92d213e0bd932346a50140faf83733bf786f55bd58301bd92f9973885c7b87d6348023e10f7eaf286d0791a1d
   languageName: node
   linkType: hard
 
@@ -7643,9 +7644,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"firebase-tools@npm:12.8.1":
-  version: 12.8.1
-  resolution: "firebase-tools@npm:12.8.1"
+"firebase-tools@npm:12.9.1":
+  version: 12.9.1
+  resolution: "firebase-tools@npm:12.9.1"
   dependencies:
     "@google-cloud/pubsub": "npm:^3.0.1"
     abort-controller: "npm:^3.0.0"
@@ -7709,7 +7710,7 @@ __metadata:
     ws: "npm:^7.2.3"
   bin:
     firebase: lib/bin/firebase.js
-  checksum: c3c945ea5aea05c3b06decbb1e119794071deaede315d01d1c007c5bf3b409661cfa43b50a2a25dadaaf3acc86b6f29e084fb1c81b573a5f0b92c052cc1e0036
+  checksum: 769311e352417bb315eb693556cdba6d402ddd8bd858b66ae064a7dd26cbce4e4641857273ca942e3f884466b106f80f253c97ece4c431f822757a5b4e34e9b4
   languageName: node
   linkType: hard
 
@@ -7772,7 +7773,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.9":
+"follow-redirects@npm:^1.15.0":
   version: 1.15.3
   resolution: "follow-redirects@npm:1.15.3"
   peerDependenciesMeta:
@@ -15178,18 +15179,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wait-on@npm:7.1.0":
-  version: 7.1.0
-  resolution: "wait-on@npm:7.1.0"
+"wait-on@npm:7.2.0":
+  version: 7.2.0
+  resolution: "wait-on@npm:7.2.0"
   dependencies:
-    axios: "npm:^0.27.2"
+    axios: "npm:^1.6.1"
     joi: "npm:^17.11.0"
     lodash: "npm:^4.17.21"
     minimist: "npm:^1.2.8"
     rxjs: "npm:^7.8.1"
   bin:
     wait-on: bin/wait-on
-  checksum: 1d3977fa23edd2ab81daebfb7874cb770dee568d6ba0247b01ce67a5906962dcb060bcc1a85a80989d504ee0ab1925106c33093bea39ddf9f0d7443647b59ce3
+  checksum: 1eff2189b3e4b0975889f3e480c75ca2a0d4275072779a6329e7cae8b729620594aa044509ddd89967de6ab2162169501b67b8d9562c16cac517837ffce17337
   languageName: node
   linkType: hard
 
