@@ -52,7 +52,7 @@
     "eslint-plugin-unicorn": "49.0.0",
     "firebase": "10.6.0",
     "firebase-admin": "11.11.0",
-    "firebase-tools": "12.8.1",
+    "firebase-tools": "12.9.1",
     "kill-port": "2.0.1",
     "lint-staged": "15.1.0",
     "micromatch": "4.0.5",
@@ -60,12 +60,12 @@
     "sort-package-json": "2.6.0",
     "typescript": "5.2.2",
     "vitest": "0.34.6",
-    "wait-on": "7.1.0"
+    "wait-on": "7.2.0"
   },
   "peerDependencies": {
     "firebase-admin": ">=11"
   },
-  "packageManager": "yarn@4.0.1",
+  "packageManager": "yarn@4.0.2",
   "engines": {
     "node": ">=16"
   },
