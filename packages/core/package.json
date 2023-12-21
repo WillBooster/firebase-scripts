@@ -49,7 +49,7 @@
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-sort-class-members": "1.19.0",
     "eslint-plugin-sort-destructure-keys": "1.5.0",
-    "eslint-plugin-unicorn": "49.0.0",
+    "eslint-plugin-unicorn": "50.0.1",
     "firebase": "10.7.1",
     "firebase-admin": "11.11.1",
     "firebase-tools": "12.9.1",
