@@ -40,7 +40,7 @@
     "@typescript-eslint/parser": "6.15.0",
     "@willbooster/eslint-config-ts": "10.5.1",
     "@willbooster/prettier-config": "9.1.2",
-    "build-ts": "8.4.3",
+    "build-ts": "11.0.20",
     "concurrently": "8.2.2",
     "conventional-changelog-conventionalcommits": "6.1.0",
     "eslint": "8.56.0",
