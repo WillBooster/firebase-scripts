@@ -7605,7 +7605,7 @@ __metadata:
     "@willbooster/prettier-config": "npm:9.1.2"
     conventional-changelog-conventionalcommits: "npm:6.1.0"
     eslint: "npm:8.56.0"
-    husky: "npm:9.0.9"
+    husky: "npm:9.0.10"
     lint-staged: "npm:15.2.1"
     micromatch: "npm:4.0.5"
     pinst: "npm:3.0.0"
@@ -8718,12 +8718,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:9.0.9":
-  version: 9.0.9
-  resolution: "husky@npm:9.0.9"
+"husky@npm:9.0.10":
+  version: 9.0.10
+  resolution: "husky@npm:9.0.10"
   bin:
     husky: bin.mjs
-  checksum: 10c0/8ce04bbe983b326d27abe9bde972040b5e81e04b375c3f7183446f355fef85cb0b58a4aa3fae9c219f376e477c0b0b7fd4758b84acdeb811d3e77278fdf45689
+  checksum: 10c0/585d95fec151d2e3fba1a8d97c1290dee40b83eb2b8850afae0805e183b3b3ec45bfeef97b2d0c4ae16f1c1bf19788b9129627d9ba02d924c874632207e33b93
   languageName: node
   linkType: hard
 
