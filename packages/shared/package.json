@@ -19,7 +19,7 @@
     "firebase-admin": "11.11.1"
   },
   "devDependencies": {
-    "@types/eslint": "8.56.2",
+    "@types/eslint": "8.56.3",
     "@types/micromatch": "4.0.6",
     "@typescript-eslint/eslint-plugin": "7.0.2",
     "@typescript-eslint/parser": "7.0.2",
