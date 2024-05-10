@@ -41,7 +41,7 @@
     "@willbooster/prettier-config": "9.1.2",
     "build-ts": "12.1.0",
     "conventional-changelog-conventionalcommits": "6.1.0",
-    "dotenv-cli": "7.4.1",
+    "dotenv-cli": "7.4.2",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-import-resolver-typescript": "3.6.1",
@@ -55,7 +55,7 @@
     "sort-package-json": "2.10.0",
     "typescript": "5.4.5"
   },
-  "packageManager": "yarn@4.2.1",
+  "packageManager": "yarn@4.2.2",
   "engines": {
     "node": ">=16"
   },
