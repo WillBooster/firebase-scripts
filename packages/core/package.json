@@ -59,7 +59,7 @@
     "prettier": "3.3.2",
     "sort-package-json": "2.10.0",
     "typescript": "5.5.3",
-    "vitest": "0.34.6",
+    "vitest": "1.6.0",
     "wait-on": "7.2.0"
   },
   "peerDependencies": {
