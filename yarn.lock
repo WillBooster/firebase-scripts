@@ -1809,7 +1809,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@firebase-scripts/cli@workspace:packages/cli"
   dependencies:
-    "@types/eslint": "npm:8.56.10"
+    "@types/eslint": "npm:8.56.11"
     "@types/micromatch": "npm:4.0.9"
     "@types/yargs": "npm:17.0.32"
     "@typescript-eslint/eslint-plugin": "npm:7.17.0"
@@ -1843,7 +1843,7 @@ __metadata:
   resolution: "@firebase-scripts/core@workspace:packages/core"
   dependencies:
     "@firebase/rules-unit-testing": "npm:3.0.4"
-    "@types/eslint": "npm:8.56.10"
+    "@types/eslint": "npm:8.56.11"
     "@types/micromatch": "npm:4.0.9"
     "@typescript-eslint/eslint-plugin": "npm:7.17.0"
     "@typescript-eslint/parser": "npm:7.17.0"
@@ -1880,7 +1880,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@firebase-scripts/shared@workspace:packages/shared"
   dependencies:
-    "@types/eslint": "npm:8.56.10"
+    "@types/eslint": "npm:8.56.11"
     "@types/micromatch": "npm:4.0.9"
     "@typescript-eslint/eslint-plugin": "npm:7.17.0"
     "@typescript-eslint/parser": "npm:7.17.0"
@@ -3972,13 +3972,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:8.56.10":
-  version: 8.56.10
-  resolution: "@types/eslint@npm:8.56.10"
+"@types/eslint@npm:8.56.11":
+  version: 8.56.11
+  resolution: "@types/eslint@npm:8.56.11"
   dependencies:
     "@types/estree": "npm:*"
     "@types/json-schema": "npm:*"
-  checksum: 10c0/674349d6c342c3864d70f4d5a9965f96fb253801532752c8c500ad6a1c2e8b219e01ccff5dc8791dcb58b5483012c495708bb9f3ff929f5c9322b3da126c15d3
+  checksum: 10c0/e47d2b8e0ce1aa7e1f2564555576fa55343e942ae8cba5940b4e2566f842810c007beff80a01d74d48c60a45ecf28150cbc5cbd53324b1e55cf672b24ccf4667
   languageName: node
   linkType: hard
 
@@ -7869,13 +7869,13 @@ __metadata:
   resolution: "firebase-scripts@workspace:."
   dependencies:
     "@qiwi/multi-semantic-release": "npm:7.1.1"
-    "@types/eslint": "npm:8.56.10"
+    "@types/eslint": "npm:8.56.11"
     "@types/micromatch": "npm:4.0.9"
     "@typescript-eslint/parser": "npm:7.17.0"
     "@willbooster/prettier-config": "npm:9.1.2"
     conventional-changelog-conventionalcommits: "npm:6.1.0"
     eslint: "npm:8.57.0"
-    husky: "npm:9.1.2"
+    husky: "npm:9.1.3"
     lint-staged: "npm:15.2.7"
     micromatch: "npm:4.0.7"
     pinst: "npm:3.0.0"
@@ -9000,12 +9000,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:9.1.2":
-  version: 9.1.2
-  resolution: "husky@npm:9.1.2"
+"husky@npm:9.1.3":
+  version: 9.1.3
+  resolution: "husky@npm:9.1.3"
   bin:
     husky: bin.js
-  checksum: 10c0/7e25c31ef98ac35d357147005d6e5d87db2abca7297e7c5aac931de3699acd32a3f1a9f8e53f101daeab818f0cfe9d18fa7e34f7cf5c9c4437c3665123456dea
+  checksum: 10c0/3fb8657ff97f529dab0b9a0afa6b818ec604f60c39abc13e8e3f4263ea30a3aa6fff7a1b625b8a53700899ce0ea2f5f656981c46b8f1837cfd84ddb6da883fb2
   languageName: node
   linkType: hard
 
