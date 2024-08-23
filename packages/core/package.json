@@ -55,9 +55,9 @@
     "firebase-tools": "12.9.1",
     "kill-port": "2.0.1",
     "lint-staged": "15.2.9",
-    "micromatch": "4.0.7",
+    "micromatch": "4.0.8",
     "prettier": "3.3.3",
-    "sort-package-json": "2.10.0",
+    "sort-package-json": "2.10.1",
     "typescript": "5.5.4",
     "vitest": "0.34.6",
     "wait-on": "7.2.0"
