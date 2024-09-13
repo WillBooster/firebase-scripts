@@ -32,13 +32,13 @@
     "@willbooster/prettier-config": "9.1.2",
     "conventional-changelog-conventionalcommits": "6.1.0",
     "eslint": "8.57.0",
-    "husky": "9.1.5",
+    "husky": "9.1.6",
     "lint-staged": "15.2.10",
     "micromatch": "4.0.8",
     "pinst": "3.0.0",
     "prettier": "3.3.3",
     "sort-package-json": "2.10.1",
-    "typescript": "5.5.4"
+    "typescript": "5.6.2"
   },
   "packageManager": "yarn@4.4.1",
   "engines": {
