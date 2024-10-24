@@ -16,7 +16,7 @@
   },
   "prettier": "@willbooster/prettier-config",
   "dependencies": {
-    "firebase-admin": "11.11.1"
+    "firebase-admin": "12.7.0"
   },
   "devDependencies": {
     "@types/eslint": "8.56.11",
