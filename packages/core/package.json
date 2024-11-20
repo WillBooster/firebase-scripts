@@ -51,7 +51,7 @@
     "eslint-plugin-sort-destructure-keys": "2.0.0",
     "eslint-plugin-unicorn": "55.0.0",
     "firebase": "10.14.1",
-    "firebase-admin": "11.11.1",
+    "firebase-admin": "12.7.0",
     "firebase-tools": "12.9.1",
     "kill-port": "2.0.1",
     "lint-staged": "15.2.10",
