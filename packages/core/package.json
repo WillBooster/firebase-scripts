@@ -52,7 +52,7 @@
     "eslint-plugin-unicorn": "55.0.0",
     "firebase": "10.14.1",
     "firebase-admin": "11.11.1",
-    "firebase-tools": "12.9.1",
+    "firebase-tools": "13.24.2",
     "kill-port": "2.0.1",
     "lint-staged": "15.2.10",
     "micromatch": "4.0.8",
