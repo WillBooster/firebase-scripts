@@ -17,7 +17,7 @@ import { promisePool } from './promisePool';
 export async function importCollection(adminApp: App, filePath: string, collectionPath?: string): Promise<void> {
   if (!collectionPath) {
     const dotIndex = filePath.indexOf('.');
-    collectionPath = filePath.slice(0, dotIndex >= 0 ? dotIndex : undefined);
+    collectionPath = filePath.slice(0, dotIndex === -1 ? undefined : dotIndex);
   }
 
   if (!fs.existsSync(filePath)) {
@@ -74,8 +74,8 @@ export function convertObjectToTimestamp(record: Record<string, any>): boolean {
   let modified = false;
   for (const [key, value] of Object.entries(record)) {
     if (value && typeof value === 'object' && !(value instanceof Timestamp)) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { _nanoseconds, _seconds } = value as any;
+       
+      const { _nanoseconds, _seconds } = value;
       if (Object.keys(value).length === 2 && typeof _seconds === 'number' && typeof _nanoseconds === 'number') {
         record[key] = new Timestamp(_seconds, _nanoseconds);
         modified = true;
