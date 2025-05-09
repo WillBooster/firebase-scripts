@@ -28,16 +28,16 @@
     "conventional-changelog-conventionalcommits": "6.1.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-import-resolver-typescript": "3.10.0",
+    "eslint-import-resolver-typescript": "3.10.1",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-sort-class-members": "1.21.0",
     "eslint-plugin-sort-destructure-keys": "2.0.0",
     "eslint-plugin-unicorn": "55.0.0",
-    "lint-staged": "15.5.1",
+    "lint-staged": "15.5.2",
     "micromatch": "4.0.8",
     "prettier": "3.5.3",
     "sort-package-json": "2.15.1",
     "typescript": "5.8.3"
   },
-  "packageManager": "yarn@4.9.0"
+  "packageManager": "yarn@4.9.1"
 }

@@ -45,7 +45,7 @@
     "conventional-changelog-conventionalcommits": "6.1.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-import-resolver-typescript": "3.10.0",
+    "eslint-import-resolver-typescript": "3.10.1",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-sort-class-members": "1.21.0",
     "eslint-plugin-sort-destructure-keys": "2.0.0",
@@ -54,7 +54,7 @@
     "firebase-admin": "11.11.1",
     "firebase-tools": "12.9.1",
     "kill-port": "2.0.1",
-    "lint-staged": "15.5.1",
+    "lint-staged": "15.5.2",
     "micromatch": "4.0.8",
     "prettier": "3.5.3",
     "sort-package-json": "2.15.1",
@@ -65,7 +65,7 @@
   "peerDependencies": {
     "firebase-admin": ">=11"
   },
-  "packageManager": "yarn@4.9.0",
+  "packageManager": "yarn@4.9.1",
   "engines": {
     "node": ">=16"
   },
