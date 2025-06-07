@@ -40,7 +40,7 @@
     "sort-package-json": "2.15.1",
     "typescript": "5.8.3"
   },
-  "packageManager": "yarn@4.9.1",
+  "packageManager": "yarn@4.9.2",
   "engines": {
     "node": ">=18"
   }
