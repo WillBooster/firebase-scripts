@@ -6,7 +6,7 @@ import { getBlobCommand } from './getBlobCommand';
 import { importCommand } from './importCommand';
 
 // https://github.com/yargs/yargs/issues/1929#issuecomment-920391458
-// eslint-disable-next-line @typescript-eslint/no-var-requires, unicorn/prefer-module
+// eslint-disable-next-line unicorn/prefer-module
 const yargs = require('yargs');
 
 export async function cli(): Promise<void> {
