@@ -1,5 +1,6 @@
 * text=auto
 
+*.lockb binary diff=lockb
 *.vcproj text eol=crlf
 
 *.cjs text eol=lf
@@ -18,6 +19,7 @@
 *.pu text eol=lf
 *.puml text eol=lf
 *.rb text eol=lf
+*.sh text eol=lf
 *.ts text eol=lf
 *.tsx text eol=lf
 *.vue text eol=lf
@@ -26,6 +28,7 @@
 *.yml text eol=lf
 *.go text eol=lf
 *.gradle text eol=lf
+*.java text eol=lf
 *.py text eol=lf
 *.md text eol=lf
 
