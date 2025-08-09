@@ -2,7 +2,7 @@ import fsp from 'node:fs/promises';
 import path from 'node:path';
 
 import type { App } from 'firebase-admin/app';
-import type { DocumentData, QueryDocumentSnapshot } from 'firebase-admin/firestore';
+import type { QueryDocumentSnapshot } from 'firebase-admin/firestore';
 import { getFirestore } from 'firebase-admin/firestore';
 
 import type { CompressionFormat } from './jsonCompressor';
@@ -56,7 +56,7 @@ export async function exportCollection(
   console.info(`Reading ${collectionPath} collection ...`);
 
   const dataList: unknown[] = [];
-  let lastDocument: QueryDocumentSnapshot<DocumentData> | undefined;
+  let lastDocument: QueryDocumentSnapshot | undefined;
   for (;;) {
     const query = lastDocument ? collectionRef.startAfter(lastDocument) : collectionRef;
     const { docs } = await query.limit(batchSize).get();
