@@ -69,5 +69,5 @@ function testExportAndImport(params?: ExportOptions): void {
   });
 }
 
-test('export and import a collection without options', () => testExportAndImport(), 180 * 1000);
-test('export and import a collection with options', () => testExportAndImport({ batchSize: 10 }), 180 * 1000);
+test('export and import a collection without options', () => { testExportAndImport(); }, 180 * 1000);
+test('export and import a collection with options', () => { testExportAndImport({ batchSize: 10 }); }, 180 * 1000);
