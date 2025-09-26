@@ -60,12 +60,12 @@
     "sort-package-json": "2.15.1",
     "typescript": "5.9.2",
     "vitest": "0.34.6",
-    "wait-on": "8.0.4"
+    "wait-on": "8.0.5"
   },
   "peerDependencies": {
     "firebase-admin": ">=11"
   },
-  "packageManager": "yarn@4.9.4",
+  "packageManager": "yarn@4.10.3",
   "engines": {
     "node": ">=16"
   },
